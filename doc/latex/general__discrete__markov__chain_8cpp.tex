@@ -1,0 +1,111 @@
+\hypertarget{general__discrete__markov__chain_8cpp}{}\section{src/general\+\_\+discrete\+\_\+markov\+\_\+chain.cpp File Reference}
+\label{general__discrete__markov__chain_8cpp}\index{src/general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{src/general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}}
+
+
+Simulate a general discrete Markov chain with a given transition probability matrix P.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$gsl/gsl\+\_\+rng.\+h$>$}\\*
+{\ttfamily \#include $<$gsl/gsl\+\_\+randist.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{general__discrete__markov__chain_8cpp_afbee3faf2b9cb746736501759c9a3371}{jump} (const gsl\+\_\+ran\+\_\+discrete\+\_\+t $\ast$G, const gsl\+\_\+rng $\ast$R)
+\item 
+void \hyperlink{general__discrete__markov__chain_8cpp_aeabe468be8a8ef258f53acea22e043e1}{pp\+\_\+matrix} (double $\ast$M, size\+\_\+t r, size\+\_\+t c)
+\item 
+int \hyperlink{general__discrete__markov__chain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \hyperlink{general__discrete__markov__chain_8cpp_ad251c3b522fa0013889f3bdf29c11077}{n\+\_\+states} = 4
+\item 
+unsigned int \hyperlink{general__discrete__markov__chain_8cpp_a856338f4004d23c28b7acb6550576c23}{s\+\_\+init} = 0
+\item 
+double \hyperlink{general__discrete__markov__chain_8cpp_ad53b83095929a31cc39e2fcc57d65b5d}{trans\+\_\+matrix} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Transition probability matrix. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{general__discrete__markov__chain_8cpp_a80eead42e8890b9cbbc6797795b53b02}{n\+\_\+iter} = 10000000
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simulate a general discrete Markov chain with a given transition probability matrix P. 
+
+\begin{DoxyAuthor}{Author}
+Dominik Schrempf \href{mailto:dominik.schrempf@gmail.com}{\tt dominik.\+schrempf@gmail.\+com} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Wed Mar 18 15\+:51\+:19 2015
+\end{DoxyDate}
+Assume that P has a stationary distribution pi. Iterate the chain and print the proportion of time spent in each state. This should match the stationary distribution.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Object oriented programming. \end{DoxyRefDesc}
+
+
+\subsection{Function Documentation}
+\hypertarget{general__discrete__markov__chain_8cpp_afbee3faf2b9cb746736501759c9a3371}{}\index{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}!jump@{jump}}
+\index{jump@{jump}!general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}}
+\subsubsection[{jump}]{\setlength{\rightskip}{0pt plus 5cm}int jump (
+\begin{DoxyParamCaption}
+\item[{const gsl\+\_\+ran\+\_\+discrete\+\_\+t $\ast$}]{G, }
+\item[{const gsl\+\_\+rng $\ast$}]{R}
+\end{DoxyParamCaption}
+)}\label{general__discrete__markov__chain_8cpp_afbee3faf2b9cb746736501759c9a3371}
+Perform a single jump of the discrete Markov chain.
+
+
+\begin{DoxyParams}{Parameters}
+{\em G} & A G\+S\+L discrete random number lookup table for the current state. \\
+\hline
+{\em R} & A random number generator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New state. 
+\end{DoxyReturn}
+\hypertarget{general__discrete__markov__chain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\index{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}!main@{main}}
+\index{main@{main}!general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{general__discrete__markov__chain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+\hypertarget{general__discrete__markov__chain_8cpp_aeabe468be8a8ef258f53acea22e043e1}{}\index{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}!pp\+\_\+matrix@{pp\+\_\+matrix}}
+\index{pp\+\_\+matrix@{pp\+\_\+matrix}!general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}}
+\subsubsection[{pp\+\_\+matrix}]{\setlength{\rightskip}{0pt plus 5cm}void pp\+\_\+matrix (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{M, }
+\item[{size\+\_\+t}]{r, }
+\item[{size\+\_\+t}]{c}
+\end{DoxyParamCaption}
+)}\label{general__discrete__markov__chain_8cpp_aeabe468be8a8ef258f53acea22e043e1}
+
+
+\subsection{Variable Documentation}
+\hypertarget{general__discrete__markov__chain_8cpp_a80eead42e8890b9cbbc6797795b53b02}{}\index{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}!n\+\_\+iter@{n\+\_\+iter}}
+\index{n\+\_\+iter@{n\+\_\+iter}!general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}}
+\subsubsection[{n\+\_\+iter}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int n\+\_\+iter = 10000000}\label{general__discrete__markov__chain_8cpp_a80eead42e8890b9cbbc6797795b53b02}
+\hypertarget{general__discrete__markov__chain_8cpp_ad251c3b522fa0013889f3bdf29c11077}{}\index{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}!n\+\_\+states@{n\+\_\+states}}
+\index{n\+\_\+states@{n\+\_\+states}!general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}}
+\subsubsection[{n\+\_\+states}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t n\+\_\+states = 4}\label{general__discrete__markov__chain_8cpp_ad251c3b522fa0013889f3bdf29c11077}
+Number of states. \hypertarget{general__discrete__markov__chain_8cpp_a856338f4004d23c28b7acb6550576c23}{}\index{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}!s\+\_\+init@{s\+\_\+init}}
+\index{s\+\_\+init@{s\+\_\+init}!general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}}
+\subsubsection[{s\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int s\+\_\+init = 0}\label{general__discrete__markov__chain_8cpp_a856338f4004d23c28b7acb6550576c23}
+Initial state. \hypertarget{general__discrete__markov__chain_8cpp_ad53b83095929a31cc39e2fcc57d65b5d}{}\index{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}!trans\+\_\+matrix@{trans\+\_\+matrix}}
+\index{trans\+\_\+matrix@{trans\+\_\+matrix}!general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp@{general\+\_\+discrete\+\_\+markov\+\_\+chain.\+cpp}}
+\subsubsection[{trans\+\_\+matrix}]{\setlength{\rightskip}{0pt plus 5cm}double trans\+\_\+matrix\mbox{[}$\,$\mbox{]}}\label{general__discrete__markov__chain_8cpp_ad53b83095929a31cc39e2fcc57d65b5d}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{ 0.1,  0.4,  0.4,  0.1,
+                          0.25, 0.25, 0.25, 0.25,
+                          0.01, 0.01, 0.97, 0.01,
+                          0.33, 0.33, 0.33, 0.01\}
+\end{DoxyCode}
+
+
+Transition probability matrix. 
+

@@ -1,0 +1,7 @@
+;; Object cpp_programs
+;; EDE Project Files are auto generated: Do Not Edit
+(ede-proj-project "cpp_programs"
+  :file "Project.ede"
+  :name "cpp_programs"
+  :targets nil
+  :makefile-type 'Makefile.am)

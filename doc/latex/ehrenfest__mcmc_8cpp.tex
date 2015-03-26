@@ -1,0 +1,110 @@
+\hypertarget{ehrenfest__mcmc_8cpp}{}\section{src/ehrenfest\+\_\+mcmc.cpp File Reference}
+\label{ehrenfest__mcmc_8cpp}\index{src/ehrenfest\+\_\+mcmc.\+cpp@{src/ehrenfest\+\_\+mcmc.\+cpp}}
+
+
+Simulate gas particles in a divided box.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$gsl/gsl\+\_\+rng.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{ehrenfest__mcmc_8cpp_ae42a013668e7a376deefff64fa881dce}{get\+\_\+q} (unsigned int i, unsigned int \hyperlink{ehrenfest__mcmc_8cpp_ae8b170dcb376fe60270f4675f84e4477}{N})
+\item 
+unsigned int \hyperlink{ehrenfest__mcmc_8cpp_a9e84f967ae03eb731820321ed36e052c}{jump} (unsigned int i, unsigned int \hyperlink{ehrenfest__mcmc_8cpp_ae8b170dcb376fe60270f4675f84e4477}{N}, gsl\+\_\+rng $\ast$r)
+\item 
+int \hyperlink{ehrenfest__mcmc_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{ehrenfest__mcmc_8cpp_ae8b170dcb376fe60270f4675f84e4477}{N} = 100
+\item 
+unsigned int \hyperlink{ehrenfest__mcmc_8cpp_a8ea5c4b17c061343d5a7c2532e629df8}{i\+\_\+start} = 0
+\item 
+unsigned int \hyperlink{ehrenfest__mcmc_8cpp_a80eead42e8890b9cbbc6797795b53b02}{n\+\_\+iter} = 1000
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simulate gas particles in a divided box. 
+
+\begin{DoxyAuthor}{Author}
+Dominik Schrempf \href{mailto:dominik.schrempf@gmail.com}{\tt dominik.\+schrempf@gmail.\+com} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Wed Feb 11 13\+:56\+:44 2015
+\end{DoxyDate}
+Please see Markov Chains --- Norris, exercise 1.\+7.\+2 (solution in Feres, homework 6)
+
+N gas particles move around in a box that is divided into two symmetrical parts A (i particles) and B (N-\/i particles). A hole lets particles move from A to B and vice versa. If we neglect two particles passing at once, this model behaves like a Markov chain. Here, we simulate this chain.
+
+The transition probabilites are as follows\+: 
+
+A simulation result\+:  
+
+\subsection{Function Documentation}
+\hypertarget{ehrenfest__mcmc_8cpp_ae42a013668e7a376deefff64fa881dce}{}\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!get\+\_\+q@{get\+\_\+q}}
+\index{get\+\_\+q@{get\+\_\+q}!ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}}
+\subsubsection[{get\+\_\+q}]{\setlength{\rightskip}{0pt plus 5cm}double get\+\_\+q (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i, }
+\item[{unsigned int}]{N}
+\end{DoxyParamCaption}
+)}\label{ehrenfest__mcmc_8cpp_ae42a013668e7a376deefff64fa881dce}
+Calculate the probability to jump from i to i-\/1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Current state. \\
+\hline
+{\em N} & Total number of particles in the box.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Probability to jump from i to i-\/1. 
+\end{DoxyReturn}
+\hypertarget{ehrenfest__mcmc_8cpp_a9e84f967ae03eb731820321ed36e052c}{}\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!jump@{jump}}
+\index{jump@{jump}!ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}}
+\subsubsection[{jump}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int jump (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i, }
+\item[{unsigned int}]{N, }
+\item[{gsl\+\_\+rng $\ast$}]{r}
+\end{DoxyParamCaption}
+)}\label{ehrenfest__mcmc_8cpp_a9e84f967ae03eb731820321ed36e052c}
+Let the chain jump from i to either i+1 or i-\/1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Current state. \\
+\hline
+{\em N} & Total number of particles in the box. \\
+\hline
+{\em r} & G\+S\+L random number generator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New state. 
+\end{DoxyReturn}
+\hypertarget{ehrenfest__mcmc_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{}\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!main@{main}}
+\index{main@{main}!ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{ehrenfest__mcmc_8cpp_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+\subsection{Variable Documentation}
+\hypertarget{ehrenfest__mcmc_8cpp_a8ea5c4b17c061343d5a7c2532e629df8}{}\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!i\+\_\+start@{i\+\_\+start}}
+\index{i\+\_\+start@{i\+\_\+start}!ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}}
+\subsubsection[{i\+\_\+start}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int i\+\_\+start = 0}\label{ehrenfest__mcmc_8cpp_a8ea5c4b17c061343d5a7c2532e629df8}
+Starting state. \hypertarget{ehrenfest__mcmc_8cpp_ae8b170dcb376fe60270f4675f84e4477}{}\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!N@{N}}
+\index{N@{N}!ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}}
+\subsubsection[{N}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int N = 100}\label{ehrenfest__mcmc_8cpp_ae8b170dcb376fe60270f4675f84e4477}
+Number of particles in the box. \hypertarget{ehrenfest__mcmc_8cpp_a80eead42e8890b9cbbc6797795b53b02}{}\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!n\+\_\+iter@{n\+\_\+iter}}
+\index{n\+\_\+iter@{n\+\_\+iter}!ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}}
+\subsubsection[{n\+\_\+iter}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int n\+\_\+iter = 1000}\label{ehrenfest__mcmc_8cpp_a80eead42e8890b9cbbc6797795b53b02}
+Number of iterations to be simulated. 

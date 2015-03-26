@@ -1,0 +1,67 @@
+;; Object src
+;; EDE Project Files are auto generated: Do Not Edit
+(ede-proj-project "src"
+  :file "Project.ede"
+  :name "src"
+  :targets
+  (list
+    (ede-proj-target-makefile-program "genetic_drift"
+      :name "genetic_drift"
+      :path ""
+      :source '("genetic_drift.cpp")
+      :configuration-variables nil
+      :ldlibs '("gsl" "cblas"))
+    (ede-proj-target-makefile-program "hitchhiking"
+      :name "hitchhiking"
+      :path ""
+      :source '("hitchhiking.c"))
+    (ede-proj-target-makefile-program "ehrenfest_mcmc"
+      :name "ehrenfest_mcmc"
+      :path ""
+      :source '("ehrenfest_mcmc.cpp")
+      :configuration-variables nil
+      :ldlibs '("gsl" "cblas"))
+    (ede-proj-target-makefile-program "coin_toss_mcmc"
+      :name "coin_toss_mcmc"
+      :path ""
+      :source '("coin_toss_mcmc.cpp")
+      :configuration-variables nil
+      :ldlibs '("gsl" "gslcblas"))
+    (ede-proj-target-makefile-program "cube_mcmc"
+      :name "cube_mcmc"
+      :path ""
+      :source '("cube_mcmc.cpp")
+      :configuration-variables nil
+      :ldlibs '("gsl" "cblas"))
+    (ede-proj-target-makefile-program "brownian_motion_mcmc"
+      :name "brownian_motion_mcmc"
+      :path ""
+      :source '("brownian_motion_mcmc.cpp")
+      :configuration-variables nil
+      :ldlibs '("gsl" "cblas"))
+    (ede-proj-target-makefile-program "bookshelf"
+      :name "bookshelf"
+      :path ""
+      :source '("bookshelf.cpp")
+      :configuration-variables nil
+      :ldlibs '("gsl" "gslcblas"))
+    (ede-proj-target-makefile-program "stepping_stone_model"
+      :name "stepping_stone_model"
+      :path ""
+      :source '("stepping_stone_model.cpp")
+      :configuration-variables nil
+      :ldlibs '("gsl" "gslcblas"))
+    (ede-proj-target-makefile-program "general_discrete_distributions"
+      :name "general_discrete_distributions"
+      :path ""
+      :source '("general_discrete_distributions.cpp")
+      :configuration-variables nil
+      :ldlibs '("gsl" "gslcblas"))
+    (ede-proj-target-makefile-program "general_discrete_markov_chain"
+      :name "general_discrete_markov_chain"
+      :path ""
+      :source '("general_discrete_markov_chain.cpp")
+      :configuration-variables nil
+      :ldlibs '("gsl" "gslcblas")))
+  :makefile-type 'Makefile.am
+  :configuration-variables '(("debug" ("CXXFLAGS" . "-g -O0"))))

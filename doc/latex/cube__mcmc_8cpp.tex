@@ -1,0 +1,147 @@
+\hypertarget{cube__mcmc_8cpp}{}\section{src/cube\+\_\+mcmc.cpp File Reference}
+\label{cube__mcmc_8cpp}\index{src/cube\+\_\+mcmc.\+cpp@{src/cube\+\_\+mcmc.\+cpp}}
+
+
+Simulation of a Markov chain that moves around the eight vertices of a cube.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$gsl/gsl\+\_\+rng.\+h$>$}\\*
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \hyperlink{cube__mcmc_8cpp_a70fb3cb460ce19a89130b2787e73d71d}{state\+\_\+t}
+\item 
+typedef int \hyperlink{cube__mcmc_8cpp_a0056f5a50f61034fd7bef8d37df8535d}{move\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{cube__mcmc_8cpp_a0056f5a50f61034fd7bef8d37df8535d}{move\+\_\+t} \hyperlink{cube__mcmc_8cpp_aa51e403119437eb0a78840540185185f}{get\+\_\+next\+\_\+move} (const gsl\+\_\+rng $\ast$r)
+\item 
+\hyperlink{cube__mcmc_8cpp_a70fb3cb460ce19a89130b2787e73d71d}{state\+\_\+t} \hyperlink{cube__mcmc_8cpp_a6f0bf03df8b974d082a659733471a820}{get\+\_\+next\+\_\+state} (\hyperlink{cube__mcmc_8cpp_a70fb3cb460ce19a89130b2787e73d71d}{state\+\_\+t} \hyperlink{hitchhiking_8c_ac9562ee4ecb3b8aeebeb04656e7e57a9}{s}, \hyperlink{cube__mcmc_8cpp_a0056f5a50f61034fd7bef8d37df8535d}{move\+\_\+t} m)
+\item 
+\hyperlink{cube__mcmc_8cpp_a70fb3cb460ce19a89130b2787e73d71d}{state\+\_\+t} \hyperlink{cube__mcmc_8cpp_ac4cdf75a22d84755a5e67890f2b3eddb}{jump} (\hyperlink{cube__mcmc_8cpp_a70fb3cb460ce19a89130b2787e73d71d}{state\+\_\+t} \hyperlink{hitchhiking_8c_ac9562ee4ecb3b8aeebeb04656e7e57a9}{s}, const gsl\+\_\+rng $\ast$r)
+\item 
+double \hyperlink{cube__mcmc_8cpp_a6f9d169c62a23579670192f552e60062}{expected\+\_\+steps\+\_\+return} (const gsl\+\_\+rng $\ast$r)
+\item 
+double \hyperlink{cube__mcmc_8cpp_ab4189e88c9e57edd84741db266efd0f0}{expected\+\_\+visits\+\_\+o} (const gsl\+\_\+rng $\ast$r)
+\item 
+double \hyperlink{cube__mcmc_8cpp_a4f5c98fe8034fbd4e9490d90154f49d1}{expected\+\_\+steps\+\_\+to\+\_\+o} (const gsl\+\_\+rng $\ast$r)
+\item 
+int \hyperlink{cube__mcmc_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{cube__mcmc_8cpp_a70fb3cb460ce19a89130b2787e73d71d}{state\+\_\+t} \hyperlink{cube__mcmc_8cpp_a000569e4fbc655e0e8189b167bed86c9}{s\+\_\+init} = 0
+\item 
+\hyperlink{cube__mcmc_8cpp_a70fb3cb460ce19a89130b2787e73d71d}{state\+\_\+t} \hyperlink{cube__mcmc_8cpp_a70eca3e398d8277ddddd5897912d3cf6}{s\+\_\+opposite} = 6
+\item 
+int \hyperlink{cube__mcmc_8cpp_accb1c46f44c5a2d86089e6852a0a008f}{n\+\_\+turns} = 100000
+\item 
+int \hyperlink{cube__mcmc_8cpp_afcc4f47505e71940c37c1c80982e5c34}{n\+\_\+directions} = 3
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simulation of a Markov chain that moves around the eight vertices of a cube. 
+
+\begin{DoxyAuthor}{Author}
+Dominik Schrempf \href{mailto:dominik.schrempf@gmail.com}{\tt dominik.\+schrempf@gmail.\+com} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Wed Feb 11 18\+:33\+:21 2015
+\end{DoxyDate}
+Please see Markov Chains --- Norris, exercise 1.\+7.\+3 (solution in Feres, homework 6)
+
+Simulate a Markov chain that moves around the eight vertices of a cube. Each step, the chain is equally likely to move to each of the three adjacent vertices, independently of its past move. Let i be the initial vertex occupied by the chain, o the vertex opposite i\+:
+
+
+
+The following quantities are calculated\+:
+
+
+\begin{DoxyEnumerate}
+\item the expected number of steps until the particle returns to i;
+\item the expected number of visits to o until the first return to i;
+\item the expected number of steps until the first visit to o. 
+\end{DoxyEnumerate}
+
+\subsection{Typedef Documentation}
+\hypertarget{cube__mcmc_8cpp_a0056f5a50f61034fd7bef8d37df8535d}{}\index{cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}!move\+\_\+t@{move\+\_\+t}}
+\index{move\+\_\+t@{move\+\_\+t}!cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}}
+\subsubsection[{move\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf move\+\_\+t}}\label{cube__mcmc_8cpp_a0056f5a50f61034fd7bef8d37df8535d}
+\hypertarget{cube__mcmc_8cpp_a70fb3cb460ce19a89130b2787e73d71d}{}\index{cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}!state\+\_\+t@{state\+\_\+t}}
+\index{state\+\_\+t@{state\+\_\+t}!cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}}
+\subsubsection[{state\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf state\+\_\+t}}\label{cube__mcmc_8cpp_a70fb3cb460ce19a89130b2787e73d71d}
+
+
+\subsection{Function Documentation}
+\hypertarget{cube__mcmc_8cpp_a6f9d169c62a23579670192f552e60062}{}\index{cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}!expected\+\_\+steps\+\_\+return@{expected\+\_\+steps\+\_\+return}}
+\index{expected\+\_\+steps\+\_\+return@{expected\+\_\+steps\+\_\+return}!cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}}
+\subsubsection[{expected\+\_\+steps\+\_\+return}]{\setlength{\rightskip}{0pt plus 5cm}double expected\+\_\+steps\+\_\+return (
+\begin{DoxyParamCaption}
+\item[{const gsl\+\_\+rng $\ast$}]{r}
+\end{DoxyParamCaption}
+)}\label{cube__mcmc_8cpp_a6f9d169c62a23579670192f552e60062}
+\hypertarget{cube__mcmc_8cpp_a4f5c98fe8034fbd4e9490d90154f49d1}{}\index{cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}!expected\+\_\+steps\+\_\+to\+\_\+o@{expected\+\_\+steps\+\_\+to\+\_\+o}}
+\index{expected\+\_\+steps\+\_\+to\+\_\+o@{expected\+\_\+steps\+\_\+to\+\_\+o}!cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}}
+\subsubsection[{expected\+\_\+steps\+\_\+to\+\_\+o}]{\setlength{\rightskip}{0pt plus 5cm}double expected\+\_\+steps\+\_\+to\+\_\+o (
+\begin{DoxyParamCaption}
+\item[{const gsl\+\_\+rng $\ast$}]{r}
+\end{DoxyParamCaption}
+)}\label{cube__mcmc_8cpp_a4f5c98fe8034fbd4e9490d90154f49d1}
+\hypertarget{cube__mcmc_8cpp_ab4189e88c9e57edd84741db266efd0f0}{}\index{cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}!expected\+\_\+visits\+\_\+o@{expected\+\_\+visits\+\_\+o}}
+\index{expected\+\_\+visits\+\_\+o@{expected\+\_\+visits\+\_\+o}!cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}}
+\subsubsection[{expected\+\_\+visits\+\_\+o}]{\setlength{\rightskip}{0pt plus 5cm}double expected\+\_\+visits\+\_\+o (
+\begin{DoxyParamCaption}
+\item[{const gsl\+\_\+rng $\ast$}]{r}
+\end{DoxyParamCaption}
+)}\label{cube__mcmc_8cpp_ab4189e88c9e57edd84741db266efd0f0}
+\hypertarget{cube__mcmc_8cpp_aa51e403119437eb0a78840540185185f}{}\index{cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}!get\+\_\+next\+\_\+move@{get\+\_\+next\+\_\+move}}
+\index{get\+\_\+next\+\_\+move@{get\+\_\+next\+\_\+move}!cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}}
+\subsubsection[{get\+\_\+next\+\_\+move}]{\setlength{\rightskip}{0pt plus 5cm}{\bf move\+\_\+t} get\+\_\+next\+\_\+move (
+\begin{DoxyParamCaption}
+\item[{const gsl\+\_\+rng $\ast$}]{r}
+\end{DoxyParamCaption}
+)}\label{cube__mcmc_8cpp_aa51e403119437eb0a78840540185185f}
+\hypertarget{cube__mcmc_8cpp_a6f0bf03df8b974d082a659733471a820}{}\index{cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}!get\+\_\+next\+\_\+state@{get\+\_\+next\+\_\+state}}
+\index{get\+\_\+next\+\_\+state@{get\+\_\+next\+\_\+state}!cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}}
+\subsubsection[{get\+\_\+next\+\_\+state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf state\+\_\+t} get\+\_\+next\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{{\bf state\+\_\+t}}]{s, }
+\item[{{\bf move\+\_\+t}}]{m}
+\end{DoxyParamCaption}
+)}\label{cube__mcmc_8cpp_a6f0bf03df8b974d082a659733471a820}
+\hypertarget{cube__mcmc_8cpp_ac4cdf75a22d84755a5e67890f2b3eddb}{}\index{cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}!jump@{jump}}
+\index{jump@{jump}!cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}}
+\subsubsection[{jump}]{\setlength{\rightskip}{0pt plus 5cm}{\bf state\+\_\+t} jump (
+\begin{DoxyParamCaption}
+\item[{{\bf state\+\_\+t}}]{s, }
+\item[{const gsl\+\_\+rng $\ast$}]{r}
+\end{DoxyParamCaption}
+)}\label{cube__mcmc_8cpp_ac4cdf75a22d84755a5e67890f2b3eddb}
+\hypertarget{cube__mcmc_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{}\index{cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}!main@{main}}
+\index{main@{main}!cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{cube__mcmc_8cpp_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+\subsection{Variable Documentation}
+\hypertarget{cube__mcmc_8cpp_afcc4f47505e71940c37c1c80982e5c34}{}\index{cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}!n\+\_\+directions@{n\+\_\+directions}}
+\index{n\+\_\+directions@{n\+\_\+directions}!cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}}
+\subsubsection[{n\+\_\+directions}]{\setlength{\rightskip}{0pt plus 5cm}int n\+\_\+directions = 3}\label{cube__mcmc_8cpp_afcc4f47505e71940c37c1c80982e5c34}
+Number of direction to move to. \hypertarget{cube__mcmc_8cpp_accb1c46f44c5a2d86089e6852a0a008f}{}\index{cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}!n\+\_\+turns@{n\+\_\+turns}}
+\index{n\+\_\+turns@{n\+\_\+turns}!cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}}
+\subsubsection[{n\+\_\+turns}]{\setlength{\rightskip}{0pt plus 5cm}int n\+\_\+turns = 100000}\label{cube__mcmc_8cpp_accb1c46f44c5a2d86089e6852a0a008f}
+Number of turns to average over. \hypertarget{cube__mcmc_8cpp_a000569e4fbc655e0e8189b167bed86c9}{}\index{cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}!s\+\_\+init@{s\+\_\+init}}
+\index{s\+\_\+init@{s\+\_\+init}!cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}}
+\subsubsection[{s\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf state\+\_\+t} s\+\_\+init = 0}\label{cube__mcmc_8cpp_a000569e4fbc655e0e8189b167bed86c9}
+Starting state. \hypertarget{cube__mcmc_8cpp_a70eca3e398d8277ddddd5897912d3cf6}{}\index{cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}!s\+\_\+opposite@{s\+\_\+opposite}}
+\index{s\+\_\+opposite@{s\+\_\+opposite}!cube\+\_\+mcmc.\+cpp@{cube\+\_\+mcmc.\+cpp}}
+\subsubsection[{s\+\_\+opposite}]{\setlength{\rightskip}{0pt plus 5cm}{\bf state\+\_\+t} s\+\_\+opposite = 6}\label{cube__mcmc_8cpp_a70eca3e398d8277ddddd5897912d3cf6}
+State opposite from the starting state. 

@@ -1,0 +1,284 @@
+\hypertarget{hitchhiking_8c}{}\section{src/hitchhiking.c File Reference}
+\label{hitchhiking_8c}\index{src/hitchhiking.\+c@{src/hitchhiking.\+c}}
+
+
+Simulate hitchhiking along a positively selected locus.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{hitchhiking_8c_a56dee7158d9de89b23535bf5ad318261}{h}~(0.\+5)		/$\ast$ heterozygous coefficient $\ast$/
+\item 
+\#define \hyperlink{hitchhiking_8c_ac9562ee4ecb3b8aeebeb04656e7e57a9}{s}~(0.\+1)		/$\ast$ selection coefficient $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{hitchhiking_8c_a762e7326fbecdfe57392b508517f882c}{w\+\_\+bar\+\_\+1} (double p)
+\item 
+double \hyperlink{hitchhiking_8c_a0b5ed1f61be53ab087b0ddac2b14f444}{w\+\_\+bar\+\_\+3} (double p)
+\item 
+double \hyperlink{hitchhiking_8c_a1c88cc6a48a67b241e20f6711bbc2013}{w\+\_\+bar} (double p)
+\item 
+double \hyperlink{hitchhiking_8c_a8ad6767d8c3ba2ac1cb3a1e505608c00}{delta\+\_\+x1} (double x1, double x2, double x3, double x4, double r)
+\item 
+double \hyperlink{hitchhiking_8c_ab9d06bab5bc2d5935044318d7c17227f}{delta\+\_\+x2} (double x1, double x2, double x3, double x4, double r)
+\item 
+double \hyperlink{hitchhiking_8c_aaa7b921beabd9f8579d4f4cce6ebde54}{delta\+\_\+x3} (double x1, double x2, double x3, double x4, double r)
+\item 
+double \hyperlink{hitchhiking_8c_a82999ab18de195736fd75e00a9cea62b}{delta\+\_\+x4} (double x1, double x2, double x3, double x4, double r)
+\item 
+double \hyperlink{hitchhiking_8c_a75764eda9dc4881822e5eb7e40e581d6}{get\+\_\+het\+\_\+f} (double x1, double x2, double x3, double x4, double r, double eps)
+\item 
+int \hyperlink{hitchhiking_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simulate hitchhiking along a positively selected locus. 
+
+\begin{DoxyAuthor}{Author}
+Dominik Schrempf \href{mailto:dominik.schrempf@gmail.com}{\tt dominik.\+schrempf@gmail.\+com} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Wed Feb 11 14\+:31\+:40 2015
+\end{DoxyDate}
+Gillespie -\/ Population Genetics p. 110 Problem 4.\+3
+
+Write a computer simulation to simulate the hitchhiking along a positively selected locus and look at the heterozygousity near this locus.
+
+The parameters are\+:
+\begin{DoxyItemize}
+\item $p_a$ frequency of $A1$
+\item $q_a$ frequency of $A2$
+\item $p_b$ frequency of $B1$
+\item $q_b$ frequency of $B2$
+\item $x_1$ frequency of $A_1B_1$
+\item $x_2$ frequency of $A_1B_2$
+\item $x_3$ frequency of $A_2B_1$
+\item $x_4$ frequency of $A_2B_2$
+\end{DoxyItemize}
+
+The linkage disequlibrium is\+:
+\begin{DoxyItemize}
+\item $D = x_1 - p_A * p_B$ 
+\end{DoxyItemize}
+
+\subsection{Macro Definition Documentation}
+\hypertarget{hitchhiking_8c_a56dee7158d9de89b23535bf5ad318261}{}\index{hitchhiking.\+c@{hitchhiking.\+c}!h@{h}}
+\index{h@{h}!hitchhiking.\+c@{hitchhiking.\+c}}
+\subsubsection[{h}]{\setlength{\rightskip}{0pt plus 5cm}\#define h~(0.\+5)		/$\ast$ heterozygous coefficient $\ast$/}\label{hitchhiking_8c_a56dee7158d9de89b23535bf5ad318261}
+\hypertarget{hitchhiking_8c_ac9562ee4ecb3b8aeebeb04656e7e57a9}{}\index{hitchhiking.\+c@{hitchhiking.\+c}!s@{s}}
+\index{s@{s}!hitchhiking.\+c@{hitchhiking.\+c}}
+\subsubsection[{s}]{\setlength{\rightskip}{0pt plus 5cm}\#define s~(0.\+1)		/$\ast$ selection coefficient $\ast$/}\label{hitchhiking_8c_ac9562ee4ecb3b8aeebeb04656e7e57a9}
+
+
+\subsection{Function Documentation}
+\hypertarget{hitchhiking_8c_a8ad6767d8c3ba2ac1cb3a1e505608c00}{}\index{hitchhiking.\+c@{hitchhiking.\+c}!delta\+\_\+x1@{delta\+\_\+x1}}
+\index{delta\+\_\+x1@{delta\+\_\+x1}!hitchhiking.\+c@{hitchhiking.\+c}}
+\subsubsection[{delta\+\_\+x1}]{\setlength{\rightskip}{0pt plus 5cm}double delta\+\_\+x1 (
+\begin{DoxyParamCaption}
+\item[{double}]{x1, }
+\item[{double}]{x2, }
+\item[{double}]{x3, }
+\item[{double}]{x4, }
+\item[{double}]{r}
+\end{DoxyParamCaption}
+)}\label{hitchhiking_8c_a8ad6767d8c3ba2ac1cb3a1e505608c00}
+Change in frequency of A1\+B1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & \\
+\hline
+{\em x2} & \\
+\hline
+{\em x3} & \\
+\hline
+{\em x4} & \\
+\hline
+{\em r} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{hitchhiking_8c_ab9d06bab5bc2d5935044318d7c17227f}{}\index{hitchhiking.\+c@{hitchhiking.\+c}!delta\+\_\+x2@{delta\+\_\+x2}}
+\index{delta\+\_\+x2@{delta\+\_\+x2}!hitchhiking.\+c@{hitchhiking.\+c}}
+\subsubsection[{delta\+\_\+x2}]{\setlength{\rightskip}{0pt plus 5cm}double delta\+\_\+x2 (
+\begin{DoxyParamCaption}
+\item[{double}]{x1, }
+\item[{double}]{x2, }
+\item[{double}]{x3, }
+\item[{double}]{x4, }
+\item[{double}]{r}
+\end{DoxyParamCaption}
+)}\label{hitchhiking_8c_ab9d06bab5bc2d5935044318d7c17227f}
+Change in frequency of A1\+B2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & \\
+\hline
+{\em x2} & \\
+\hline
+{\em x3} & \\
+\hline
+{\em x4} & \\
+\hline
+{\em r} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{hitchhiking_8c_aaa7b921beabd9f8579d4f4cce6ebde54}{}\index{hitchhiking.\+c@{hitchhiking.\+c}!delta\+\_\+x3@{delta\+\_\+x3}}
+\index{delta\+\_\+x3@{delta\+\_\+x3}!hitchhiking.\+c@{hitchhiking.\+c}}
+\subsubsection[{delta\+\_\+x3}]{\setlength{\rightskip}{0pt plus 5cm}double delta\+\_\+x3 (
+\begin{DoxyParamCaption}
+\item[{double}]{x1, }
+\item[{double}]{x2, }
+\item[{double}]{x3, }
+\item[{double}]{x4, }
+\item[{double}]{r}
+\end{DoxyParamCaption}
+)}\label{hitchhiking_8c_aaa7b921beabd9f8579d4f4cce6ebde54}
+Change in frequency of A2\+B1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & \\
+\hline
+{\em x2} & \\
+\hline
+{\em x3} & \\
+\hline
+{\em x4} & \\
+\hline
+{\em r} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{hitchhiking_8c_a82999ab18de195736fd75e00a9cea62b}{}\index{hitchhiking.\+c@{hitchhiking.\+c}!delta\+\_\+x4@{delta\+\_\+x4}}
+\index{delta\+\_\+x4@{delta\+\_\+x4}!hitchhiking.\+c@{hitchhiking.\+c}}
+\subsubsection[{delta\+\_\+x4}]{\setlength{\rightskip}{0pt plus 5cm}double delta\+\_\+x4 (
+\begin{DoxyParamCaption}
+\item[{double}]{x1, }
+\item[{double}]{x2, }
+\item[{double}]{x3, }
+\item[{double}]{x4, }
+\item[{double}]{r}
+\end{DoxyParamCaption}
+)}\label{hitchhiking_8c_a82999ab18de195736fd75e00a9cea62b}
+Change in frequency of A2\+B2.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & \\
+\hline
+{\em x2} & \\
+\hline
+{\em x3} & \\
+\hline
+{\em x4} & \\
+\hline
+{\em r} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{hitchhiking_8c_a75764eda9dc4881822e5eb7e40e581d6}{}\index{hitchhiking.\+c@{hitchhiking.\+c}!get\+\_\+het\+\_\+f@{get\+\_\+het\+\_\+f}}
+\index{get\+\_\+het\+\_\+f@{get\+\_\+het\+\_\+f}!hitchhiking.\+c@{hitchhiking.\+c}}
+\subsubsection[{get\+\_\+het\+\_\+f}]{\setlength{\rightskip}{0pt plus 5cm}double get\+\_\+het\+\_\+f (
+\begin{DoxyParamCaption}
+\item[{double}]{x1, }
+\item[{double}]{x2, }
+\item[{double}]{x3, }
+\item[{double}]{x4, }
+\item[{double}]{r, }
+\item[{double}]{eps}
+\end{DoxyParamCaption}
+)}\label{hitchhiking_8c_a75764eda9dc4881822e5eb7e40e581d6}
+Iterate the equations and return the final heterozygosity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & \\
+\hline
+{\em x2} & \\
+\hline
+{\em x3} & \\
+\hline
+{\em x4} & \\
+\hline
+{\em r} & \\
+\hline
+{\em eps} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{hitchhiking_8c_a840291bc02cba5474a4cb46a9b9566fe}{}\index{hitchhiking.\+c@{hitchhiking.\+c}!main@{main}}
+\index{main@{main}!hitchhiking.\+c@{hitchhiking.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{hitchhiking_8c_a840291bc02cba5474a4cb46a9b9566fe}
+\hypertarget{hitchhiking_8c_a1c88cc6a48a67b241e20f6711bbc2013}{}\index{hitchhiking.\+c@{hitchhiking.\+c}!w\+\_\+bar@{w\+\_\+bar}}
+\index{w\+\_\+bar@{w\+\_\+bar}!hitchhiking.\+c@{hitchhiking.\+c}}
+\subsubsection[{w\+\_\+bar}]{\setlength{\rightskip}{0pt plus 5cm}double w\+\_\+bar (
+\begin{DoxyParamCaption}
+\item[{double}]{p}
+\end{DoxyParamCaption}
+)}\label{hitchhiking_8c_a1c88cc6a48a67b241e20f6711bbc2013}
+Mean fitness.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{hitchhiking_8c_a762e7326fbecdfe57392b508517f882c}{}\index{hitchhiking.\+c@{hitchhiking.\+c}!w\+\_\+bar\+\_\+1@{w\+\_\+bar\+\_\+1}}
+\index{w\+\_\+bar\+\_\+1@{w\+\_\+bar\+\_\+1}!hitchhiking.\+c@{hitchhiking.\+c}}
+\subsubsection[{w\+\_\+bar\+\_\+1}]{\setlength{\rightskip}{0pt plus 5cm}double w\+\_\+bar\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{double}]{p}
+\end{DoxyParamCaption}
+)}\label{hitchhiking_8c_a762e7326fbecdfe57392b508517f882c}
+Marginal fitness 1.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{hitchhiking_8c_a0b5ed1f61be53ab087b0ddac2b14f444}{}\index{hitchhiking.\+c@{hitchhiking.\+c}!w\+\_\+bar\+\_\+3@{w\+\_\+bar\+\_\+3}}
+\index{w\+\_\+bar\+\_\+3@{w\+\_\+bar\+\_\+3}!hitchhiking.\+c@{hitchhiking.\+c}}
+\subsubsection[{w\+\_\+bar\+\_\+3}]{\setlength{\rightskip}{0pt plus 5cm}double w\+\_\+bar\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{double}]{p}
+\end{DoxyParamCaption}
+)}\label{hitchhiking_8c_a0b5ed1f61be53ab087b0ddac2b14f444}
+Marginal fitness 3.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}

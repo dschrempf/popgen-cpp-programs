@@ -1,0 +1,61 @@
+\hypertarget{genetic__drift_8cpp}{}\section{src/genetic\+\_\+drift.cpp File Reference}
+\label{genetic__drift_8cpp}\index{src/genetic\+\_\+drift.\+cpp@{src/genetic\+\_\+drift.\+cpp}}
+
+
+Simulate genetic drift.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$gsl/gsl\+\_\+rng.\+h$>$}\\*
+{\ttfamily \#include $<$gsl/gsl\+\_\+randist.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{genetic__drift_8cpp_adcad5b6c56c59702f1a03e60162f7fbe}{evolve\+\_\+population} (unsigned int k, unsigned int \hyperlink{ehrenfest__mcmc_8cpp_ae8b170dcb376fe60270f4675f84e4477}{N}, const gsl\+\_\+rng $\ast$r)
+\item 
+int \hyperlink{genetic__drift_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simulate genetic drift. 
+
+\begin{DoxyAuthor}{Author}
+Dominik Schrempf \href{mailto:dominik.schrempf@gmail.com}{\tt dominik.\+schrempf@gmail.\+com} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Wed Feb 11 14\+:20\+:44 2015
+\end{DoxyDate}
+Simulate genetic drift using the Wright-\/\+Fisher model; the G\+S\+L library is used for random number generation. Apart from that the code is pretty straight forward to read. 
+
+\subsection{Function Documentation}
+\hypertarget{genetic__drift_8cpp_adcad5b6c56c59702f1a03e60162f7fbe}{}\index{genetic\+\_\+drift.\+cpp@{genetic\+\_\+drift.\+cpp}!evolve\+\_\+population@{evolve\+\_\+population}}
+\index{evolve\+\_\+population@{evolve\+\_\+population}!genetic\+\_\+drift.\+cpp@{genetic\+\_\+drift.\+cpp}}
+\subsubsection[{evolve\+\_\+population}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int evolve\+\_\+population (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{k, }
+\item[{unsigned int}]{N, }
+\item[{const gsl\+\_\+rng $\ast$}]{r}
+\end{DoxyParamCaption}
+)}\label{genetic__drift_8cpp_adcad5b6c56c59702f1a03e60162f7fbe}
+Evolve a population one Wright-\/\+Fisher generation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & Number of individuals with allele one. \\
+\hline
+{\em N} & Population size. \\
+\hline
+{\em r} & G\+S\+L random number generator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of individuals with allele one after one Wright-\/\+Fisher generation.
+\end{DoxyReturn}
+\hypertarget{genetic__drift_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{}\index{genetic\+\_\+drift.\+cpp@{genetic\+\_\+drift.\+cpp}!main@{main}}
+\index{main@{main}!genetic\+\_\+drift.\+cpp@{genetic\+\_\+drift.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{genetic__drift_8cpp_a840291bc02cba5474a4cb46a9b9566fe}

@@ -1,0 +1,93 @@
+\hypertarget{coin__toss_8cpp}{}\section{src/coin\+\_\+toss.cpp File Reference}
+\label{coin__toss_8cpp}\index{src/coin\+\_\+toss.\+cpp@{src/coin\+\_\+toss.\+cpp}}
+
+
+Run a coin toss M\+C\+M\+C simulation.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$gsl/gsl\+\_\+rng.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{coin__toss_8cpp_ad3cc63ab7fcc334e856361062b7ad2d4}{fix\+\_\+width\+\_\+cout\+\_\+str} (std\+::string \hyperlink{hitchhiking_8c_ac9562ee4ecb3b8aeebeb04656e7e57a9}{s})
+\item 
+void \hyperlink{coin__toss_8cpp_acddbe38a61f5792e4ee690ce384f7215}{fix\+\_\+width\+\_\+cout\+\_\+dbl} (double d)
+\item 
+int \hyperlink{coin__toss_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{coin__toss_8cpp_a610ec40f6babb717449a45510182e897}{n\+\_\+tosses} = 100
+\item 
+int \hyperlink{coin__toss_8cpp_aca083abbddb1299ebe56e96fcef8b90b}{n\+\_\+heads} = 58
+\item 
+int \hyperlink{coin__toss_8cpp_a05d50b0347c35a995fccd5bdbb86f39b}{n\+\_\+tails} = \hyperlink{coin__toss_8cpp_a610ec40f6babb717449a45510182e897}{n\+\_\+tosses} -\/ \hyperlink{coin__toss_8cpp_aca083abbddb1299ebe56e96fcef8b90b}{n\+\_\+heads}
+\item 
+int \hyperlink{coin__toss_8cpp_af0d8e0d5d3de3869b941b66b6caaf964}{n\+\_\+iter} = 10000
+\item 
+int \hyperlink{coin__toss_8cpp_a373db8023228d5abce861e8964aecf0c}{print\+\_\+every} = 500
+\item 
+double \hyperlink{coin__toss_8cpp_a9ea1a8f5ef3e6d20b362385e1288c72c}{delta} = 0.\+1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Run a coin toss M\+C\+M\+C simulation. 
+
+\begin{DoxyAuthor}{Author}
+Dominik Schrempf \href{mailto:dominik.schrempf@gmail.com}{\tt dominik.\+schrempf@gmail.\+com} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Wed Feb 11 15\+:05\+:12 2015
+\end{DoxyDate}
+For documentation please refer to the code; it is very well documented. 
+
+\subsection{Function Documentation}
+\hypertarget{coin__toss_8cpp_acddbe38a61f5792e4ee690ce384f7215}{}\index{coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}!fix\+\_\+width\+\_\+cout\+\_\+dbl@{fix\+\_\+width\+\_\+cout\+\_\+dbl}}
+\index{fix\+\_\+width\+\_\+cout\+\_\+dbl@{fix\+\_\+width\+\_\+cout\+\_\+dbl}!coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}}
+\subsubsection[{fix\+\_\+width\+\_\+cout\+\_\+dbl}]{\setlength{\rightskip}{0pt plus 5cm}void fix\+\_\+width\+\_\+cout\+\_\+dbl (
+\begin{DoxyParamCaption}
+\item[{double}]{d}
+\end{DoxyParamCaption}
+)}\label{coin__toss_8cpp_acddbe38a61f5792e4ee690ce384f7215}
+\hypertarget{coin__toss_8cpp_ad3cc63ab7fcc334e856361062b7ad2d4}{}\index{coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}!fix\+\_\+width\+\_\+cout\+\_\+str@{fix\+\_\+width\+\_\+cout\+\_\+str}}
+\index{fix\+\_\+width\+\_\+cout\+\_\+str@{fix\+\_\+width\+\_\+cout\+\_\+str}!coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}}
+\subsubsection[{fix\+\_\+width\+\_\+cout\+\_\+str}]{\setlength{\rightskip}{0pt plus 5cm}void fix\+\_\+width\+\_\+cout\+\_\+str (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{s}
+\end{DoxyParamCaption}
+)}\label{coin__toss_8cpp_ad3cc63ab7fcc334e856361062b7ad2d4}
+\hypertarget{coin__toss_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{}\index{coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}!main@{main}}
+\index{main@{main}!coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{coin__toss_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+\subsection{Variable Documentation}
+\hypertarget{coin__toss_8cpp_a9ea1a8f5ef3e6d20b362385e1288c72c}{}\index{coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}!delta@{delta}}
+\index{delta@{delta}!coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}}
+\subsubsection[{delta}]{\setlength{\rightskip}{0pt plus 5cm}double delta = 0.\+1}\label{coin__toss_8cpp_a9ea1a8f5ef3e6d20b362385e1288c72c}
+Specifies the jump lengths with respect to the absolute value. \hypertarget{coin__toss_8cpp_aca083abbddb1299ebe56e96fcef8b90b}{}\index{coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}!n\+\_\+heads@{n\+\_\+heads}}
+\index{n\+\_\+heads@{n\+\_\+heads}!coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}}
+\subsubsection[{n\+\_\+heads}]{\setlength{\rightskip}{0pt plus 5cm}int n\+\_\+heads = 58}\label{coin__toss_8cpp_aca083abbddb1299ebe56e96fcef8b90b}
+Number of observed heads. \hypertarget{coin__toss_8cpp_af0d8e0d5d3de3869b941b66b6caaf964}{}\index{coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}!n\+\_\+iter@{n\+\_\+iter}}
+\index{n\+\_\+iter@{n\+\_\+iter}!coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}}
+\subsubsection[{n\+\_\+iter}]{\setlength{\rightskip}{0pt plus 5cm}int n\+\_\+iter = 10000}\label{coin__toss_8cpp_af0d8e0d5d3de3869b941b66b6caaf964}
+Number of iterations to be done. \hypertarget{coin__toss_8cpp_a05d50b0347c35a995fccd5bdbb86f39b}{}\index{coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}!n\+\_\+tails@{n\+\_\+tails}}
+\index{n\+\_\+tails@{n\+\_\+tails}!coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}}
+\subsubsection[{n\+\_\+tails}]{\setlength{\rightskip}{0pt plus 5cm}int n\+\_\+tails = {\bf n\+\_\+tosses} -\/ {\bf n\+\_\+heads}}\label{coin__toss_8cpp_a05d50b0347c35a995fccd5bdbb86f39b}
+Number of tails. \hypertarget{coin__toss_8cpp_a610ec40f6babb717449a45510182e897}{}\index{coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}!n\+\_\+tosses@{n\+\_\+tosses}}
+\index{n\+\_\+tosses@{n\+\_\+tosses}!coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}}
+\subsubsection[{n\+\_\+tosses}]{\setlength{\rightskip}{0pt plus 5cm}int n\+\_\+tosses = 100}\label{coin__toss_8cpp_a610ec40f6babb717449a45510182e897}
+Number of tosses. \hypertarget{coin__toss_8cpp_a373db8023228d5abce861e8964aecf0c}{}\index{coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}!print\+\_\+every@{print\+\_\+every}}
+\index{print\+\_\+every@{print\+\_\+every}!coin\+\_\+toss.\+cpp@{coin\+\_\+toss.\+cpp}}
+\subsubsection[{print\+\_\+every}]{\setlength{\rightskip}{0pt plus 5cm}int print\+\_\+every = 500}\label{coin__toss_8cpp_a373db8023228d5abce861e8964aecf0c}
+Print output every n generations. 
