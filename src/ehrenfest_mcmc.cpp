@@ -6,7 +6,7 @@
  * @author Dominik Schrempf <dominik.schrempf@gmail.com>
  * @date   Wed Feb 11 13:56:44 2015
  *
- * @brief Simulate gas particles in a divided box.
+ * @brief Simulate gas particles in a divided box
  *
  * Please see Markov Chains --- Norris, exercise 1.7.2 (solution in
  * Feres, homework 6)
