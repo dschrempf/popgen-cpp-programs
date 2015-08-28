@@ -5,4 +5,4 @@ population genetics and/or methods that could be used in population
 genetics.
 
 Please check out the [documenation](doc/html/index.html) in the doc
-folder.
+folder.  It can only be viewed offline.
