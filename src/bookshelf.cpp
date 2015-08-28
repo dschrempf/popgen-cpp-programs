@@ -56,7 +56,6 @@ int main ()
         state_vec[i] = i;
     }
 
-
     // Burn in phase.
     for (int i = 0; i < n_burn; i++) {
         jump(state_vec, r);
@@ -74,10 +73,14 @@ int main ()
     // }
     double rel_occ = (double) counter / (double) n_iter;
     double n_states = 1.0 / rel_occ;
-    std::cout << "The chain returned " << counter << " times to its initial state." << std::endl;
-    std::cout << "The relative occurrence is " << rel_occ << "." << std::endl;
-    std::cout << "This corresponds to an empirical number of " << n_states << " states." << std::endl;
-    std::cout << "The actual number of states is " << fac(n_books) << "."<< std::endl;
+    std::cout << "The chain returned "
+              << counter << " times to its initial state." << std::endl;
+    std::cout << "The relative occurrence is "
+              << rel_occ << "." << std::endl;
+    std::cout << "This corresponds to an empirical number of "
+              << n_states << " states." << std::endl;
+    std::cout << "The actual number of states is "
+              << fac(n_books) << "."<< std::endl;
 
     gsl_rng_free (r);
     return 0;
