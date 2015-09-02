@@ -91,7 +91,8 @@ bin_PROGRAMS = genetic_drift$(EXEEXT) hitchhiking$(EXEEXT) \
 	cube_mcmc$(EXEEXT) brownian_motion_mcmc$(EXEEXT) \
 	bookshelf$(EXEEXT) stepping_stone_model$(EXEEXT) \
 	general_discrete_distributions$(EXEEXT) \
-	general_discrete_markov_chain$(EXEEXT)
+	general_discrete_markov_chain$(EXEEXT) \
+	continuous_markov_chain_norris_ex_2_3_2$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -113,6 +114,11 @@ brownian_motion_mcmc_DEPENDENCIES =
 am_coin_toss_mcmc_OBJECTS = coin_toss_mcmc.$(OBJEXT)
 coin_toss_mcmc_OBJECTS = $(am_coin_toss_mcmc_OBJECTS)
 coin_toss_mcmc_DEPENDENCIES =
+am_continuous_markov_chain_norris_ex_2_3_2_OBJECTS =  \
+	continuous_markov_chain_norris_ex_2_3_2.$(OBJEXT)
+continuous_markov_chain_norris_ex_2_3_2_OBJECTS =  \
+	$(am_continuous_markov_chain_norris_ex_2_3_2_OBJECTS)
+continuous_markov_chain_norris_ex_2_3_2_DEPENDENCIES =
 am_cube_mcmc_OBJECTS = cube_mcmc.$(OBJEXT)
 cube_mcmc_OBJECTS = $(am_cube_mcmc_OBJECTS)
 cube_mcmc_DEPENDENCIES =
@@ -180,15 +186,17 @@ am__v_CXXLD_ = $(am__v_CXXLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
 SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
-	$(coin_toss_mcmc_SOURCES) $(cube_mcmc_SOURCES) \
-	$(ehrenfest_mcmc_SOURCES) \
+	$(coin_toss_mcmc_SOURCES) \
+	$(continuous_markov_chain_norris_ex_2_3_2_SOURCES) \
+	$(cube_mcmc_SOURCES) $(ehrenfest_mcmc_SOURCES) \
 	$(general_discrete_distributions_SOURCES) \
 	$(general_discrete_markov_chain_SOURCES) \
 	$(genetic_drift_SOURCES) $(hitchhiking_SOURCES) \
 	$(stepping_stone_model_SOURCES)
 DIST_SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
-	$(coin_toss_mcmc_SOURCES) $(cube_mcmc_SOURCES) \
-	$(ehrenfest_mcmc_SOURCES) \
+	$(coin_toss_mcmc_SOURCES) \
+	$(continuous_markov_chain_norris_ex_2_3_2_SOURCES) \
+	$(cube_mcmc_SOURCES) $(ehrenfest_mcmc_SOURCES) \
 	$(general_discrete_distributions_SOURCES) \
 	$(general_discrete_markov_chain_SOURCES) \
 	$(genetic_drift_SOURCES) $(hitchhiking_SOURCES) \
@@ -275,16 +283,7 @@ CPP = gcc -E
 CPPFLAGS = 
 CXX = g++
 CXXDEPMODE = depmode=gcc3
-
-# Automatically Generated Makefile by EDE.
-# For use with: automake
-# Relative File Name: src/Makefile.am
-#
-# DO NOT MODIFY THIS FILE OR YOUR CHANGES MAY BE LOST.
-# EDE is the Emacs Development Environment.
-# http://cedet.sourceforge.net/ede.shtml
-#
-CXXFLAGS = -g -O0
+CXXFLAGS = -g -O2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -361,6 +360,16 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
+
+# Automatically Generated Makefile by EDE.
+# For use with: automake
+# Relative File Name: src/Makefile.am
+#
+# DO NOT MODIFY THIS FILE OR YOUR CHANGES MAY BE LOST.
+# EDE is the Emacs Development Environment.
+# http://cedet.sourceforge.net/ede.shtml
+#
+AM_CXXFLAGS = -g -O0
 top = ../
 ede_FILES = Project.ede Makefile.am
 SUBDIRS = 
@@ -375,6 +384,7 @@ bookshelf_SOURCES = bookshelf.cpp
 stepping_stone_model_SOURCES = stepping_stone_model.cpp
 general_discrete_distributions_SOURCES = general_discrete_distributions.cpp
 general_discrete_markov_chain_SOURCES = general_discrete_markov_chain.cpp
+continuous_markov_chain_norris_ex_2_3_2_SOURCES = continuous_markov_chain_norris_ex_2_3_2.cpp
 genetic_drift_LDADD = -lgsl -lcblas
 hitchhiking_LDADD = 
 ehrenfest_mcmc_LDADD = -lgsl -lcblas
@@ -385,6 +395,7 @@ bookshelf_LDADD = -lgsl -lgslcblas
 stepping_stone_model_LDADD = -lgsl -lgslcblas
 general_discrete_distributions_LDADD = -lgsl -lgslcblas
 general_discrete_markov_chain_LDADD = -lgsl -lgslcblas
+continuous_markov_chain_norris_ex_2_3_2_LDADD = -lgsl -lcblas
 all: all-recursive
 
 .SUFFIXES:
@@ -473,6 +484,10 @@ coin_toss_mcmc$(EXEEXT): $(coin_toss_mcmc_OBJECTS) $(coin_toss_mcmc_DEPENDENCIES
 	@rm -f coin_toss_mcmc$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(coin_toss_mcmc_OBJECTS) $(coin_toss_mcmc_LDADD) $(LIBS)
 
+continuous_markov_chain_norris_ex_2_3_2$(EXEEXT): $(continuous_markov_chain_norris_ex_2_3_2_OBJECTS) $(continuous_markov_chain_norris_ex_2_3_2_DEPENDENCIES) $(EXTRA_continuous_markov_chain_norris_ex_2_3_2_DEPENDENCIES) 
+	@rm -f continuous_markov_chain_norris_ex_2_3_2$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(continuous_markov_chain_norris_ex_2_3_2_OBJECTS) $(continuous_markov_chain_norris_ex_2_3_2_LDADD) $(LIBS)
+
 cube_mcmc$(EXEEXT): $(cube_mcmc_OBJECTS) $(cube_mcmc_DEPENDENCIES) $(EXTRA_cube_mcmc_DEPENDENCIES) 
 	@rm -f cube_mcmc$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(cube_mcmc_OBJECTS) $(cube_mcmc_LDADD) $(LIBS)
@@ -510,6 +525,7 @@ distclean-compile:
 include ./$(DEPDIR)/bookshelf.Po
 include ./$(DEPDIR)/brownian_motion_mcmc.Po
 include ./$(DEPDIR)/coin_toss_mcmc.Po
+include ./$(DEPDIR)/continuous_markov_chain_norris_ex_2_3_2.Po
 include ./$(DEPDIR)/cube_mcmc.Po
 include ./$(DEPDIR)/ehrenfest_mcmc.Po
 include ./$(DEPDIR)/general_discrete_distributions.Po

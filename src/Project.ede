@@ -14,7 +14,8 @@
     (ede-proj-target-makefile-program "hitchhiking"
       :name "hitchhiking"
       :path ""
-      :source '("hitchhiking.c"))
+      :source '("hitchhiking.c")
+      :configuration-variables nil)
     (ede-proj-target-makefile-program "ehrenfest_mcmc"
       :name "ehrenfest_mcmc"
       :path ""
@@ -62,6 +63,12 @@
       :path ""
       :source '("general_discrete_markov_chain.cpp")
       :configuration-variables nil
-      :ldlibs '("gsl" "gslcblas")))
+      :ldlibs '("gsl" "gslcblas"))
+    (ede-proj-target-makefile-program "Continuous Markov Chain - Norris - Exercise 2.3.2"
+      :name "continuous_markov_chain_norris_ex_2_3_2"
+      :path ""
+      :source '("continuous_markov_chain_norris_ex_2_3_2.cpp")
+      :configuration-variables nil
+      :ldlibs '("gsl" "cblas")))
   :makefile-type 'Makefile.am
-  :configuration-variables '(("debug" ("CXXFLAGS" . "-g -O0"))))
+  :configuration-variables '(("debug" ("AM_CXXFLAGS" . "-g -O0"))))

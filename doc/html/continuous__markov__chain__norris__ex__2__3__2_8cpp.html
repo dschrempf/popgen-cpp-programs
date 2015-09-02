@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>PopGen C/C++ Programs: src/coin_toss_mcmc.cpp File Reference</title>
+<title>PopGen C/C++ Programs: src/continuous_markov_chain_norris_ex_2_3_2.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -93,83 +93,86 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">coin_toss_mcmc.cpp File Reference</div>  </div>
+<div class="title">continuous_markov_chain_norris_ex_2_3_2.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Run a coin toss MCMC simulation.  
+<p>Runs a continuous Markov chain.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;iomanip&gt;</code><br />
-<code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;gsl/gsl_rng.h&gt;</code><br />
+<code>#include &lt;gsl/gsl_randist.h&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChain.html">Chain</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad3cc63ab7fcc334e856361062b7ad2d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coin__toss__mcmc_8cpp.html#ad3cc63ab7fcc334e856361062b7ad2d4">fix_width_cout_str</a> (std::string <a class="el" href="hitchhiking_8c.html#ac9562ee4ecb3b8aeebeb04656e7e57a9">s</a>)</td></tr>
-<tr class="separator:ad3cc63ab7fcc334e856361062b7ad2d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acddbe38a61f5792e4ee690ce384f7215"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coin__toss__mcmc_8cpp.html#acddbe38a61f5792e4ee690ce384f7215">fix_width_cout_dbl</a> (double d)</td></tr>
-<tr class="separator:acddbe38a61f5792e4ee690ce384f7215"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coin__toss__mcmc_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a0fe9fd831cf4fea7e847a9eb8dece"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="continuous__markov__chain__norris__ex__2__3__2_8cpp.html#a25a0fe9fd831cf4fea7e847a9eb8dece">jump</a> (<a class="el" href="classChain.html">Chain</a> *chain, double beta, gsl_rng *r)</td></tr>
+<tr class="separator:a25a0fe9fd831cf4fea7e847a9eb8dece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="continuous__markov__chain__norris__ex__2__3__2_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+<tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a610ec40f6babb717449a45510182e897"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coin__toss__mcmc_8cpp.html#a610ec40f6babb717449a45510182e897">n_tosses</a> = 100</td></tr>
-<tr class="separator:a610ec40f6babb717449a45510182e897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca083abbddb1299ebe56e96fcef8b90b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coin__toss__mcmc_8cpp.html#aca083abbddb1299ebe56e96fcef8b90b">n_heads</a> = 58</td></tr>
-<tr class="separator:aca083abbddb1299ebe56e96fcef8b90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05d50b0347c35a995fccd5bdbb86f39b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coin__toss__mcmc_8cpp.html#a05d50b0347c35a995fccd5bdbb86f39b">n_tails</a> = <a class="el" href="coin__toss__mcmc_8cpp.html#a610ec40f6babb717449a45510182e897">n_tosses</a> - <a class="el" href="coin__toss__mcmc_8cpp.html#aca083abbddb1299ebe56e96fcef8b90b">n_heads</a></td></tr>
-<tr class="separator:a05d50b0347c35a995fccd5bdbb86f39b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0d8e0d5d3de3869b941b66b6caaf964"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coin__toss__mcmc_8cpp.html#af0d8e0d5d3de3869b941b66b6caaf964">n_iter</a> = 10000</td></tr>
+<tr class="memitem:a3db359547eed8cfd48ca821d95f577af"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="continuous__markov__chain__norris__ex__2__3__2_8cpp.html#a3db359547eed8cfd48ca821d95f577af">lambda</a> = 1.0</td></tr>
+<tr class="separator:a3db359547eed8cfd48ca821d95f577af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d8e0d5d3de3869b941b66b6caaf964"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="continuous__markov__chain__norris__ex__2__3__2_8cpp.html#af0d8e0d5d3de3869b941b66b6caaf964">n_iter</a> = 1000</td></tr>
 <tr class="separator:af0d8e0d5d3de3869b941b66b6caaf964"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a373db8023228d5abce861e8964aecf0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coin__toss__mcmc_8cpp.html#a373db8023228d5abce861e8964aecf0c">print_every</a> = 500</td></tr>
-<tr class="separator:a373db8023228d5abce861e8964aecf0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ea1a8f5ef3e6d20b362385e1288c72c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="coin__toss__mcmc_8cpp.html#a9ea1a8f5ef3e6d20b362385e1288c72c">delta</a> = 0.1</td></tr>
-<tr class="separator:a9ea1a8f5ef3e6d20b362385e1288c72c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ca44e06843e5766b44848f7f2f8427a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="continuous__markov__chain__norris__ex__2__3__2_8cpp.html#a6ca44e06843e5766b44848f7f2f8427a">n_points</a> = 100</td></tr>
+<tr class="separator:a6ca44e06843e5766b44848f7f2f8427a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Run a coin toss MCMC simulation. </p>
+<div class="textblock"><p>Runs a continuous Markov chain. </p>
 <dl class="section author"><dt>Author</dt><dd>Dominik Schrempf <a href="#" onclick="location.href='mai'+'lto:'+'dom'+'in'+'ik.'+'sc'+'hre'+'mp'+'f@g'+'ma'+'il.'+'co'+'m'; return false;">domin<span style="display: none;">.nosp@m.</span>ik.s<span style="display: none;">.nosp@m.</span>chrem<span style="display: none;">.nosp@m.</span>pf@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a> </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>Wed Feb 11 15:05:12 2015</dd></dl>
-<p>For documentation please refer to the code; it is very well documented. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="acddbe38a61f5792e4ee690ce384f7215"></a>
+<dl class="section date"><dt>Date</dt><dd>Wed Sep 2 12:21:18 2015</dd></dl>
+<p>Please see Markov Chains &mdash; Norris, exercise 2.3.2 (solution in Feres, homework 8).</p>
+<p>The problem is the following: we draw independent exponential random variables \( T_1, T_2, \ldots \) of parameter \( \lambda \). We do this \( N \) times, where \( N \) is an independent geometric random variable of parameter \( \beta \).</p>
+<p>The hypothesis is: the stopping time \( T = T_1 + T_2 + \ldots + T_N \) after these draws has exponential distribution of parameter \( \lambda \beta \).</p>
+<p>This can be proven analytically (see the notes of Feres) and can also be made visible by simulations. Here, we see that for \( \lambda=1.0 \), the mean stopping time is just \( 1/\beta \). This is exactly the mean of the exponential distribution with parameter \( \beta \). </p><div class="image">
+<img src="continuous_markov_chain_norris_ex_2_3_2.png" alt="continuous_markov_chain_norris_ex_2_3_2.png"/>
+</div>
+ </div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a25a0fe9fd831cf4fea7e847a9eb8dece"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void fix_width_cout_dbl </td>
+          <td class="memname">bool jump </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classChain.html">Chain</a> *&#160;</td>
+          <td class="paramname"><em>chain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>d</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"><em>beta</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ad3cc63ab7fcc334e856361062b7ad2d4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">void fix_width_cout_str </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>s</em></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<a class="anchor" id="a840291bc02cba5474a4cb46a9b9566fe"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -182,33 +185,22 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>&lt; Mean state upon absorption.</p>
+<p>&lt; Mean time upon absorption. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a9ea1a8f5ef3e6d20b362385e1288c72c"></a>
+<a class="anchor" id="a3db359547eed8cfd48ca821d95f577af"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double delta = 0.1</td>
+          <td class="memname">double lambda = 1.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Specifies the jump lengths with respect to the absolute value. </p>
-
-</div>
-</div>
-<a class="anchor" id="aca083abbddb1299ebe56e96fcef8b90b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int n_heads = 58</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Number of observed heads. </p>
+<p>Parameter of exponential distribution. </p>
 
 </div>
 </div>
@@ -217,50 +209,24 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int n_iter = 10000</td>
+          <td class="memname">int n_iter = 1000</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of iterations to be done. </p>
+<p>Number of iterations. </p>
 
 </div>
 </div>
-<a class="anchor" id="a05d50b0347c35a995fccd5bdbb86f39b"></a>
+<a class="anchor" id="a6ca44e06843e5766b44848f7f2f8427a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int n_tails = <a class="el" href="coin__toss__mcmc_8cpp.html#a610ec40f6babb717449a45510182e897">n_tosses</a> - <a class="el" href="coin__toss__mcmc_8cpp.html#aca083abbddb1299ebe56e96fcef8b90b">n_heads</a></td>
+          <td class="memname">int n_points = 100</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of tails. </p>
-
-</div>
-</div>
-<a class="anchor" id="a610ec40f6babb717449a45510182e897"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int n_tosses = 100</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Number of tosses. </p>
-
-</div>
-</div>
-<a class="anchor" id="a373db8023228d5abce861e8964aecf0c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int print_every = 500</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Print output every n generations. </p>
+<p>Number of grid points for plot of exponential distribution of parameter beta*lambda. </p>
 
 </div>
 </div>
