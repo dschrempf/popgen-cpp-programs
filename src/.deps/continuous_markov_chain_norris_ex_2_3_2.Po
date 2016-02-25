@@ -75,21 +75,22 @@ continuous_markov_chain_norris_ex_2_3_2.o: \
  /usr/include/c++/5.2.0/bits/basic_ios.tcc \
  /usr/include/c++/5.2.0/bits/ostream.tcc /usr/include/c++/5.2.0/istream \
  /usr/include/c++/5.2.0/bits/istream.tcc /usr/include/c++/5.2.0/iomanip \
- /usr/include/gsl/gsl_rng.h /usr/include/stdlib.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/sys/types.h /usr/include/sys/select.h \
- /usr/include/bits/select.h /usr/include/bits/sigset.h \
- /usr/include/bits/select2.h /usr/include/sys/sysmacros.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-bsearch.h \
- /usr/include/bits/stdlib-float.h /usr/include/bits/stdlib.h \
- /usr/include/gsl/gsl_types.h /usr/include/gsl/gsl_errno.h \
- /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
- /usr/include/errno.h /usr/include/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/gsl/gsl_inline.h /usr/include/gsl/gsl_randist.h
+ ../include/ran_generator.h /usr/include/gsl/gsl_rng.h \
+ /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+ /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/select2.h \
+ /usr/include/sys/sysmacros.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
+ /usr/include/bits/stdlib.h /usr/include/gsl/gsl_types.h \
+ /usr/include/gsl/gsl_errno.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/bits/stdio_lim.h \
+ /usr/include/bits/sys_errlist.h /usr/include/bits/stdio.h \
+ /usr/include/bits/stdio2.h /usr/include/errno.h \
+ /usr/include/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+ /usr/include/asm-generic/errno-base.h /usr/include/gsl/gsl_inline.h \
+ /usr/include/gsl/gsl_randist.h
 
 /usr/include/stdc-predef.h:
 
@@ -288,6 +289,8 @@ continuous_markov_chain_norris_ex_2_3_2.o: \
 /usr/include/c++/5.2.0/bits/istream.tcc:
 
 /usr/include/c++/5.2.0/iomanip:
+
+../include/ran_generator.h:
 
 /usr/include/gsl/gsl_rng.h:
 

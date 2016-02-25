@@ -2,13 +2,12 @@
 \label{continuous__markov__chain__norris__ex__2__3__2_8cpp}\index{src/continuous\+\_\+markov\+\_\+chain\+\_\+norris\+\_\+ex\+\_\+2\+\_\+3\+\_\+2.\+cpp@{src/continuous\+\_\+markov\+\_\+chain\+\_\+norris\+\_\+ex\+\_\+2\+\_\+3\+\_\+2.\+cpp}}
 
 
-Runs a continuous Markov chain.  
+Markov Chains -\/ Norris; exercise 2.\+3.\+2.; run a continuous Markov chain.  
 
 
 {\ttfamily \#include $<$iostream$>$}\\*
 {\ttfamily \#include $<$iomanip$>$}\\*
-{\ttfamily \#include $<$gsl/gsl\+\_\+rng.\+h$>$}\\*
-{\ttfamily \#include $<$gsl/gsl\+\_\+randist.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}ran\+\_\+generator.\+h\char`\"{}}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,7 +16,7 @@ class \hyperlink{classChain}{Chain}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{continuous__markov__chain__norris__ex__2__3__2_8cpp_a25a0fe9fd831cf4fea7e847a9eb8dece}{jump} (\hyperlink{classChain}{Chain} $\ast$chain, double beta, gsl\+\_\+rng $\ast$r)
+bool \hyperlink{continuous__markov__chain__norris__ex__2__3__2_8cpp_a6083899b74700af9a2eb342bc97a646f}{jump} (\hyperlink{classChain}{Chain} $\ast$chain, double beta, Ran\+Gen $\ast$rg)
 \item 
 int \hyperlink{continuous__markov__chain__norris__ex__2__3__2_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
 \end{DoxyCompactItemize}
@@ -33,7 +32,7 @@ int \hyperlink{continuous__markov__chain__norris__ex__2__3__2_8cpp_a6ca44e06843e
 
 
 \subsection{Detailed Description}
-Runs a continuous Markov chain. 
+Markov Chains -\/ Norris; exercise 2.\+3.\+2.; run a continuous Markov chain. 
 
 \begin{DoxyAuthor}{Author}
 Dominik Schrempf \href{mailto:dominik.schrempf@gmail.com}{\tt dominik.\+schrempf@gmail.\+com} 
@@ -41,7 +40,7 @@ Dominik Schrempf \href{mailto:dominik.schrempf@gmail.com}{\tt dominik.\+schrempf
 \begin{DoxyDate}{Date}
 Wed Sep 2 12\+:21\+:18 2015
 \end{DoxyDate}
-Please see Markov Chains --- Norris, exercise 2.\+3.\+2 (solution in Feres, homework 8).
+Solution in Feres, homework 8.
 
 The problem is the following\+: we draw independent exponential random variables $ T_1, T_2, \ldots $ of parameter $ \lambda $. We do this $ N $ times, where $ N $ is an independent geometric random variable of parameter $ \beta $.
 
@@ -50,15 +49,15 @@ The hypothesis is\+: the stopping time $ T = T_1 + T_2 + \ldots + T_N $ after th
 This can be proven analytically (see the notes of Feres) and can also be made visible by simulations. Here, we see that for $ \lambda=1.0 $, the mean stopping time is just $ 1/\beta $. This is exactly the mean of the exponential distribution with parameter $ \beta $.  
 
 \subsection{Function Documentation}
-\hypertarget{continuous__markov__chain__norris__ex__2__3__2_8cpp_a25a0fe9fd831cf4fea7e847a9eb8dece}{}\index{continuous\+\_\+markov\+\_\+chain\+\_\+norris\+\_\+ex\+\_\+2\+\_\+3\+\_\+2.\+cpp@{continuous\+\_\+markov\+\_\+chain\+\_\+norris\+\_\+ex\+\_\+2\+\_\+3\+\_\+2.\+cpp}!jump@{jump}}
+\hypertarget{continuous__markov__chain__norris__ex__2__3__2_8cpp_a6083899b74700af9a2eb342bc97a646f}{}\index{continuous\+\_\+markov\+\_\+chain\+\_\+norris\+\_\+ex\+\_\+2\+\_\+3\+\_\+2.\+cpp@{continuous\+\_\+markov\+\_\+chain\+\_\+norris\+\_\+ex\+\_\+2\+\_\+3\+\_\+2.\+cpp}!jump@{jump}}
 \index{jump@{jump}!continuous\+\_\+markov\+\_\+chain\+\_\+norris\+\_\+ex\+\_\+2\+\_\+3\+\_\+2.\+cpp@{continuous\+\_\+markov\+\_\+chain\+\_\+norris\+\_\+ex\+\_\+2\+\_\+3\+\_\+2.\+cpp}}
-\subsubsection[{jump(\+Chain $\ast$chain, double beta, gsl\+\_\+rng $\ast$r)}]{\setlength{\rightskip}{0pt plus 5cm}bool jump (
+\subsubsection[{jump(\+Chain $\ast$chain, double beta, Ran\+Gen $\ast$rg)}]{\setlength{\rightskip}{0pt plus 5cm}bool jump (
 \begin{DoxyParamCaption}
 \item[{{\bf Chain} $\ast$}]{chain, }
 \item[{double}]{beta, }
-\item[{gsl\+\_\+rng $\ast$}]{r}
+\item[{Ran\+Gen $\ast$}]{rg}
 \end{DoxyParamCaption}
-)}\label{continuous__markov__chain__norris__ex__2__3__2_8cpp_a25a0fe9fd831cf4fea7e847a9eb8dece}
+)}\label{continuous__markov__chain__norris__ex__2__3__2_8cpp_a6083899b74700af9a2eb342bc97a646f}
 \hypertarget{continuous__markov__chain__norris__ex__2__3__2_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{}\index{continuous\+\_\+markov\+\_\+chain\+\_\+norris\+\_\+ex\+\_\+2\+\_\+3\+\_\+2.\+cpp@{continuous\+\_\+markov\+\_\+chain\+\_\+norris\+\_\+ex\+\_\+2\+\_\+3\+\_\+2.\+cpp}!main@{main}}
 \index{main@{main}!continuous\+\_\+markov\+\_\+chain\+\_\+norris\+\_\+ex\+\_\+2\+\_\+3\+\_\+2.\+cpp@{continuous\+\_\+markov\+\_\+chain\+\_\+norris\+\_\+ex\+\_\+2\+\_\+3\+\_\+2.\+cpp}}
 \subsubsection[{main(void)}]{\setlength{\rightskip}{0pt plus 5cm}int main (

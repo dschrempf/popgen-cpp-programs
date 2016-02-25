@@ -5,7 +5,7 @@
  *
  * @brief  Simulate standard Brownian motion (Wiener process).
  *
- * <a href="/home/dominik/Dropbox/university/E-Books/Mathematics/Topics in Applied Mathematics - Feres - Lecture Notes/dhigham.pdf">(Higham 2001)</a>
+ * <a href="/home/dominik/Shared/university/E-Books/Mathematics/Topics in Applied Mathematics - Feres - Lecture Notes/dhigham.pdf">(Higham 2001)</a>
  * 
  */
 

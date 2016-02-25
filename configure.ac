@@ -15,6 +15,7 @@ AM_CONFIG_HEADER(config.h)
 AC_PROG_CC
 AC_PROG_CXX
 AC_PROG_GCC_TRADITIONAL
+AC_PROG_LIBTOOL
 
 # End the configure script.
-AC_OUTPUT(Makefile src/Makefile, [date > stamp-h] )
+AC_OUTPUT(Makefile src/Makefile include/Makefile, [date > stamp-h] )

@@ -3,9 +3,8 @@
  * @author Dominik Schrempf <dominik.schrempf@gmail.com>
  * @date   Thu Mar 12 17:49:27 2015
  *
- * @brief  Bookshelf Markov chain.
- *
- * See Markov Chains Norris Ex. 1.8.4
+ * @brief  Markov Chains - Norris; exercise 1.8.4.; bookshelf Markov
+ * chain
  *
  */
 

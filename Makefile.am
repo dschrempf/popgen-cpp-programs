@@ -10,7 +10,7 @@
 top="$(CURDIR)"/
 ede_FILES=Project.ede Makefile.am
 
-SUBDIRS= src/
+SUBDIRS= src/ include/
 EXTRA_DIST=Project.ede
 
 # End of Makefile.am

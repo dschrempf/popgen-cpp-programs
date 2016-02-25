@@ -1,17 +1,16 @@
 #include <iostream>
 #include <iomanip>
-#include <gsl/gsl_rng.h>
-#include <gsl/gsl_randist.h>
+#include "ran_generator.h"
 
 /**
  * @file   continuous_markov_chain_norris_ex_2_3_2.cpp
  * @author Dominik Schrempf <dominik.schrempf@gmail.com>
  * @date   Wed Sep  2 12:21:18 2015
  * 
- * @brief  Runs a continuous Markov chain.
+ * @brief  Markov Chains - Norris; exercise 2.3.2.; run a continuous
+ * Markov chain
  * 
- * Please see Markov Chains --- Norris, exercise 2.3.2 (solution in
- * Feres, homework 8).
+ * Solution in Feres, homework 8.
  * 
  * The problem is the following: we draw independent exponential
  * random variables \f$ T_1, T_2, \ldots \f$ of parameter \f$ \lambda
@@ -47,10 +46,10 @@ public:
     int s;                      /**< state */
 };
 
-bool jump (Chain * chain, double beta, gsl_rng * r)
+bool jump (Chain * chain, double beta, RanGen * rg)
 {
-    double holding_time = gsl_ran_exponential(r, 1.0/lambda);
-    double d = gsl_rng_uniform (r);
+    double holding_time = rg->get_ran_exponential(1.0/lambda);
+    double d = rg->get_uniform();
     chain->s+=1;
     chain->t+=holding_time;
     if (d < beta) return false;
@@ -59,12 +58,7 @@ bool jump (Chain * chain, double beta, gsl_rng * r)
 
 int main(void)
 {
-    const gsl_rng_type * T;
-    gsl_rng * r;
-
-    gsl_rng_env_setup ();
-    T = gsl_rng_default;
-    r = gsl_rng_alloc (T);
+    RanGen rg;
 
     double sigma[n_points];     /**< Mean state upon absorption. */
     double tau[n_points];       /**< Mean time upon absorption. */
@@ -77,7 +71,7 @@ int main(void)
         Chain chain;
         double beta = (double) b / (double) n_points;
         for (int i = 0; i < n_iter; i++) {
-            while (jump (&chain, beta, r));      
+            while (jump (&chain, beta, &rg));      
         }
         sigma[b] = chain.s / (double) n_iter;
         tau[b] = (double) chain.t / (double) n_iter;

@@ -14,7 +14,8 @@ ehrenfest_mcmc.o: ehrenfest_mcmc.cpp /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0/include/stdarg.h \
  /usr/include/bits/wchar.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0/include/stddef.h \
- /usr/include/xlocale.h /usr/include/c++/5.2.0/exception \
+ /usr/include/xlocale.h /usr/include/bits/wchar2.h \
+ /usr/include/c++/5.2.0/exception \
  /usr/include/c++/5.2.0/bits/atomic_lockfree_defines.h \
  /usr/include/c++/5.2.0/bits/char_traits.h \
  /usr/include/c++/5.2.0/bits/stl_algobase.h \
@@ -76,15 +77,17 @@ ehrenfest_mcmc.o: ehrenfest_mcmc.cpp /usr/include/stdc-predef.h \
  /usr/include/stdlib.h /usr/include/bits/waitflags.h \
  /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
  /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/sigset.h /usr/include/sys/sysmacros.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
- /usr/include/gsl/gsl_types.h /usr/include/gsl/gsl_errno.h \
- /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
- /usr/include/errno.h /usr/include/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/gsl/gsl_inline.h
+ /usr/include/bits/sigset.h /usr/include/bits/select2.h \
+ /usr/include/sys/sysmacros.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
+ /usr/include/bits/stdlib.h /usr/include/gsl/gsl_types.h \
+ /usr/include/gsl/gsl_errno.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/bits/stdio_lim.h \
+ /usr/include/bits/sys_errlist.h /usr/include/bits/stdio.h \
+ /usr/include/bits/stdio2.h /usr/include/errno.h \
+ /usr/include/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+ /usr/include/asm-generic/errno-base.h /usr/include/gsl/gsl_inline.h
 
 /usr/include/stdc-predef.h:
 
@@ -131,6 +134,8 @@ ehrenfest_mcmc.o: ehrenfest_mcmc.cpp /usr/include/stdc-predef.h \
 /usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0/include/stddef.h:
 
 /usr/include/xlocale.h:
+
+/usr/include/bits/wchar2.h:
 
 /usr/include/c++/5.2.0/exception:
 
@@ -296,11 +301,17 @@ ehrenfest_mcmc.o: ehrenfest_mcmc.cpp /usr/include/stdc-predef.h \
 
 /usr/include/bits/sigset.h:
 
+/usr/include/bits/select2.h:
+
 /usr/include/sys/sysmacros.h:
 
 /usr/include/alloca.h:
 
+/usr/include/bits/stdlib-bsearch.h:
+
 /usr/include/bits/stdlib-float.h:
+
+/usr/include/bits/stdlib.h:
 
 /usr/include/gsl/gsl_types.h:
 
@@ -313,6 +324,10 @@ ehrenfest_mcmc.o: ehrenfest_mcmc.cpp /usr/include/stdc-predef.h \
 /usr/include/bits/stdio_lim.h:
 
 /usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/bits/stdio2.h:
 
 /usr/include/errno.h:
 

@@ -1,0 +1,15 @@
+;; Object includes
+;; EDE Project Files are auto generated: Do Not Edit
+(ede-proj-project "include"
+  :file "Project.ede"
+  :name "include"
+  :targets
+  (list
+    (ede-proj-target-makefile-shared-object "ran_generator"
+      :name "ran_generator"
+      :path ""
+      :source '("ran_generator.cpp")
+      :auxsource '("ran_generator.h")
+      :configuration-variables nil
+      :ldlibs '("gsl" "cblas")))
+  :makefile-type 'Makefile.am)

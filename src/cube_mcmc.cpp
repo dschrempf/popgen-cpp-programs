@@ -6,12 +6,11 @@
  * @author Dominik Schrempf <dominik.schrempf@gmail.com>
  * @date   Wed Feb 11 18:33:21 2015
  * 
- * @brief Simulation of a Markov chain that moves around the eight
- * vertices of a cube.
+ * @brief Markov Chains - Norris; exercise 1.7.3.; simulation of a
+ * Markov chain that moves around the eight vertices of a cube.
  * 
  * 
- * Please see Markov Chains --- Norris, exercise 1.7.3 (solution in
- * Feres, homework 6)
+ * Solution in Feres, homework 6.
  *
  * Simulate a Markov chain that moves around the eight vertices of a
  * cube.  Each step, the chain is equally likely to move to each of

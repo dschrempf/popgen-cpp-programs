@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['d',['d',['../classContChain.html#aef8dccaf67d35e5e04f236f3dddb36f1',1,'ContChain']]],
   ['delta',['delta',['../coin__toss__mcmc_8cpp.html#a9ea1a8f5ef3e6d20b362385e1288c72c',1,'coin_toss_mcmc.cpp']]],
   ['delta_5fx1',['delta_x1',['../hitchhiking_8c.html#a8ad6767d8c3ba2ac1cb3a1e505608c00',1,'hitchhiking.c']]],
   ['delta_5fx2',['delta_x2',['../hitchhiking_8c.html#ab9d06bab5bc2d5935044318d7c17227f',1,'hitchhiking.c']]],

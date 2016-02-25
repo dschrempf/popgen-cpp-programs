@@ -5,6 +5,9 @@
  * 
  * @brief Given K discrete events with different probabilities P[k],
  * produce a random value k consistent with its probability.
+ *
+ * The probabilities of the set of K events has to sum up to 1.  After
+ * a single draw, the event k is drawn with probability P[k].
  * 
  * 
  */

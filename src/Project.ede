@@ -69,6 +69,15 @@
       :path ""
       :source '("continuous_markov_chain_norris_ex_2_3_2.cpp")
       :configuration-variables nil
+      :ldlibs-local '("../include/libran_generator.la")
+      :ldlibs '("gsl" "cblas"))
+    (ede-proj-target-makefile-program "hopping_flees"
+      :name "hopping_flees"
+      :path ""
+      :source '("hopping_flees.cpp")
+      :configuration-variables nil
+      :ldlibs-local '("../include/libran_generator.la")
       :ldlibs '("gsl" "cblas")))
   :makefile-type 'Makefile.am
+  :variables '(("AM_CPPFLAGS" . "-I../include"))
   :configuration-variables '(("debug" ("AM_CXXFLAGS" . "-g -O0"))))

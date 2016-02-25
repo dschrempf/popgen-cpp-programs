@@ -86,13 +86,16 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
+build_triplet = x86_64-unknown-linux-gnu
+host_triplet = x86_64-unknown-linux-gnu
 bin_PROGRAMS = genetic_drift$(EXEEXT) hitchhiking$(EXEEXT) \
 	ehrenfest_mcmc$(EXEEXT) coin_toss_mcmc$(EXEEXT) \
 	cube_mcmc$(EXEEXT) brownian_motion_mcmc$(EXEEXT) \
 	bookshelf$(EXEEXT) stepping_stone_model$(EXEEXT) \
 	general_discrete_distributions$(EXEEXT) \
 	general_discrete_markov_chain$(EXEEXT) \
-	continuous_markov_chain_norris_ex_2_3_2$(EXEEXT)
+	continuous_markov_chain_norris_ex_2_3_2$(EXEEXT) \
+	hopping_flees$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -108,6 +111,10 @@ PROGRAMS = $(bin_PROGRAMS)
 am_bookshelf_OBJECTS = bookshelf.$(OBJEXT)
 bookshelf_OBJECTS = $(am_bookshelf_OBJECTS)
 bookshelf_DEPENDENCIES =
+AM_V_lt = $(am__v_lt_$(V))
+am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
+am__v_lt_0 = --silent
+am__v_lt_1 = 
 am_brownian_motion_mcmc_OBJECTS = brownian_motion_mcmc.$(OBJEXT)
 brownian_motion_mcmc_OBJECTS = $(am_brownian_motion_mcmc_OBJECTS)
 brownian_motion_mcmc_DEPENDENCIES =
@@ -118,7 +125,8 @@ am_continuous_markov_chain_norris_ex_2_3_2_OBJECTS =  \
 	continuous_markov_chain_norris_ex_2_3_2.$(OBJEXT)
 continuous_markov_chain_norris_ex_2_3_2_OBJECTS =  \
 	$(am_continuous_markov_chain_norris_ex_2_3_2_OBJECTS)
-continuous_markov_chain_norris_ex_2_3_2_DEPENDENCIES =
+continuous_markov_chain_norris_ex_2_3_2_DEPENDENCIES =  \
+	../include/libran_generator.la
 am_cube_mcmc_OBJECTS = cube_mcmc.$(OBJEXT)
 cube_mcmc_OBJECTS = $(am_cube_mcmc_OBJECTS)
 cube_mcmc_DEPENDENCIES =
@@ -141,6 +149,9 @@ genetic_drift_DEPENDENCIES =
 am_hitchhiking_OBJECTS = hitchhiking.$(OBJEXT)
 hitchhiking_OBJECTS = $(am_hitchhiking_OBJECTS)
 hitchhiking_DEPENDENCIES =
+am_hopping_flees_OBJECTS = hopping_flees.$(OBJEXT)
+hopping_flees_OBJECTS = $(am_hopping_flees_OBJECTS)
+hopping_flees_DEPENDENCIES = ../include/libran_generator.la
 am_stepping_stone_model_OBJECTS = stepping_stone_model.$(OBJEXT)
 stepping_stone_model_OBJECTS = $(am_stepping_stone_model_OBJECTS)
 stepping_stone_model_DEPENDENCIES =
@@ -162,25 +173,36 @@ am__depfiles_maybe = depfiles
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) \
+	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+	$(AM_CFLAGS) $(CFLAGS)
 AM_V_CC = $(am__v_CC_$(V))
 am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
 am__v_CC_0 = @echo "  CC      " $@;
 am__v_CC_1 = 
 CCLD = $(CC)
-LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 AM_V_CCLD = $(am__v_CCLD_$(V))
 am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+LTCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) \
+	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+	$(AM_CXXFLAGS) $(CXXFLAGS)
 AM_V_CXX = $(am__v_CXX_$(V))
 am__v_CXX_ = $(am__v_CXX_$(AM_DEFAULT_VERBOSITY))
 am__v_CXX_0 = @echo "  CXX     " $@;
 am__v_CXX_1 = 
 CXXLD = $(CXX)
-CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
-	-o $@
+CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
 AM_V_CXXLD = $(am__v_CXXLD_$(V))
 am__v_CXXLD_ = $(am__v_CXXLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
@@ -192,7 +214,7 @@ SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
 	$(general_discrete_distributions_SOURCES) \
 	$(general_discrete_markov_chain_SOURCES) \
 	$(genetic_drift_SOURCES) $(hitchhiking_SOURCES) \
-	$(stepping_stone_model_SOURCES)
+	$(hopping_flees_SOURCES) $(stepping_stone_model_SOURCES)
 DIST_SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
 	$(coin_toss_mcmc_SOURCES) \
 	$(continuous_markov_chain_norris_ex_2_3_2_SOURCES) \
@@ -200,7 +222,7 @@ DIST_SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
 	$(general_discrete_distributions_SOURCES) \
 	$(general_discrete_markov_chain_SOURCES) \
 	$(genetic_drift_SOURCES) $(hitchhiking_SOURCES) \
-	$(stepping_stone_model_SOURCES)
+	$(hopping_flees_SOURCES) $(stepping_stone_model_SOURCES)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -269,12 +291,13 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /home/dominik/Population-Genetics/Derivations-and-Tests-of-Algorithms/cpp_programs/missing aclocal-1.15
+ACLOCAL = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
-AUTOCONF = ${SHELL} /home/dominik/Population-Genetics/Derivations-and-Tests-of-Algorithms/cpp_programs/missing autoconf
-AUTOHEADER = ${SHELL} /home/dominik/Population-Genetics/Derivations-and-Tests-of-Algorithms/cpp_programs/missing autoheader
-AUTOMAKE = ${SHELL} /home/dominik/Population-Genetics/Derivations-and-Tests-of-Algorithms/cpp_programs/missing automake-1.15
+AR = ar
+AUTOCONF = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing autoconf
+AUTOHEADER = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing autoheader
+AUTOMAKE = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing automake-1.15
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -282,29 +305,45 @@ CFLAGS = -g -O2
 CPP = gcc -E
 CPPFLAGS = 
 CXX = g++
+CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
+DLLTOOL = false
+DSYMUTIL = 
+DUMPBIN = 
 ECHO_C = 
 ECHO_N = -n
 ECHO_T = 
 EGREP = /usr/bin/grep -E
 EXEEXT = 
+FGREP = /usr/bin/grep -F
 GREP = /usr/bin/grep
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
+LD = /usr/lib/hardening-wrapper/bin/ld -m elf_x86_64
 LDFLAGS = 
 LIBOBJS = 
 LIBS = 
+LIBTOOL = $(SHELL) $(top_builddir)/libtool
+LIPO = 
+LN_S = ln -s
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/dominik/Population-Genetics/Derivations-and-Tests-of-Algorithms/cpp_programs/missing makeinfo
+LT_SYS_LIBRARY_PATH = 
+MAKEINFO = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing makeinfo
+MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
+NM = /usr/bin/nm -B
+NMEDIT = 
+OBJDUMP = objdump
 OBJEXT = o
+OTOOL = 
+OTOOL64 = 
 PACKAGE = cpp_programs
 PACKAGE_BUGREPORT = 
 PACKAGE_NAME = cpp_programs
@@ -313,34 +352,46 @@ PACKAGE_TARNAME = cpp_programs
 PACKAGE_URL = 
 PACKAGE_VERSION = 1.0
 PATH_SEPARATOR = :
+RANLIB = ranlib
+SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/sh
-STRIP = 
+STRIP = strip
 VERSION = 1.0
-abs_builddir = /home/dominik/Population-Genetics/Derivations-and-Tests-of-Algorithms/cpp_programs/src
-abs_srcdir = /home/dominik/Population-Genetics/Derivations-and-Tests-of-Algorithms/cpp_programs/src
-abs_top_builddir = /home/dominik/Population-Genetics/Derivations-and-Tests-of-Algorithms/cpp_programs
-abs_top_srcdir = /home/dominik/Population-Genetics/Derivations-and-Tests-of-Algorithms/cpp_programs
+abs_builddir = /home/dominik/Population-Genetics/Algorithms/cpp_programs/src
+abs_srcdir = /home/dominik/Population-Genetics/Algorithms/cpp_programs/src
+abs_top_builddir = /home/dominik/Population-Genetics/Algorithms/cpp_programs
+abs_top_srcdir = /home/dominik/Population-Genetics/Algorithms/cpp_programs
+ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
+ac_ct_DUMPBIN = 
 am__include = include
 am__leading_dot = .
 am__quote = 
 am__tar = $${TAR-tar} chof - "$$tardir"
 am__untar = $${TAR-tar} xf -
 bindir = ${exec_prefix}/bin
+build = x86_64-unknown-linux-gnu
 build_alias = 
+build_cpu = x86_64
+build_os = linux-gnu
+build_vendor = unknown
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
+host = x86_64-unknown-linux-gnu
 host_alias = 
+host_cpu = x86_64
+host_os = linux-gnu
+host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/dominik/Population-Genetics/Derivations-and-Tests-of-Algorithms/cpp_programs/install-sh
+install_sh = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -369,6 +420,7 @@ top_srcdir = ..
 # EDE is the Emacs Development Environment.
 # http://cedet.sourceforge.net/ede.shtml
 #
+AM_CPPFLAGS = -I../include
 AM_CXXFLAGS = -g -O0
 top = ../
 ede_FILES = Project.ede Makefile.am
@@ -385,6 +437,7 @@ stepping_stone_model_SOURCES = stepping_stone_model.cpp
 general_discrete_distributions_SOURCES = general_discrete_distributions.cpp
 general_discrete_markov_chain_SOURCES = general_discrete_markov_chain.cpp
 continuous_markov_chain_norris_ex_2_3_2_SOURCES = continuous_markov_chain_norris_ex_2_3_2.cpp
+hopping_flees_SOURCES = hopping_flees.cpp
 genetic_drift_LDADD = -lgsl -lcblas
 hitchhiking_LDADD = 
 ehrenfest_mcmc_LDADD = -lgsl -lcblas
@@ -395,11 +448,12 @@ bookshelf_LDADD = -lgsl -lgslcblas
 stepping_stone_model_LDADD = -lgsl -lgslcblas
 general_discrete_distributions_LDADD = -lgsl -lgslcblas
 general_discrete_markov_chain_LDADD = -lgsl -lgslcblas
-continuous_markov_chain_norris_ex_2_3_2_LDADD = -lgsl -lcblas
+continuous_markov_chain_norris_ex_2_3_2_LDADD = ../include/libran_generator.la -lgsl -lcblas
+hopping_flees_LDADD = ../include/libran_generator.la -lgsl -lcblas
 all: all-recursive
 
 .SUFFIXES:
-.SUFFIXES: .c .cpp .o .obj
+.SUFFIXES: .c .cpp .lo .o .obj
 $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
@@ -439,6 +493,7 @@ install-binPROGRAMS: $(bin_PROGRAMS)
 	for p in $$list; do echo "$$p $$p"; done | \
 	sed 's/$(EXEEXT)$$//' | \
 	while read p p1; do if test -f $$p \
+	 || test -f $$p1 \
 	  ; then echo "$$p"; echo "$$p"; else :; fi; \
 	done | \
 	sed -e 'p;s,.*/,,;n;h' \
@@ -453,8 +508,8 @@ install-binPROGRAMS: $(bin_PROGRAMS)
 	while read type dir files; do \
 	    if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
 	    test -z "$$files" || { \
-	      echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$files '$(DESTDIR)$(bindir)$$dir'"; \
-	      $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$files "$(DESTDIR)$(bindir)$$dir" || exit $$?; \
+	    echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL_PROGRAM) $$files '$(DESTDIR)$(bindir)$$dir'"; \
+	    $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL_PROGRAM) $$files "$(DESTDIR)$(bindir)$$dir" || exit $$?; \
 	    } \
 	; done
 
@@ -470,7 +525,13 @@ uninstall-binPROGRAMS:
 	cd "$(DESTDIR)$(bindir)" && rm -f $$files
 
 clean-binPROGRAMS:
-	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+	@list='$(bin_PROGRAMS)'; test -n "$$list" || exit 0; \
+	echo " rm -f" $$list; \
+	rm -f $$list || exit $$?; \
+	test -n "$(EXEEXT)" || exit 0; \
+	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
+	echo " rm -f" $$list; \
+	rm -f $$list
 
 bookshelf$(EXEEXT): $(bookshelf_OBJECTS) $(bookshelf_DEPENDENCIES) $(EXTRA_bookshelf_DEPENDENCIES) 
 	@rm -f bookshelf$(EXEEXT)
@@ -512,6 +573,10 @@ hitchhiking$(EXEEXT): $(hitchhiking_OBJECTS) $(hitchhiking_DEPENDENCIES) $(EXTRA
 	@rm -f hitchhiking$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(hitchhiking_OBJECTS) $(hitchhiking_LDADD) $(LIBS)
 
+hopping_flees$(EXEEXT): $(hopping_flees_OBJECTS) $(hopping_flees_DEPENDENCIES) $(EXTRA_hopping_flees_DEPENDENCIES) 
+	@rm -f hopping_flees$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(hopping_flees_OBJECTS) $(hopping_flees_LDADD) $(LIBS)
+
 stepping_stone_model$(EXEEXT): $(stepping_stone_model_OBJECTS) $(stepping_stone_model_DEPENDENCIES) $(EXTRA_stepping_stone_model_DEPENDENCIES) 
 	@rm -f stepping_stone_model$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(stepping_stone_model_OBJECTS) $(stepping_stone_model_LDADD) $(LIBS)
@@ -532,6 +597,7 @@ include ./$(DEPDIR)/general_discrete_distributions.Po
 include ./$(DEPDIR)/general_discrete_markov_chain.Po
 include ./$(DEPDIR)/genetic_drift.Po
 include ./$(DEPDIR)/hitchhiking.Po
+include ./$(DEPDIR)/hopping_flees.Po
 include ./$(DEPDIR)/stepping_stone_model.Po
 
 .c.o:
@@ -548,6 +614,13 @@ include ./$(DEPDIR)/stepping_stone_model.Po
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(AM_V_CC_no)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
+.c.lo:
+	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+#	$(AM_V_CC)source='$<' object='$@' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(LTCOMPILE) -c -o $@ $<
+
 .cpp.o:
 	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
 	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
@@ -561,6 +634,19 @@ include ./$(DEPDIR)/stepping_stone_model.Po
 #	$(AM_V_CXX)source='$<' object='$@' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+.cpp.lo:
+	$(AM_V_CXX)$(LTCXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+#	$(AM_V_CXX)source='$<' object='$@' libtool=yes \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(LTCXXCOMPILE) -c -o $@ $<
+
+mostlyclean-libtool:
+	-rm -f *.lo
+
+clean-libtool:
+	-rm -rf .libs _libs
 
 # This directory's subdirectories are mostly independent; you can cd
 # into them and run 'make' without going through this Makefile.
@@ -756,7 +842,7 @@ maintainer-clean-generic:
 	@echo "it deletes files that may require special tools to rebuild."
 clean: clean-recursive
 
-clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
+clean-am: clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
 
 distclean: distclean-recursive
 	-rm -rf ./$(DEPDIR)
@@ -811,7 +897,8 @@ maintainer-clean-am: distclean-am maintainer-clean-generic
 
 mostlyclean: mostlyclean-recursive
 
-mostlyclean-am: mostlyclean-compile mostlyclean-generic
+mostlyclean-am: mostlyclean-compile mostlyclean-generic \
+	mostlyclean-libtool
 
 pdf: pdf-recursive
 
@@ -826,17 +913,18 @@ uninstall-am: uninstall-binPROGRAMS
 .MAKE: $(am__recursive_targets) install-am install-strip
 
 .PHONY: $(am__recursive_targets) CTAGS GTAGS TAGS all all-am check \
-	check-am clean clean-binPROGRAMS clean-generic cscopelist-am \
-	ctags ctags-am distclean distclean-compile distclean-generic \
-	distclean-tags distdir dvi dvi-am html html-am info info-am \
-	install install-am install-binPROGRAMS install-data \
-	install-data-am install-dvi install-dvi-am install-exec \
-	install-exec-am install-html install-html-am install-info \
-	install-info-am install-man install-pdf install-pdf-am \
-	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installdirs installdirs-am maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-compile \
-	mostlyclean-generic pdf pdf-am ps ps-am tags tags-am uninstall \
+	check-am clean clean-binPROGRAMS clean-generic clean-libtool \
+	cscopelist-am ctags ctags-am distclean distclean-compile \
+	distclean-generic distclean-libtool distclean-tags distdir dvi \
+	dvi-am html html-am info info-am install install-am \
+	install-binPROGRAMS install-data install-data-am install-dvi \
+	install-dvi-am install-exec install-exec-am install-html \
+	install-html-am install-info install-info-am install-man \
+	install-pdf install-pdf-am install-ps install-ps-am \
+	install-strip installcheck installcheck-am installdirs \
+	installdirs-am maintainer-clean maintainer-clean-generic \
+	mostlyclean mostlyclean-compile mostlyclean-generic \
+	mostlyclean-libtool pdf pdf-am ps ps-am tags tags-am uninstall \
 	uninstall-am uninstall-binPROGRAMS
 
 .PRECIOUS: Makefile

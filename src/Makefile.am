@@ -6,6 +6,7 @@
 # EDE is the Emacs Development Environment.
 # http://cedet.sourceforge.net/ede.shtml
 #
+AM_CPPFLAGS=-I../include
 AM_CXXFLAGS=-g -O0
 
 top=../
@@ -16,7 +17,8 @@ EXTRA_DIST=Project.ede
 bin_PROGRAMS=genetic_drift hitchhiking ehrenfest_mcmc\
    coin_toss_mcmc cube_mcmc brownian_motion_mcmc\
    bookshelf stepping_stone_model general_discrete_distributions\
-   general_discrete_markov_chain continuous_markov_chain_norris_ex_2_3_2
+   general_discrete_markov_chain continuous_markov_chain_norris_ex_2_3_2\
+   hopping_flees
 genetic_drift_SOURCES=genetic_drift.cpp
 hitchhiking_SOURCES=hitchhiking.c
 ehrenfest_mcmc_SOURCES=ehrenfest_mcmc.cpp
@@ -28,6 +30,7 @@ stepping_stone_model_SOURCES=stepping_stone_model.cpp
 general_discrete_distributions_SOURCES=general_discrete_distributions.cpp
 general_discrete_markov_chain_SOURCES=general_discrete_markov_chain.cpp
 continuous_markov_chain_norris_ex_2_3_2_SOURCES=continuous_markov_chain_norris_ex_2_3_2.cpp
+hopping_flees_SOURCES=hopping_flees.cpp
 genetic_drift_LDADD= -lgsl -lcblas
 hitchhiking_LDADD=
 ehrenfest_mcmc_LDADD= -lgsl -lcblas
@@ -38,6 +41,7 @@ bookshelf_LDADD= -lgsl -lgslcblas
 stepping_stone_model_LDADD= -lgsl -lgslcblas
 general_discrete_distributions_LDADD= -lgsl -lgslcblas
 general_discrete_markov_chain_LDADD= -lgsl -lgslcblas
-continuous_markov_chain_norris_ex_2_3_2_LDADD= -lgsl -lcblas
+continuous_markov_chain_norris_ex_2_3_2_LDADD= ../include/libran_generator.la -lgsl -lcblas
+hopping_flees_LDADD= ../include/libran_generator.la -lgsl -lcblas
 
 # End of Makefile.am

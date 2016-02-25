@@ -126,7 +126,9 @@ Variables</h2></td></tr>
 <div class="textblock"><p>Simulate Stepping Stone Model with a Markov chain. </p>
 <dl class="section author"><dt>Author</dt><dd>Dominik Schrempf <a href="#" onclick="location.href='mai'+'lto:'+'dom'+'in'+'ik.'+'sc'+'hre'+'mp'+'f@g'+'ma'+'il.'+'co'+'m'; return false;">domin<span style="display: none;">.nosp@m.</span>ik.s<span style="display: none;">.nosp@m.</span>chrem<span style="display: none;">.nosp@m.</span>pf@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a> </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>Fri Mar 13 16:56:17 2015</dd></dl>
-<p>Stepping Stone Model: In this model we have an n-by-n array of squares, and each square is initially any one of k different colors. For each step, a square is chosen at random. This square then chooses one of its eight neighbors at random and assumes the color of that neighbor. To avoid boundary problems, we assume that if a square S is on the left-hand boundary, say, but not at a corner, it is adjacent to the square T on the right-hand boundary in the same row as S, and S is also adjacent to the squares just above and below T . A similar assumption is made about squares on the upper and lower boundaries. (These adjacencies are much easier to understand if one imagines making the array into a cylinder by gluing the top and bottom edge together, and then making the cylinder into a doughnut by gluing the two circular boundaries together.) With these adjacencies, each square in the array is adjacent to exactly eight other squares. A state in this Markov chain is a description of the color of each square. For this 2 Markov chain the number of states is k n , which for even a small array of squares is enormous. This is an example of a Markov chain that is easy to simulate but difficult to analyze in terms of its transition matrix. </p>
+<p>Stepping Stone Model: In this model we have an n-by-n array of squares, and each square is initially any one of k different colors. For each step, a square is chosen at random. This square then chooses one of its eight neighbors at random and assumes the color of that neighbor.</p>
+<p>To avoid boundary problems, we assume that if a square S is on the left-hand boundary, say, but not at a corner, it is adjacent to the square T on the right-hand boundary in the same row as S, and S is also adjacent to the squares just above and below T . A similar assumption is made about squares on the upper and lower boundaries. (These adjacencies are much easier to understand if one imagines making the array into a cylinder by gluing the top and bottom edge together, and then making the cylinder into a doughnut by gluing the two circular boundaries together.) With these adjacencies, each square in the array is adjacent to exactly eight other squares.</p>
+<p>A state in this Markov chain is a description of the color of each square. For this 2 Markov chain the number of states is k n , which for even a small array of squares is enormous. This is an example of a Markov chain that is easy to simulate but difficult to analyze in terms of its transition matrix. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="aa30af12209e25d63e7d2a3963560b4ea"></a>
 <div class="memitem">
@@ -231,7 +233,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 2 2015 14:16:50 for PopGen C/C++ Programs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 23 2015 15:34:44 for PopGen C/C++ Programs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.10
 </small></address>
