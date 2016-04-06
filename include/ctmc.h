@@ -26,26 +26,25 @@ unsigned int LOG_INTERVAL = 1e5;
 
 class CTMC {
  public:
-    /** 
-     * Initialize the chain.
+    /** Initialize the chain.
      *
-     * @param q the transition rate matrix Q.
-     * @param n_states the number of states.
-     * @param log_out the log output stream.
-     * @param do_log_path set to false to inhibit logging of path.
+     *  @param q_matrix the transition rate matrix Q.
+     *  @param n_states the number of states.
+     *  @param log_out the log output stream.
+     *  @param do_log_path set to false to inhibit logging of path.
      */
     CTMC(gsl_matrix * q_matrix, size_t n_states,
          std::ostream& log_out, bool do_log_path=true);
 
-    /** 
-     * Initialize the chain with a specific time and state.
+    /**
+     *  Initialize the chain with a specific time and state.
      *
-     * @param q the transition rate matrix Q.
-     * @param n_states the number of states.
-     * @param t_init the initial time.
-     * @param s_init the inital state.
-     * @param log_out the log output stream.
-     * @param do_log_path set to false to inhibit logging.
+     *  @param q_matrix the transition rate matrix Q.
+     *  @param n_states the number of states.
+     *  @param t_init the initial time.
+     *  @param s_init the inital state.
+     *  @param log_out the log output stream.
+     *  @param do_log_path set to false to inhibit logging.
      */
     CTMC(gsl_matrix * q_matrix, size_t n_states,
          double t_init, state s_init,
@@ -53,7 +52,7 @@ class CTMC {
 
     ~CTMC();
 
-    /** 
+    /**
      * Let the chain jump once if the time to the next jump does not
      * exceed the given value.
      *
@@ -64,7 +63,7 @@ class CTMC {
      */
     state jump_maybe(double dt_max);
 
-    /** 
+    /**
      * Let the chain jump one.
      *
      * The time is not changed, the new state is determined according
@@ -75,7 +74,7 @@ class CTMC {
      */
     state jump();
 
-    /** 
+    /**
      * Let the chain evolve for some time.
      *
      * @param dt the time to evolve.
@@ -84,44 +83,44 @@ class CTMC {
      */
     state evolve(double dt);
 
-    /** 
+    /**
      * Print info about the CTMC.
      *
      * @param out output stream.
      */
     void print_info(std::ostream & out);
 
-    /** 
+    /**
      * Print short info about the CTMC.
      *
      * @param out output stream.
      */
     void print_info_short(std::ostream & out);
 
-    /** 
+    /**
      * Set the log level from 0 (silent) to 3 (debug).  Default is 1.
      *
-     * 
+     *
      * @param level log level.
      */
     void set_log_level(unsigned int level=1);
 
-    /** 
+    /**
      * Log the path of the CTMC (log states and time in time_vector
      * and state_vector).
-     * 
+     *
      */
     void activate_log_path();
 
-    /** 
+    /**
      * Log current state of Markov chain.
-     * 
+     *
      */
     void log_push_back();
 
-    /** 
+    /**
      * Pretty print the states and times.
-     * 
+     *
      * @param out output stream.
      */
     void pretty_print_path(std::ostream & out);
@@ -170,9 +169,9 @@ class CTMC {
 
 class CTMCPath {
  public:
-    /** 
+    /**
      * Enter states and times and the number of states.
-     * 
+     *
      * @param p_states_vector pointer to states vector.
      * @param p_times_vector pointer to times vector.
      * @param n_states number of states.
@@ -186,24 +185,24 @@ class CTMCPath {
              unsigned int log_level,
              std::ostream& log_out,
              unsigned int burn_in_init=BURN_IN);
-    /** 
+    /**
      * Constructor that gets information out of a given CTMC.
-     * 
+     *
      * @param chain a chain.
      */
     CTMCPath(CTMC * chain, unsigned int burn_in_init=BURN_IN);
-    
+
     ~CTMCPath();
-    
-    /** 
+
+    /**
      * Traverses logs and analyzes them.
      * - Determins the average hitting time from state a to state b.
      * - Determins the average number of jumps from state a to state b.
-     * 
+     *
      * @param out_average_hitting_time OUT.
      * @param out_average_n_jumps OUT.
      * @param burn_in number of jumps to wait before checking times.
-     * 
+     *
      * @return average hitting time.
      */
 
@@ -212,9 +211,9 @@ class CTMCPath {
     void print_hitting_times(std::ostream & out);
 
     void print_n_jumps(std::ostream & out);
-    
+
     void print_invariant_distribution(std::ostream & out);
-    
+
  private:
     /// Pointer to the states vector.
     std::vector<unsigned int> * p_states;
@@ -242,5 +241,3 @@ class CTMCPath {
 };
 
 #endif
-
-

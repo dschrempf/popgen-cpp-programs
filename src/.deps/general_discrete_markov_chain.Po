@@ -78,14 +78,14 @@ general_discrete_markov_chain.o: general_discrete_markov_chain.cpp \
  /usr/include/sys/types.h /usr/include/sys/select.h \
  /usr/include/bits/select.h /usr/include/bits/sigset.h \
  /usr/include/sys/sysmacros.h /usr/include/alloca.h \
- /usr/include/bits/stdlib-float.h /usr/include/gsl/gsl_types.h \
- /usr/include/gsl/gsl_errno.h /usr/include/libio.h \
- /usr/include/_G_config.h /usr/include/bits/stdio_lim.h \
- /usr/include/bits/sys_errlist.h /usr/include/errno.h \
- /usr/include/bits/errno.h /usr/include/linux/errno.h \
- /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
- /usr/include/asm-generic/errno-base.h /usr/include/gsl/gsl_inline.h \
- /usr/include/gsl/gsl_randist.h
+ /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
+ /usr/include/gsl/gsl_types.h /usr/include/gsl/gsl_errno.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/gsl/gsl_inline.h /usr/include/gsl/gsl_randist.h
 
 /usr/include/stdc-predef.h:
 
@@ -303,6 +303,8 @@ general_discrete_markov_chain.o: general_discrete_markov_chain.cpp \
 
 /usr/include/alloca.h:
 
+/usr/include/bits/stdlib-bsearch.h:
+
 /usr/include/bits/stdlib-float.h:
 
 /usr/include/gsl/gsl_types.h:
@@ -316,6 +318,8 @@ general_discrete_markov_chain.o: general_discrete_markov_chain.cpp \
 /usr/include/bits/stdio_lim.h:
 
 /usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
 
 /usr/include/errno.h:
 

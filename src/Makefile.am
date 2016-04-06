@@ -7,7 +7,7 @@
 # http://cedet.sourceforge.net/ede.shtml
 #
 AM_CPPFLAGS=-I../include
-CXXFLAGS=-g -O0 -std=c++11
+CXXFLAGS=-g -O0
 
 top=../
 ede_FILES=Project.ede Makefile.am

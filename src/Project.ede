@@ -87,4 +87,4 @@
       :ldlibs '("gsl" "cblas")))
   :makefile-type 'Makefile.am
   :variables '(("AM_CPPFLAGS" . "-I../include"))
-  :configuration-variables '(("debug" ("CXXFLAGS" . "-g -O0 -std=c++11"))))
+  :configuration-variables '(("debug" ("CXXFLAGS" . "-g -O0"))))
