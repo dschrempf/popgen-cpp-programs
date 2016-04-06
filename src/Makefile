@@ -95,7 +95,7 @@ bin_PROGRAMS = genetic_drift$(EXEEXT) hitchhiking$(EXEEXT) \
 	general_discrete_distributions$(EXEEXT) \
 	general_discrete_markov_chain$(EXEEXT) \
 	continuous_markov_chain_norris_ex_2_3_2$(EXEEXT) \
-	hopping_flees$(EXEEXT)
+	hopping_flees$(EXEEXT) moran_model_boundary_mutation$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -152,6 +152,12 @@ hitchhiking_DEPENDENCIES =
 am_hopping_flees_OBJECTS = hopping_flees.$(OBJEXT)
 hopping_flees_OBJECTS = $(am_hopping_flees_OBJECTS)
 hopping_flees_DEPENDENCIES = ../include/libran_generator.la
+am_moran_model_boundary_mutation_OBJECTS =  \
+	moran_model_boundary_mutation.$(OBJEXT)
+moran_model_boundary_mutation_OBJECTS =  \
+	$(am_moran_model_boundary_mutation_OBJECTS)
+moran_model_boundary_mutation_DEPENDENCIES = ../include/libtools.la \
+	../include/libran_generator.la ../include/libctmc.la
 am_stepping_stone_model_OBJECTS = stepping_stone_model.$(OBJEXT)
 stepping_stone_model_OBJECTS = $(am_stepping_stone_model_OBJECTS)
 stepping_stone_model_DEPENDENCIES =
@@ -214,7 +220,9 @@ SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
 	$(general_discrete_distributions_SOURCES) \
 	$(general_discrete_markov_chain_SOURCES) \
 	$(genetic_drift_SOURCES) $(hitchhiking_SOURCES) \
-	$(hopping_flees_SOURCES) $(stepping_stone_model_SOURCES)
+	$(hopping_flees_SOURCES) \
+	$(moran_model_boundary_mutation_SOURCES) \
+	$(stepping_stone_model_SOURCES)
 DIST_SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
 	$(coin_toss_mcmc_SOURCES) \
 	$(continuous_markov_chain_norris_ex_2_3_2_SOURCES) \
@@ -222,7 +230,9 @@ DIST_SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
 	$(general_discrete_distributions_SOURCES) \
 	$(general_discrete_markov_chain_SOURCES) \
 	$(genetic_drift_SOURCES) $(hitchhiking_SOURCES) \
-	$(hopping_flees_SOURCES) $(stepping_stone_model_SOURCES)
+	$(hopping_flees_SOURCES) \
+	$(moran_model_boundary_mutation_SOURCES) \
+	$(stepping_stone_model_SOURCES)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -291,13 +301,13 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing aclocal-1.15
+ACLOCAL = ${SHELL} /home/dominik/Population-Genetics/Programs/cpp_programs/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AR = ar
-AUTOCONF = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing autoconf
-AUTOHEADER = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing autoheader
-AUTOMAKE = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing automake-1.15
+AUTOCONF = ${SHELL} /home/dominik/Population-Genetics/Programs/cpp_programs/missing autoconf
+AUTOHEADER = ${SHELL} /home/dominik/Population-Genetics/Programs/cpp_programs/missing autoheader
+AUTOMAKE = ${SHELL} /home/dominik/Population-Genetics/Programs/cpp_programs/missing automake-1.15
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -307,7 +317,7 @@ CPPFLAGS =
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2
+CXXFLAGS = -g -O0 -std=c++11
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -326,7 +336,7 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LD = /usr/lib/hardening-wrapper/bin/ld -m elf_x86_64
+LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
 LIBOBJS = 
 LIBS = 
@@ -335,7 +345,7 @@ LIPO =
 LN_S = ln -s
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
-MAKEINFO = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing makeinfo
+MAKEINFO = ${SHELL} /home/dominik/Population-Genetics/Programs/cpp_programs/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 NM = /usr/bin/nm -B
@@ -358,10 +368,10 @@ SET_MAKE =
 SHELL = /bin/sh
 STRIP = strip
 VERSION = 1.0
-abs_builddir = /home/dominik/Population-Genetics/Algorithms/cpp_programs/src
-abs_srcdir = /home/dominik/Population-Genetics/Algorithms/cpp_programs/src
-abs_top_builddir = /home/dominik/Population-Genetics/Algorithms/cpp_programs
-abs_top_srcdir = /home/dominik/Population-Genetics/Algorithms/cpp_programs
+abs_builddir = /home/dominik/Population-Genetics/Programs/cpp_programs/src
+abs_srcdir = /home/dominik/Population-Genetics/Programs/cpp_programs/src
+abs_top_builddir = /home/dominik/Population-Genetics/Programs/cpp_programs
+abs_top_srcdir = /home/dominik/Population-Genetics/Programs/cpp_programs
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -391,7 +401,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/install-sh
+install_sh = ${SHELL} /home/dominik/Population-Genetics/Programs/cpp_programs/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -421,7 +431,6 @@ top_srcdir = ..
 # http://cedet.sourceforge.net/ede.shtml
 #
 AM_CPPFLAGS = -I../include
-AM_CXXFLAGS = -g -O0
 top = ../
 ede_FILES = Project.ede Makefile.am
 SUBDIRS = 
@@ -438,18 +447,20 @@ general_discrete_distributions_SOURCES = general_discrete_distributions.cpp
 general_discrete_markov_chain_SOURCES = general_discrete_markov_chain.cpp
 continuous_markov_chain_norris_ex_2_3_2_SOURCES = continuous_markov_chain_norris_ex_2_3_2.cpp
 hopping_flees_SOURCES = hopping_flees.cpp
+moran_model_boundary_mutation_SOURCES = moran_model_boundary_mutation.cpp
 genetic_drift_LDADD = -lgsl -lcblas
 hitchhiking_LDADD = 
 ehrenfest_mcmc_LDADD = -lgsl -lcblas
-coin_toss_mcmc_LDADD = -lgsl -lgslcblas
+coin_toss_mcmc_LDADD = -lgsl -lcblas
 cube_mcmc_LDADD = -lgsl -lcblas
 brownian_motion_mcmc_LDADD = -lgsl -lcblas
 bookshelf_LDADD = -lgsl -lgslcblas
-stepping_stone_model_LDADD = -lgsl -lgslcblas
-general_discrete_distributions_LDADD = -lgsl -lgslcblas
-general_discrete_markov_chain_LDADD = -lgsl -lgslcblas
+stepping_stone_model_LDADD = -lgsl -lcblas
+general_discrete_distributions_LDADD = -lgsl -lcblas
+general_discrete_markov_chain_LDADD = -lgsl -lcblas
 continuous_markov_chain_norris_ex_2_3_2_LDADD = ../include/libran_generator.la -lgsl -lcblas
 hopping_flees_LDADD = ../include/libran_generator.la -lgsl -lcblas
+moran_model_boundary_mutation_LDADD = ../include/libtools.la ../include/libran_generator.la ../include/libctmc.la -lgsl -lcblas
 all: all-recursive
 
 .SUFFIXES:
@@ -577,6 +588,10 @@ hopping_flees$(EXEEXT): $(hopping_flees_OBJECTS) $(hopping_flees_DEPENDENCIES) $
 	@rm -f hopping_flees$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(hopping_flees_OBJECTS) $(hopping_flees_LDADD) $(LIBS)
 
+moran_model_boundary_mutation$(EXEEXT): $(moran_model_boundary_mutation_OBJECTS) $(moran_model_boundary_mutation_DEPENDENCIES) $(EXTRA_moran_model_boundary_mutation_DEPENDENCIES) 
+	@rm -f moran_model_boundary_mutation$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(moran_model_boundary_mutation_OBJECTS) $(moran_model_boundary_mutation_LDADD) $(LIBS)
+
 stepping_stone_model$(EXEEXT): $(stepping_stone_model_OBJECTS) $(stepping_stone_model_DEPENDENCIES) $(EXTRA_stepping_stone_model_DEPENDENCIES) 
 	@rm -f stepping_stone_model$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(stepping_stone_model_OBJECTS) $(stepping_stone_model_LDADD) $(LIBS)
@@ -598,6 +613,7 @@ include ./$(DEPDIR)/general_discrete_markov_chain.Po
 include ./$(DEPDIR)/genetic_drift.Po
 include ./$(DEPDIR)/hitchhiking.Po
 include ./$(DEPDIR)/hopping_flees.Po
+include ./$(DEPDIR)/moran_model_boundary_mutation.Po
 include ./$(DEPDIR)/stepping_stone_model.Po
 
 .c.o:

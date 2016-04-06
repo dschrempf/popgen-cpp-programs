@@ -12,25 +12,25 @@ RanGen::~RanGen ()
     gsl_rng_free (r);
 }
 
-double RanGen::get_ran_exponential (double mean)
+double RanGen::pick_exponential (double mean)
 {
     return gsl_ran_exponential (r, mean);
 }
 
-double RanGen::get_uniform()
+double RanGen::pick_uniform()
 {
     return gsl_rng_uniform (r);
 }
 
-int RanGen::ran_pick (double * v, int l)
+int RanGen::vector_weighted_pick (gsl_vector * v, int l)
 {
     double sum = 0.0;
-    for (int i = 0; i < l; i++) sum += v[i];
+    for (int i = 0; i < l; i++) sum += gsl_vector_get(v, i);
 
-    double rn = gsl_rng_uniform (r);
+    double rn = pick_uniform ();
     double x = 0.0;
     for (int i = 0; i < l; i++) {
-        x += v[i];
+        x += gsl_vector_get(v,i);
         if (rn*sum < x) return i;
     }
     throw "Nothing has been picked.";

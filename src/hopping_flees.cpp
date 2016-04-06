@@ -84,7 +84,7 @@ bool jump(ContChain * ch, double t, RanGen * rg)
     int d = ch->d;
     double q = -ch->qm[s*d + s];
     // std::cout << "q=" << q << std::endl;
-    double dt = rg->get_ran_exponential(1.0/q);
+    double dt = rg->pick_exponential(1.0/q);
     // std::cout << "dt=" << dt << std::endl;
     if (ch->t + dt > t) {
         ch->t = t;
@@ -93,8 +93,12 @@ bool jump(ContChain * ch, double t, RanGen * rg)
     }
     else {
         // FIXME: Only works for this specific problem at the moment.
-        double v[] = {la, mu};
-        int ds = rg->ran_pick(v, 2);
+        gsl_vector * v = gsl_vector_alloc(2);
+        gsl_vector_set(v,0,la);
+        gsl_vector_set(v,1,mu);
+        // v[] = {la, mu};
+        int ds = rg->vector_weighted_pick(v, 2);
+        gsl_vector_free(v);
         if (ds == 0) ds = -1;
         int s_prime = s + ds;
         if (s_prime < 0) s_prime = 2;

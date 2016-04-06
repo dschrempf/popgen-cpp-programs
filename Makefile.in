@@ -333,7 +333,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 top = "$(CURDIR)"/
 ede_FILES = Project.ede Makefile.am
-SUBDIRS = src/ include/
+SUBDIRS = include/ src/
 EXTRA_DIST = Project.ede
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive

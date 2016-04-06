@@ -14,15 +14,6 @@
 
 
 
-# Automatically Generated Makefile by EDE.
-# For use with: automake
-# Relative File Name: include/Makefile.am
-#
-# DO NOT MODIFY THIS FILE OR YOUR CHANGES MAY BE LOST.
-# EDE is the Emacs Development Environment.
-# http://cedet.sourceforge.net/ede.shtml
-#
-
 
 am__is_gnu_make = { \
   if test -z '$(MAKELEVEL)'; then \
@@ -136,13 +127,19 @@ am__uninstall_files_from_dir = { \
   }
 am__installdirs = "$(DESTDIR)$(libdir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
-libran_generator_la_LIBADD =
-am_libran_generator_la_OBJECTS = ran_generator.lo
-libran_generator_la_OBJECTS = $(am_libran_generator_la_OBJECTS)
+libctmc_la_LIBADD =
+am_libctmc_la_OBJECTS = ctmc.lo
+libctmc_la_OBJECTS = $(am_libctmc_la_OBJECTS)
 AM_V_lt = $(am__v_lt_$(V))
 am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
 am__v_lt_0 = --silent
 am__v_lt_1 = 
+libran_generator_la_LIBADD =
+am_libran_generator_la_OBJECTS = ran_generator.lo
+libran_generator_la_OBJECTS = $(am_libran_generator_la_OBJECTS)
+libtools_la_LIBADD =
+am_libtools_la_OBJECTS = tools.lo
+libtools_la_OBJECTS = $(am_libtools_la_OBJECTS)
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
 am__v_P_0 = false
@@ -177,8 +174,10 @@ AM_V_CXXLD = $(am__v_CXXLD_$(V))
 am__v_CXXLD_ = $(am__v_CXXLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(libran_generator_la_SOURCES)
-DIST_SOURCES = $(libran_generator_la_SOURCES)
+SOURCES = $(libctmc_la_SOURCES) $(libran_generator_la_SOURCES) \
+	$(libtools_la_SOURCES)
+DIST_SOURCES = $(libctmc_la_SOURCES) $(libran_generator_la_SOURCES) \
+	$(libtools_la_SOURCES)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -247,13 +246,13 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing aclocal-1.15
+ACLOCAL = ${SHELL} /home/dominik/Population-Genetics/Programs/cpp_programs/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AR = ar
-AUTOCONF = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing autoconf
-AUTOHEADER = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing autoheader
-AUTOMAKE = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing automake-1.15
+AUTOCONF = ${SHELL} /home/dominik/Population-Genetics/Programs/cpp_programs/missing autoconf
+AUTOHEADER = ${SHELL} /home/dominik/Population-Genetics/Programs/cpp_programs/missing autoheader
+AUTOMAKE = ${SHELL} /home/dominik/Population-Genetics/Programs/cpp_programs/missing automake-1.15
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -263,7 +262,16 @@ CPPFLAGS =
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2
+
+# Automatically Generated Makefile by EDE.
+# For use with: automake
+# Relative File Name: include/Makefile.am
+#
+# DO NOT MODIFY THIS FILE OR YOUR CHANGES MAY BE LOST.
+# EDE is the Emacs Development Environment.
+# http://cedet.sourceforge.net/ede.shtml
+#
+CXXFLAGS = -g -O0
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -282,7 +290,7 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LD = /usr/lib/hardening-wrapper/bin/ld -m elf_x86_64
+LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
 LIBOBJS = 
 LIBS = 
@@ -291,7 +299,7 @@ LIPO =
 LN_S = ln -s
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
-MAKEINFO = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/missing makeinfo
+MAKEINFO = ${SHELL} /home/dominik/Population-Genetics/Programs/cpp_programs/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 NM = /usr/bin/nm -B
@@ -314,10 +322,10 @@ SET_MAKE =
 SHELL = /bin/sh
 STRIP = strip
 VERSION = 1.0
-abs_builddir = /home/dominik/Population-Genetics/Algorithms/cpp_programs/include
-abs_srcdir = /home/dominik/Population-Genetics/Algorithms/cpp_programs/include
-abs_top_builddir = /home/dominik/Population-Genetics/Algorithms/cpp_programs
-abs_top_srcdir = /home/dominik/Population-Genetics/Algorithms/cpp_programs
+abs_builddir = /home/dominik/Population-Genetics/Programs/cpp_programs/include
+abs_srcdir = /home/dominik/Population-Genetics/Programs/cpp_programs/include
+abs_top_builddir = /home/dominik/Population-Genetics/Programs/cpp_programs
+abs_top_srcdir = /home/dominik/Population-Genetics/Programs/cpp_programs
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -347,7 +355,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/dominik/Population-Genetics/Algorithms/cpp_programs/install-sh
+install_sh = ${SHELL} /home/dominik/Population-Genetics/Programs/cpp_programs/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -371,8 +379,12 @@ top = ../
 ede_FILES = Project.ede Makefile.am
 SUBDIRS = 
 EXTRA_DIST = Project.ede
-lib_LTLIBRARIES = libran_generator.la
+lib_LTLIBRARIES = libran_generator.la libctmc.la\
+   libtools.la
+
 libran_generator_la_SOURCES = ran_generator.cpp
+libctmc_la_SOURCES = ctmc.cpp
+libtools_la_SOURCES = tools.cpp
 all: all-recursive
 
 .SUFFIXES:
@@ -442,8 +454,14 @@ clean-libLTLIBRARIES:
 	  rm -f $${locs}; \
 	}
 
+libctmc.la: $(libctmc_la_OBJECTS) $(libctmc_la_DEPENDENCIES) $(EXTRA_libctmc_la_DEPENDENCIES) 
+	$(AM_V_CXXLD)$(CXXLINK) -rpath $(libdir) $(libctmc_la_OBJECTS) $(libctmc_la_LIBADD) $(LIBS)
+
 libran_generator.la: $(libran_generator_la_OBJECTS) $(libran_generator_la_DEPENDENCIES) $(EXTRA_libran_generator_la_DEPENDENCIES) 
 	$(AM_V_CXXLD)$(CXXLINK) -rpath $(libdir) $(libran_generator_la_OBJECTS) $(libran_generator_la_LIBADD) $(LIBS)
+
+libtools.la: $(libtools_la_OBJECTS) $(libtools_la_DEPENDENCIES) $(EXTRA_libtools_la_DEPENDENCIES) 
+	$(AM_V_CXXLD)$(CXXLINK) -rpath $(libdir) $(libtools_la_OBJECTS) $(libtools_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -451,7 +469,9 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+include ./$(DEPDIR)/ctmc.Plo
 include ./$(DEPDIR)/ran_generator.Plo
+include ./$(DEPDIR)/tools.Plo
 
 .cpp.o:
 	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

@@ -6,13 +6,17 @@
 # EDE is the Emacs Development Environment.
 # http://cedet.sourceforge.net/ede.shtml
 #
+CXXFLAGS=-g -O0
 
 top=../
 ede_FILES=Project.ede Makefile.am
 
 SUBDIRS=
 EXTRA_DIST=Project.ede
-lib_LTLIBRARIES=libran_generator.la
+lib_LTLIBRARIES=libran_generator.la libctmc.la\
+   libtools.la
 libran_generator_la_SOURCES=ran_generator.cpp
+libctmc_la_SOURCES=ctmc.cpp
+libtools_la_SOURCES=tools.cpp
 
 # End of Makefile.am

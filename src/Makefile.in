@@ -95,7 +95,7 @@ bin_PROGRAMS = genetic_drift$(EXEEXT) hitchhiking$(EXEEXT) \
 	general_discrete_distributions$(EXEEXT) \
 	general_discrete_markov_chain$(EXEEXT) \
 	continuous_markov_chain_norris_ex_2_3_2$(EXEEXT) \
-	hopping_flees$(EXEEXT)
+	hopping_flees$(EXEEXT) moran_model_boundary_mutation$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -152,6 +152,12 @@ hitchhiking_DEPENDENCIES =
 am_hopping_flees_OBJECTS = hopping_flees.$(OBJEXT)
 hopping_flees_OBJECTS = $(am_hopping_flees_OBJECTS)
 hopping_flees_DEPENDENCIES = ../include/libran_generator.la
+am_moran_model_boundary_mutation_OBJECTS =  \
+	moran_model_boundary_mutation.$(OBJEXT)
+moran_model_boundary_mutation_OBJECTS =  \
+	$(am_moran_model_boundary_mutation_OBJECTS)
+moran_model_boundary_mutation_DEPENDENCIES = ../include/libtools.la \
+	../include/libran_generator.la ../include/libctmc.la
 am_stepping_stone_model_OBJECTS = stepping_stone_model.$(OBJEXT)
 stepping_stone_model_OBJECTS = $(am_stepping_stone_model_OBJECTS)
 stepping_stone_model_DEPENDENCIES =
@@ -214,7 +220,9 @@ SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
 	$(general_discrete_distributions_SOURCES) \
 	$(general_discrete_markov_chain_SOURCES) \
 	$(genetic_drift_SOURCES) $(hitchhiking_SOURCES) \
-	$(hopping_flees_SOURCES) $(stepping_stone_model_SOURCES)
+	$(hopping_flees_SOURCES) \
+	$(moran_model_boundary_mutation_SOURCES) \
+	$(stepping_stone_model_SOURCES)
 DIST_SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
 	$(coin_toss_mcmc_SOURCES) \
 	$(continuous_markov_chain_norris_ex_2_3_2_SOURCES) \
@@ -222,7 +230,9 @@ DIST_SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
 	$(general_discrete_distributions_SOURCES) \
 	$(general_discrete_markov_chain_SOURCES) \
 	$(genetic_drift_SOURCES) $(hitchhiking_SOURCES) \
-	$(hopping_flees_SOURCES) $(stepping_stone_model_SOURCES)
+	$(hopping_flees_SOURCES) \
+	$(moran_model_boundary_mutation_SOURCES) \
+	$(stepping_stone_model_SOURCES)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -307,7 +317,7 @@ CPPFLAGS = @CPPFLAGS@
 CXX = @CXX@
 CXXCPP = @CXXCPP@
 CXXDEPMODE = @CXXDEPMODE@
-CXXFLAGS = @CXXFLAGS@
+CXXFLAGS = -g -O0 -std=c++11
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
@@ -421,7 +431,6 @@ top_srcdir = @top_srcdir@
 # http://cedet.sourceforge.net/ede.shtml
 #
 AM_CPPFLAGS = -I../include
-AM_CXXFLAGS = -g -O0
 top = ../
 ede_FILES = Project.ede Makefile.am
 SUBDIRS = 
@@ -438,18 +447,20 @@ general_discrete_distributions_SOURCES = general_discrete_distributions.cpp
 general_discrete_markov_chain_SOURCES = general_discrete_markov_chain.cpp
 continuous_markov_chain_norris_ex_2_3_2_SOURCES = continuous_markov_chain_norris_ex_2_3_2.cpp
 hopping_flees_SOURCES = hopping_flees.cpp
+moran_model_boundary_mutation_SOURCES = moran_model_boundary_mutation.cpp
 genetic_drift_LDADD = -lgsl -lcblas
 hitchhiking_LDADD = 
 ehrenfest_mcmc_LDADD = -lgsl -lcblas
-coin_toss_mcmc_LDADD = -lgsl -lgslcblas
+coin_toss_mcmc_LDADD = -lgsl -lcblas
 cube_mcmc_LDADD = -lgsl -lcblas
 brownian_motion_mcmc_LDADD = -lgsl -lcblas
 bookshelf_LDADD = -lgsl -lgslcblas
-stepping_stone_model_LDADD = -lgsl -lgslcblas
-general_discrete_distributions_LDADD = -lgsl -lgslcblas
-general_discrete_markov_chain_LDADD = -lgsl -lgslcblas
+stepping_stone_model_LDADD = -lgsl -lcblas
+general_discrete_distributions_LDADD = -lgsl -lcblas
+general_discrete_markov_chain_LDADD = -lgsl -lcblas
 continuous_markov_chain_norris_ex_2_3_2_LDADD = ../include/libran_generator.la -lgsl -lcblas
 hopping_flees_LDADD = ../include/libran_generator.la -lgsl -lcblas
+moran_model_boundary_mutation_LDADD = ../include/libtools.la ../include/libran_generator.la ../include/libctmc.la -lgsl -lcblas
 all: all-recursive
 
 .SUFFIXES:
@@ -577,6 +588,10 @@ hopping_flees$(EXEEXT): $(hopping_flees_OBJECTS) $(hopping_flees_DEPENDENCIES) $
 	@rm -f hopping_flees$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(hopping_flees_OBJECTS) $(hopping_flees_LDADD) $(LIBS)
 
+moran_model_boundary_mutation$(EXEEXT): $(moran_model_boundary_mutation_OBJECTS) $(moran_model_boundary_mutation_DEPENDENCIES) $(EXTRA_moran_model_boundary_mutation_DEPENDENCIES) 
+	@rm -f moran_model_boundary_mutation$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(moran_model_boundary_mutation_OBJECTS) $(moran_model_boundary_mutation_LDADD) $(LIBS)
+
 stepping_stone_model$(EXEEXT): $(stepping_stone_model_OBJECTS) $(stepping_stone_model_DEPENDENCIES) $(EXTRA_stepping_stone_model_DEPENDENCIES) 
 	@rm -f stepping_stone_model$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(stepping_stone_model_OBJECTS) $(stepping_stone_model_LDADD) $(LIBS)
@@ -598,6 +613,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/genetic_drift.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hitchhiking.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hopping_flees.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/moran_model_boundary_mutation.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stepping_stone_model.Po@am__quote@
 
 .c.o:

@@ -45,14 +45,14 @@ The transition probabilites are as follows\+:
 A simulation result\+:  
 
 \subsection{Function Documentation}
-\hypertarget{ehrenfest__mcmc_8cpp_ae42a013668e7a376deefff64fa881dce}{}\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!get\+\_\+q@{get\+\_\+q}}
+\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!get\+\_\+q@{get\+\_\+q}}
 \index{get\+\_\+q@{get\+\_\+q}!ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}}
-\subsubsection[{get\+\_\+q(unsigned int i, unsigned int N)}]{\setlength{\rightskip}{0pt plus 5cm}double get\+\_\+q (
+\subsubsection[{\texorpdfstring{get\+\_\+q(unsigned int i, unsigned int N)}{get_q(unsigned int i, unsigned int N)}}]{\setlength{\rightskip}{0pt plus 5cm}double get\+\_\+q (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{i, }
 \item[{unsigned int}]{N}
 \end{DoxyParamCaption}
-)}\label{ehrenfest__mcmc_8cpp_ae42a013668e7a376deefff64fa881dce}
+)}\hypertarget{ehrenfest__mcmc_8cpp_ae42a013668e7a376deefff64fa881dce}{}\label{ehrenfest__mcmc_8cpp_ae42a013668e7a376deefff64fa881dce}
 Calculate the probability to jump from i to i-\/1.
 
 
@@ -65,15 +65,15 @@ Calculate the probability to jump from i to i-\/1.
 \begin{DoxyReturn}{Returns}
 Probability to jump from i to i-\/1. 
 \end{DoxyReturn}
-\hypertarget{ehrenfest__mcmc_8cpp_a9e84f967ae03eb731820321ed36e052c}{}\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!jump@{jump}}
+\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!jump@{jump}}
 \index{jump@{jump}!ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}}
-\subsubsection[{jump(unsigned int i, unsigned int N, gsl\+\_\+rng $\ast$r)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int jump (
+\subsubsection[{\texorpdfstring{jump(unsigned int i, unsigned int N, gsl\+\_\+rng $\ast$r)}{jump(unsigned int i, unsigned int N, gsl_rng *r)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int jump (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{i, }
 \item[{unsigned int}]{N, }
 \item[{gsl\+\_\+rng $\ast$}]{r}
 \end{DoxyParamCaption}
-)}\label{ehrenfest__mcmc_8cpp_a9e84f967ae03eb731820321ed36e052c}
+)}\hypertarget{ehrenfest__mcmc_8cpp_a9e84f967ae03eb731820321ed36e052c}{}\label{ehrenfest__mcmc_8cpp_a9e84f967ae03eb731820321ed36e052c}
 Let the chain jump from i to either i+1 or i-\/1.
 
 
@@ -82,29 +82,29 @@ Let the chain jump from i to either i+1 or i-\/1.
 \hline
 {\em N} & Total number of particles in the box. \\
 \hline
-{\em r} & G\+S\+L random number generator.\\
+{\em r} & G\+SL random number generator.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 New state. 
 \end{DoxyReturn}
-\hypertarget{ehrenfest__mcmc_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{}\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!main@{main}}
+\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!main@{main}}
 \index{main@{main}!ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}}
-\subsubsection[{main(void)}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\subsubsection[{\texorpdfstring{main(void)}{main(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}\label{ehrenfest__mcmc_8cpp_a840291bc02cba5474a4cb46a9b9566fe}
+)}\hypertarget{ehrenfest__mcmc_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{}\label{ehrenfest__mcmc_8cpp_a840291bc02cba5474a4cb46a9b9566fe}
 
 
 \subsection{Variable Documentation}
-\hypertarget{ehrenfest__mcmc_8cpp_a8ea5c4b17c061343d5a7c2532e629df8}{}\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!i\+\_\+start@{i\+\_\+start}}
+\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!i\+\_\+start@{i\+\_\+start}}
 \index{i\+\_\+start@{i\+\_\+start}!ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}}
-\subsubsection[{i\+\_\+start}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int i\+\_\+start = 0}\label{ehrenfest__mcmc_8cpp_a8ea5c4b17c061343d5a7c2532e629df8}
-Starting state. \hypertarget{ehrenfest__mcmc_8cpp_ae8b170dcb376fe60270f4675f84e4477}{}\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!N@{N}}
+\subsubsection[{\texorpdfstring{i\+\_\+start}{i_start}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int i\+\_\+start = 0}\hypertarget{ehrenfest__mcmc_8cpp_a8ea5c4b17c061343d5a7c2532e629df8}{}\label{ehrenfest__mcmc_8cpp_a8ea5c4b17c061343d5a7c2532e629df8}
+Starting state. \index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!N@{N}}
 \index{N@{N}!ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}}
-\subsubsection[{N}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int N = 100}\label{ehrenfest__mcmc_8cpp_ae8b170dcb376fe60270f4675f84e4477}
-Number of particles in the box. \hypertarget{ehrenfest__mcmc_8cpp_a80eead42e8890b9cbbc6797795b53b02}{}\index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!n\+\_\+iter@{n\+\_\+iter}}
+\subsubsection[{\texorpdfstring{N}{N}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int N = 100}\hypertarget{ehrenfest__mcmc_8cpp_ae8b170dcb376fe60270f4675f84e4477}{}\label{ehrenfest__mcmc_8cpp_ae8b170dcb376fe60270f4675f84e4477}
+Number of particles in the box. \index{ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}!n\+\_\+iter@{n\+\_\+iter}}
 \index{n\+\_\+iter@{n\+\_\+iter}!ehrenfest\+\_\+mcmc.\+cpp@{ehrenfest\+\_\+mcmc.\+cpp}}
-\subsubsection[{n\+\_\+iter}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int n\+\_\+iter = 1000}\label{ehrenfest__mcmc_8cpp_a80eead42e8890b9cbbc6797795b53b02}
+\subsubsection[{\texorpdfstring{n\+\_\+iter}{n_iter}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int n\+\_\+iter = 1000}\hypertarget{ehrenfest__mcmc_8cpp_a80eead42e8890b9cbbc6797795b53b02}{}\label{ehrenfest__mcmc_8cpp_a80eead42e8890b9cbbc6797795b53b02}
 Number of iterations to be simulated. 

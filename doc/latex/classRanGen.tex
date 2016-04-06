@@ -1,0 +1,99 @@
+\hypertarget{classRanGen}{}\section{Ran\+Gen Class Reference}
+\label{classRanGen}\index{Ran\+Gen@{Ran\+Gen}}
+
+
+{\ttfamily \#include $<$ran\+\_\+generator.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRanGen_af9569853a8e21e8848765565815d84a4}{Ran\+Gen} ()
+\item 
+\hyperlink{classRanGen_a8e188812ddc05572a650eb90f1fe6cf0}{$\sim$\+Ran\+Gen} ()
+\item 
+double \hyperlink{classRanGen_a59d9212459d4ec46e9403b7e81f3f90e}{pick\+\_\+exponential} (double mean)
+\item 
+double \hyperlink{classRanGen_af43088ca2848ff838ac13177bb2885d0}{pick\+\_\+uniform} ()
+\item 
+int \hyperlink{classRanGen_a17cbda75f84cbf5d1e9f1aad83a17702}{vector\+\_\+weighted\+\_\+pick} (double $\ast$v, int \hyperlink{stepping__stone__model_8cpp_a89606eca6b563ec68d2da2e84657736f}{l})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The class \hyperlink{classRanGen}{Ran\+Gen} is a wrapper around the G\+SL library. It contains useful functions to pick random variables out of different distributions. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ran\+Gen@{Ran\+Gen}!Ran\+Gen@{Ran\+Gen}}
+\index{Ran\+Gen@{Ran\+Gen}!Ran\+Gen@{Ran\+Gen}}
+\subsubsection[{\texorpdfstring{Ran\+Gen()}{RanGen()}}]{\setlength{\rightskip}{0pt plus 5cm}Ran\+Gen\+::\+Ran\+Gen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanGen_af9569853a8e21e8848765565815d84a4}{}\label{classRanGen_af9569853a8e21e8848765565815d84a4}
+\index{Ran\+Gen@{Ran\+Gen}!````~Ran\+Gen@{$\sim$\+Ran\+Gen}}
+\index{````~Ran\+Gen@{$\sim$\+Ran\+Gen}!Ran\+Gen@{Ran\+Gen}}
+\subsubsection[{\texorpdfstring{$\sim$\+Ran\+Gen()}{~RanGen()}}]{\setlength{\rightskip}{0pt plus 5cm}Ran\+Gen\+::$\sim$\+Ran\+Gen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanGen_a8e188812ddc05572a650eb90f1fe6cf0}{}\label{classRanGen_a8e188812ddc05572a650eb90f1fe6cf0}
+
+
+\subsection{Member Function Documentation}
+\index{Ran\+Gen@{Ran\+Gen}!pick\+\_\+exponential@{pick\+\_\+exponential}}
+\index{pick\+\_\+exponential@{pick\+\_\+exponential}!Ran\+Gen@{Ran\+Gen}}
+\subsubsection[{\texorpdfstring{pick\+\_\+exponential(double mean)}{pick_exponential(double mean)}}]{\setlength{\rightskip}{0pt plus 5cm}double Ran\+Gen\+::pick\+\_\+exponential (
+\begin{DoxyParamCaption}
+\item[{double}]{mean}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanGen_a59d9212459d4ec46e9403b7e81f3f90e}{}\label{classRanGen_a59d9212459d4ec46e9403b7e81f3f90e}
+Simulate an exponentially distributed random variable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mean} & the mean.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the picked value. 
+\end{DoxyReturn}
+\index{Ran\+Gen@{Ran\+Gen}!pick\+\_\+uniform@{pick\+\_\+uniform}}
+\index{pick\+\_\+uniform@{pick\+\_\+uniform}!Ran\+Gen@{Ran\+Gen}}
+\subsubsection[{\texorpdfstring{pick\+\_\+uniform()}{pick_uniform()}}]{\setlength{\rightskip}{0pt plus 5cm}double Ran\+Gen\+::pick\+\_\+uniform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanGen_af43088ca2848ff838ac13177bb2885d0}{}\label{classRanGen_af43088ca2848ff838ac13177bb2885d0}
+Simulate a uniformly distributed random variable between 0 and 1.
+
+\begin{DoxyReturn}{Returns}
+the picked value. 
+\end{DoxyReturn}
+\index{Ran\+Gen@{Ran\+Gen}!vector\+\_\+weighted\+\_\+pick@{vector\+\_\+weighted\+\_\+pick}}
+\index{vector\+\_\+weighted\+\_\+pick@{vector\+\_\+weighted\+\_\+pick}!Ran\+Gen@{Ran\+Gen}}
+\subsubsection[{\texorpdfstring{vector\+\_\+weighted\+\_\+pick(double $\ast$v, int l)}{vector_weighted_pick(double *v, int l)}}]{\setlength{\rightskip}{0pt plus 5cm}int Ran\+Gen\+::vector\+\_\+weighted\+\_\+pick (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{v, }
+\item[{int}]{l}
+\end{DoxyParamCaption}
+)}\hypertarget{classRanGen_a17cbda75f84cbf5d1e9f1aad83a17702}{}\label{classRanGen_a17cbda75f84cbf5d1e9f1aad83a17702}
+Randomly pick an element out of a vector according to its value.
+
+For example, a for vector v = \{0, 1, 1, 2\}, v\mbox{[}0\mbox{]} will never be chosen, v\mbox{[}3\mbox{]} will be chosen twice as often as v\mbox{[}1\mbox{]} or v\mbox{[}2\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & the vector. \\
+\hline
+{\em l} & the length.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the picked index. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{ran__generator_8h}{ran\+\_\+generator.\+h}\item 
+include/\hyperlink{ran__generator_8cpp}{ran\+\_\+generator.\+cpp}\end{DoxyCompactItemize}

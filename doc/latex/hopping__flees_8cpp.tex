@@ -17,9 +17,9 @@ class \hyperlink{classContChain}{Cont\+Chain}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{hopping__flees_8cpp_a7f3eea55850114fc658a0e698f2ed46d}{jump} (\hyperlink{classContChain}{Cont\+Chain} $\ast$ch, double t, Ran\+Gen $\ast$rg)
+bool \hyperlink{hopping__flees_8cpp_a7f3eea55850114fc658a0e698f2ed46d}{jump} (\hyperlink{classContChain}{Cont\+Chain} $\ast$ch, double t, \hyperlink{classRanGen}{Ran\+Gen} $\ast$rg)
 \item 
-void \hyperlink{hopping__flees_8cpp_ae97f7181bb7a088fc5bbda1a3e991f97}{evolve\+\_\+chain} (\hyperlink{classContChain}{Cont\+Chain} $\ast$ch, double t, Ran\+Gen $\ast$rg)
+void \hyperlink{hopping__flees_8cpp_ae97f7181bb7a088fc5bbda1a3e991f97}{evolve\+\_\+chain} (\hyperlink{classContChain}{Cont\+Chain} $\ast$ch, double t, \hyperlink{classRanGen}{Ran\+Gen} $\ast$rg)
 \item 
 double \hyperlink{hopping__flees_8cpp_a823c60d20e55f719e8af93a4564ddc13}{hopping\+\_\+flees\+\_\+prob} (double \hyperlink{hopping__flees_8cpp_a7c5c962413e7b54fde1f44db08451677}{la}, double \hyperlink{hopping__flees_8cpp_a74577585cf12d1712ab9c57616d49205}{mu}, double t)
 \item 
@@ -72,73 +72,73 @@ We can see, that the empirical simulation fits the analytical results very well\
  
 
 \subsection{Function Documentation}
-\hypertarget{hopping__flees_8cpp_ae97f7181bb7a088fc5bbda1a3e991f97}{}\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!evolve\+\_\+chain@{evolve\+\_\+chain}}
+\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!evolve\+\_\+chain@{evolve\+\_\+chain}}
 \index{evolve\+\_\+chain@{evolve\+\_\+chain}!hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}}
-\subsubsection[{evolve\+\_\+chain(\+Cont\+Chain $\ast$ch, double t, Ran\+Gen $\ast$rg)}]{\setlength{\rightskip}{0pt plus 5cm}void evolve\+\_\+chain (
+\subsubsection[{\texorpdfstring{evolve\+\_\+chain(\+Cont\+Chain $\ast$ch, double t, Ran\+Gen $\ast$rg)}{evolve_chain(ContChain *ch, double t, RanGen *rg)}}]{\setlength{\rightskip}{0pt plus 5cm}void evolve\+\_\+chain (
 \begin{DoxyParamCaption}
 \item[{{\bf Cont\+Chain} $\ast$}]{ch, }
 \item[{double}]{t, }
-\item[{Ran\+Gen $\ast$}]{rg}
+\item[{{\bf Ran\+Gen} $\ast$}]{rg}
 \end{DoxyParamCaption}
-)}\label{hopping__flees_8cpp_ae97f7181bb7a088fc5bbda1a3e991f97}
-\hypertarget{hopping__flees_8cpp_a823c60d20e55f719e8af93a4564ddc13}{}\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!hopping\+\_\+flees\+\_\+prob@{hopping\+\_\+flees\+\_\+prob}}
+)}\hypertarget{hopping__flees_8cpp_ae97f7181bb7a088fc5bbda1a3e991f97}{}\label{hopping__flees_8cpp_ae97f7181bb7a088fc5bbda1a3e991f97}
+\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!hopping\+\_\+flees\+\_\+prob@{hopping\+\_\+flees\+\_\+prob}}
 \index{hopping\+\_\+flees\+\_\+prob@{hopping\+\_\+flees\+\_\+prob}!hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}}
-\subsubsection[{hopping\+\_\+flees\+\_\+prob(double la, double mu, double t)}]{\setlength{\rightskip}{0pt plus 5cm}double hopping\+\_\+flees\+\_\+prob (
+\subsubsection[{\texorpdfstring{hopping\+\_\+flees\+\_\+prob(double la, double mu, double t)}{hopping_flees_prob(double la, double mu, double t)}}]{\setlength{\rightskip}{0pt plus 5cm}double hopping\+\_\+flees\+\_\+prob (
 \begin{DoxyParamCaption}
 \item[{double}]{la, }
 \item[{double}]{mu, }
 \item[{double}]{t}
 \end{DoxyParamCaption}
-)}\label{hopping__flees_8cpp_a823c60d20e55f719e8af93a4564ddc13}
-\hypertarget{hopping__flees_8cpp_a7f3eea55850114fc658a0e698f2ed46d}{}\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!jump@{jump}}
+)}\hypertarget{hopping__flees_8cpp_a823c60d20e55f719e8af93a4564ddc13}{}\label{hopping__flees_8cpp_a823c60d20e55f719e8af93a4564ddc13}
+\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!jump@{jump}}
 \index{jump@{jump}!hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}}
-\subsubsection[{jump(\+Cont\+Chain $\ast$ch, double t, Ran\+Gen $\ast$rg)}]{\setlength{\rightskip}{0pt plus 5cm}bool jump (
+\subsubsection[{\texorpdfstring{jump(\+Cont\+Chain $\ast$ch, double t, Ran\+Gen $\ast$rg)}{jump(ContChain *ch, double t, RanGen *rg)}}]{\setlength{\rightskip}{0pt plus 5cm}bool jump (
 \begin{DoxyParamCaption}
 \item[{{\bf Cont\+Chain} $\ast$}]{ch, }
 \item[{double}]{t, }
-\item[{Ran\+Gen $\ast$}]{rg}
+\item[{{\bf Ran\+Gen} $\ast$}]{rg}
 \end{DoxyParamCaption}
-)}\label{hopping__flees_8cpp_a7f3eea55850114fc658a0e698f2ed46d}
-\hypertarget{hopping__flees_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!main@{main}}
+)}\hypertarget{hopping__flees_8cpp_a7f3eea55850114fc658a0e698f2ed46d}{}\label{hopping__flees_8cpp_a7f3eea55850114fc658a0e698f2ed46d}
+\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!main@{main}}
 \index{main@{main}!hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}}
-\subsubsection[{main()}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}\label{hopping__flees_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+)}\hypertarget{hopping__flees_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{hopping__flees_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
 
 
 \subsection{Variable Documentation}
-\hypertarget{hopping__flees_8cpp_a7c5c962413e7b54fde1f44db08451677}{}\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!la@{la}}
+\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!la@{la}}
 \index{la@{la}!hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}}
-\subsubsection[{la}]{\setlength{\rightskip}{0pt plus 5cm}double la = 2.\+0}\label{hopping__flees_8cpp_a7c5c962413e7b54fde1f44db08451677}
-\hypertarget{hopping__flees_8cpp_a74577585cf12d1712ab9c57616d49205}{}\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!mu@{mu}}
+\subsubsection[{\texorpdfstring{la}{la}}]{\setlength{\rightskip}{0pt plus 5cm}double la = 2.\+0}\hypertarget{hopping__flees_8cpp_a7c5c962413e7b54fde1f44db08451677}{}\label{hopping__flees_8cpp_a7c5c962413e7b54fde1f44db08451677}
+\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!mu@{mu}}
 \index{mu@{mu}!hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}}
-\subsubsection[{mu}]{\setlength{\rightskip}{0pt plus 5cm}double mu = 1.\+0}\label{hopping__flees_8cpp_a74577585cf12d1712ab9c57616d49205}
-\hypertarget{hopping__flees_8cpp_a78feae20120a9911b61dd580ef2ea84c}{}\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!n\+\_\+reps@{n\+\_\+reps}}
+\subsubsection[{\texorpdfstring{mu}{mu}}]{\setlength{\rightskip}{0pt plus 5cm}double mu = 1.\+0}\hypertarget{hopping__flees_8cpp_a74577585cf12d1712ab9c57616d49205}{}\label{hopping__flees_8cpp_a74577585cf12d1712ab9c57616d49205}
+\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!n\+\_\+reps@{n\+\_\+reps}}
 \index{n\+\_\+reps@{n\+\_\+reps}!hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}}
-\subsubsection[{n\+\_\+reps}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int n\+\_\+reps = 10000}\label{hopping__flees_8cpp_a78feae20120a9911b61dd580ef2ea84c}
-\hypertarget{hopping__flees_8cpp_ad251c3b522fa0013889f3bdf29c11077}{}\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!n\+\_\+states@{n\+\_\+states}}
+\subsubsection[{\texorpdfstring{n\+\_\+reps}{n_reps}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int n\+\_\+reps = 10000}\hypertarget{hopping__flees_8cpp_a78feae20120a9911b61dd580ef2ea84c}{}\label{hopping__flees_8cpp_a78feae20120a9911b61dd580ef2ea84c}
+\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!n\+\_\+states@{n\+\_\+states}}
 \index{n\+\_\+states@{n\+\_\+states}!hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}}
-\subsubsection[{n\+\_\+states}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t n\+\_\+states = 3}\label{hopping__flees_8cpp_ad251c3b522fa0013889f3bdf29c11077}
-\hypertarget{hopping__flees_8cpp_add92b1a08159aa93b09e02e5794e3bd3}{}\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!n\+\_\+time\+\_\+steps@{n\+\_\+time\+\_\+steps}}
+\subsubsection[{\texorpdfstring{n\+\_\+states}{n_states}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t n\+\_\+states = 3}\hypertarget{hopping__flees_8cpp_ad251c3b522fa0013889f3bdf29c11077}{}\label{hopping__flees_8cpp_ad251c3b522fa0013889f3bdf29c11077}
+\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!n\+\_\+time\+\_\+steps@{n\+\_\+time\+\_\+steps}}
 \index{n\+\_\+time\+\_\+steps@{n\+\_\+time\+\_\+steps}!hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}}
-\subsubsection[{n\+\_\+time\+\_\+steps}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int n\+\_\+time\+\_\+steps = 1000}\label{hopping__flees_8cpp_add92b1a08159aa93b09e02e5794e3bd3}
-\hypertarget{hopping__flees_8cpp_a5b5e3f03e443adea974601f295136638}{}\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!q@{q}}
+\subsubsection[{\texorpdfstring{n\+\_\+time\+\_\+steps}{n_time_steps}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int n\+\_\+time\+\_\+steps = 1000}\hypertarget{hopping__flees_8cpp_add92b1a08159aa93b09e02e5794e3bd3}{}\label{hopping__flees_8cpp_add92b1a08159aa93b09e02e5794e3bd3}
+\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!q@{q}}
 \index{q@{q}!hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}}
-\subsubsection[{q}]{\setlength{\rightskip}{0pt plus 5cm}double q = {\bf mu}+{\bf la}}\label{hopping__flees_8cpp_a5b5e3f03e443adea974601f295136638}
-\hypertarget{hopping__flees_8cpp_a1b302ed1559953dd1f3fa9daad206409}{}\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!q\+\_\+matrix@{q\+\_\+matrix}}
+\subsubsection[{\texorpdfstring{q}{q}}]{\setlength{\rightskip}{0pt plus 5cm}double q = {\bf mu}+{\bf la}}\hypertarget{hopping__flees_8cpp_a5b5e3f03e443adea974601f295136638}{}\label{hopping__flees_8cpp_a5b5e3f03e443adea974601f295136638}
+\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!q\+\_\+matrix@{q\+\_\+matrix}}
 \index{q\+\_\+matrix@{q\+\_\+matrix}!hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}}
-\subsubsection[{q\+\_\+matrix}]{\setlength{\rightskip}{0pt plus 5cm}double q\+\_\+matrix\mbox{[}$\,$\mbox{]}}\label{hopping__flees_8cpp_a1b302ed1559953dd1f3fa9daad206409}
+\subsubsection[{\texorpdfstring{q\+\_\+matrix}{q_matrix}}]{\setlength{\rightskip}{0pt plus 5cm}double q\+\_\+matrix\mbox{[}$\,$\mbox{]}}\hypertarget{hopping__flees_8cpp_a1b302ed1559953dd1f3fa9daad206409}{}\label{hopping__flees_8cpp_a1b302ed1559953dd1f3fa9daad206409}
 {\bfseries Initial value\+:}
 \begin{DoxyCode}
 = \{ -\hyperlink{hopping__flees_8cpp_a5b5e3f03e443adea974601f295136638}{q}, \hyperlink{hopping__flees_8cpp_a74577585cf12d1712ab9c57616d49205}{mu}, \hyperlink{hopping__flees_8cpp_a7c5c962413e7b54fde1f44db08451677}{la},
                       \hyperlink{hopping__flees_8cpp_a7c5c962413e7b54fde1f44db08451677}{la}, -\hyperlink{hopping__flees_8cpp_a5b5e3f03e443adea974601f295136638}{q}, \hyperlink{hopping__flees_8cpp_a74577585cf12d1712ab9c57616d49205}{mu},
                       \hyperlink{hopping__flees_8cpp_a74577585cf12d1712ab9c57616d49205}{mu}, \hyperlink{hopping__flees_8cpp_a7c5c962413e7b54fde1f44db08451677}{la}, -q\}
 \end{DoxyCode}
-\hypertarget{hopping__flees_8cpp_a856338f4004d23c28b7acb6550576c23}{}\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!s\+\_\+init@{s\+\_\+init}}
+\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!s\+\_\+init@{s\+\_\+init}}
 \index{s\+\_\+init@{s\+\_\+init}!hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}}
-\subsubsection[{s\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int s\+\_\+init = 0}\label{hopping__flees_8cpp_a856338f4004d23c28b7acb6550576c23}
-\hypertarget{hopping__flees_8cpp_a69bcd76a76d7e5503a922700fd0d919f}{}\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!t\+\_\+max@{t\+\_\+max}}
+\subsubsection[{\texorpdfstring{s\+\_\+init}{s_init}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int s\+\_\+init = 0}\hypertarget{hopping__flees_8cpp_a856338f4004d23c28b7acb6550576c23}{}\label{hopping__flees_8cpp_a856338f4004d23c28b7acb6550576c23}
+\index{hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}!t\+\_\+max@{t\+\_\+max}}
 \index{t\+\_\+max@{t\+\_\+max}!hopping\+\_\+flees.\+cpp@{hopping\+\_\+flees.\+cpp}}
-\subsubsection[{t\+\_\+max}]{\setlength{\rightskip}{0pt plus 5cm}double t\+\_\+max = 1}\label{hopping__flees_8cpp_a69bcd76a76d7e5503a922700fd0d919f}
+\subsubsection[{\texorpdfstring{t\+\_\+max}{t_max}}]{\setlength{\rightskip}{0pt plus 5cm}double t\+\_\+max = 1}\hypertarget{hopping__flees_8cpp_a69bcd76a76d7e5503a922700fd0d919f}{}\label{hopping__flees_8cpp_a69bcd76a76d7e5503a922700fd0d919f}

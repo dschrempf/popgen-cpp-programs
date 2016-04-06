@@ -14,15 +14,6 @@
 
 @SET_MAKE@
 
-# Automatically Generated Makefile by EDE.
-# For use with: automake
-# Relative File Name: include/Makefile.am
-#
-# DO NOT MODIFY THIS FILE OR YOUR CHANGES MAY BE LOST.
-# EDE is the Emacs Development Environment.
-# http://cedet.sourceforge.net/ede.shtml
-#
-
 VPATH = @srcdir@
 am__is_gnu_make = { \
   if test -z '$(MAKELEVEL)'; then \
@@ -136,13 +127,19 @@ am__uninstall_files_from_dir = { \
   }
 am__installdirs = "$(DESTDIR)$(libdir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
-libran_generator_la_LIBADD =
-am_libran_generator_la_OBJECTS = ran_generator.lo
-libran_generator_la_OBJECTS = $(am_libran_generator_la_OBJECTS)
+libctmc_la_LIBADD =
+am_libctmc_la_OBJECTS = ctmc.lo
+libctmc_la_OBJECTS = $(am_libctmc_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
+libran_generator_la_LIBADD =
+am_libran_generator_la_OBJECTS = ran_generator.lo
+libran_generator_la_OBJECTS = $(am_libran_generator_la_OBJECTS)
+libtools_la_LIBADD =
+am_libtools_la_OBJECTS = tools.lo
+libtools_la_OBJECTS = $(am_libtools_la_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -177,8 +174,10 @@ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
 am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(libran_generator_la_SOURCES)
-DIST_SOURCES = $(libran_generator_la_SOURCES)
+SOURCES = $(libctmc_la_SOURCES) $(libran_generator_la_SOURCES) \
+	$(libtools_la_SOURCES)
+DIST_SOURCES = $(libctmc_la_SOURCES) $(libran_generator_la_SOURCES) \
+	$(libtools_la_SOURCES)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -263,7 +262,16 @@ CPPFLAGS = @CPPFLAGS@
 CXX = @CXX@
 CXXCPP = @CXXCPP@
 CXXDEPMODE = @CXXDEPMODE@
-CXXFLAGS = @CXXFLAGS@
+
+# Automatically Generated Makefile by EDE.
+# For use with: automake
+# Relative File Name: include/Makefile.am
+#
+# DO NOT MODIFY THIS FILE OR YOUR CHANGES MAY BE LOST.
+# EDE is the Emacs Development Environment.
+# http://cedet.sourceforge.net/ede.shtml
+#
+CXXFLAGS = -g -O0
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
@@ -371,8 +379,12 @@ top = ../
 ede_FILES = Project.ede Makefile.am
 SUBDIRS = 
 EXTRA_DIST = Project.ede
-lib_LTLIBRARIES = libran_generator.la
+lib_LTLIBRARIES = libran_generator.la libctmc.la\
+   libtools.la
+
 libran_generator_la_SOURCES = ran_generator.cpp
+libctmc_la_SOURCES = ctmc.cpp
+libtools_la_SOURCES = tools.cpp
 all: all-recursive
 
 .SUFFIXES:
@@ -442,8 +454,14 @@ clean-libLTLIBRARIES:
 	  rm -f $${locs}; \
 	}
 
+libctmc.la: $(libctmc_la_OBJECTS) $(libctmc_la_DEPENDENCIES) $(EXTRA_libctmc_la_DEPENDENCIES) 
+	$(AM_V_CXXLD)$(CXXLINK) -rpath $(libdir) $(libctmc_la_OBJECTS) $(libctmc_la_LIBADD) $(LIBS)
+
 libran_generator.la: $(libran_generator_la_OBJECTS) $(libran_generator_la_DEPENDENCIES) $(EXTRA_libran_generator_la_DEPENDENCIES) 
 	$(AM_V_CXXLD)$(CXXLINK) -rpath $(libdir) $(libran_generator_la_OBJECTS) $(libran_generator_la_LIBADD) $(LIBS)
+
+libtools.la: $(libtools_la_OBJECTS) $(libtools_la_DEPENDENCIES) $(EXTRA_libtools_la_DEPENDENCIES) 
+	$(AM_V_CXXLD)$(CXXLINK) -rpath $(libdir) $(libtools_la_OBJECTS) $(libtools_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -451,7 +469,9 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ctmc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ran_generator.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tools.Plo@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

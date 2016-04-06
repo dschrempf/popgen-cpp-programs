@@ -1,6 +1,6 @@
 #! /bin/sh
 # Generated automatically by config.status (cpp_programs) 1.0
-# Libtool was configured on host arbeitsbaer:
+# Libtool was configured on host schwarzbaer:
 # NOTE: Changes made to this file will be lost: look at ltmain.sh.
 
 # Provide generalized library-building support services.
@@ -97,7 +97,7 @@ NM="/usr/bin/nm -B"
 LN_S="ln -s"
 
 # What is the maximum length of a command?
-max_cmd_len=1635000
+max_cmd_len=1572864
 
 # Object file suffix (normally "o").
 objext=o
@@ -282,10 +282,10 @@ finish_eval=""
 hardcode_into_libs=yes
 
 # Compile-time system search path for libraries.
-sys_lib_search_path_spec="/usr/lib/hardening-wrapper/bin /usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0 /usr/lib /lib "
+sys_lib_search_path_spec="/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0 /usr/lib /lib "
 
 # Detected run-time system search path for libraries.
-sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/lib/R/lib /usr/lib/libfakeroot /usr/lib/ /usr/lib/ffmpeg-compat/ /usr/lib32 /usr/lib/openmpi "
+sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/lib/R/lib /usr/lib/libfakeroot /usr/lib/ /usr/lib/ffmpeg2.8/ /usr/lib32 "
 
 # Explicit LT_SYS_LIBRARY_PATH set during ./configure time.
 configure_time_lt_sys_library_path=""
@@ -305,7 +305,7 @@ striplib="strip --strip-unneeded"
 
 
 # The linker used to build libraries.
-LD="/usr/lib/hardening-wrapper/bin/ld -m elf_x86_64"
+LD="/usr/bin/ld -m elf_x86_64"
 
 # How to create reloadable object files.
 reload_flag=" -r"
@@ -11661,7 +11661,7 @@ build_old_libs=`case $build_libtool_libs in yes) echo no;; *) echo yes;; esac`
 # ### BEGIN LIBTOOL TAG CONFIG: CXX
 
 # The linker used to build libraries.
-LD="/usr/lib/hardening-wrapper/bin/ld -m elf_x86_64"
+LD="/usr/bin/ld -m elf_x86_64"
 
 # How to create reloadable object files.
 reload_flag=" -r"
@@ -11792,17 +11792,17 @@ file_list_spec=""
 hardcode_action=immediate
 
 # The directories searched by this compiler when creating a shared library.
-compiler_lib_search_dirs="/usr/lib/hardening-wrapper/bin /usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0 /usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0/../../../../lib /lib/../lib /usr/lib/../lib /usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0/../../.."
+compiler_lib_search_dirs="/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0 /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib /lib/../lib /usr/lib/../lib /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../.."
 
 # Dependencies to place before and after the objects being linked to
 # create a shared library.
-predep_objects="/usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0/crtbeginS.o"
-postdep_objects="/usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0/crtendS.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0/../../../../lib/crtn.o"
+predep_objects="/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtbeginS.o"
+postdep_objects="/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/crtendS.o /usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib/crtn.o"
 predeps=""
 postdeps="-lstdc++ -lm -lgcc_s -lc -lgcc_s"
 
 # The library search path used internally by the compiler when linking
 # a shared library.
-compiler_lib_search_path="-L/usr/lib/hardening-wrapper/bin -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0 -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.2.0/../../.."
+compiler_lib_search_path="-L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0 -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/../../.."
 
 # ### END LIBTOOL TAG CONFIG: CXX

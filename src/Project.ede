@@ -27,7 +27,7 @@
       :path ""
       :source '("coin_toss_mcmc.cpp")
       :configuration-variables nil
-      :ldlibs '("gsl" "gslcblas"))
+      :ldlibs '("gsl" "cblas"))
     (ede-proj-target-makefile-program "cube_mcmc"
       :name "cube_mcmc"
       :path ""
@@ -51,19 +51,19 @@
       :path ""
       :source '("stepping_stone_model.cpp")
       :configuration-variables nil
-      :ldlibs '("gsl" "gslcblas"))
+      :ldlibs '("gsl" "cblas"))
     (ede-proj-target-makefile-program "general_discrete_distributions"
       :name "general_discrete_distributions"
       :path ""
       :source '("general_discrete_distributions.cpp")
       :configuration-variables nil
-      :ldlibs '("gsl" "gslcblas"))
+      :ldlibs '("gsl" "cblas"))
     (ede-proj-target-makefile-program "general_discrete_markov_chain"
       :name "general_discrete_markov_chain"
       :path ""
       :source '("general_discrete_markov_chain.cpp")
       :configuration-variables nil
-      :ldlibs '("gsl" "gslcblas"))
+      :ldlibs '("gsl" "cblas"))
     (ede-proj-target-makefile-program "Continuous Markov Chain - Norris - Exercise 2.3.2"
       :name "continuous_markov_chain_norris_ex_2_3_2"
       :path ""
@@ -77,7 +77,14 @@
       :source '("hopping_flees.cpp")
       :configuration-variables nil
       :ldlibs-local '("../include/libran_generator.la")
+      :ldlibs '("gsl" "cblas"))
+    (ede-proj-target-makefile-program "moran_model_boundary_mutation"
+      :name "moran_model_boundary_mutation"
+      :path ""
+      :source '("moran_model_boundary_mutation.cpp")
+      :configuration-variables nil
+      :ldlibs-local '("../include/libtools.la" "../include/libran_generator.la" "../include/libctmc.la")
       :ldlibs '("gsl" "cblas")))
   :makefile-type 'Makefile.am
   :variables '(("AM_CPPFLAGS" . "-I../include"))
-  :configuration-variables '(("debug" ("AM_CXXFLAGS" . "-g -O0"))))
+  :configuration-variables '(("debug" ("CXXFLAGS" . "-g -O0 -std=c++11"))))

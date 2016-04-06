@@ -41,15 +41,14 @@ class Chain
 {
 public:
     Chain () {t=0; s=0;};
-    Chain (double t_init, int s_init) {t=t_init; s=s_init;};
     double t;                   /**< time */
     int s;                      /**< state */
 };
 
 bool jump (Chain * chain, double beta, RanGen * rg)
 {
-    double holding_time = rg->get_ran_exponential(1.0/lambda);
-    double d = rg->get_uniform();
+    double holding_time = rg->pick_exponential(1.0/lambda);
+    double d = rg->pick_uniform();
     chain->s+=1;
     chain->t+=holding_time;
     if (d < beta) return false;

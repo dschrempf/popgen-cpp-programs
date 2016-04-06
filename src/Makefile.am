@@ -7,7 +7,7 @@
 # http://cedet.sourceforge.net/ede.shtml
 #
 AM_CPPFLAGS=-I../include
-AM_CXXFLAGS=-g -O0
+CXXFLAGS=-g -O0 -std=c++11
 
 top=../
 ede_FILES=Project.ede Makefile.am
@@ -18,7 +18,7 @@ bin_PROGRAMS=genetic_drift hitchhiking ehrenfest_mcmc\
    coin_toss_mcmc cube_mcmc brownian_motion_mcmc\
    bookshelf stepping_stone_model general_discrete_distributions\
    general_discrete_markov_chain continuous_markov_chain_norris_ex_2_3_2\
-   hopping_flees
+   hopping_flees moran_model_boundary_mutation
 genetic_drift_SOURCES=genetic_drift.cpp
 hitchhiking_SOURCES=hitchhiking.c
 ehrenfest_mcmc_SOURCES=ehrenfest_mcmc.cpp
@@ -31,17 +31,19 @@ general_discrete_distributions_SOURCES=general_discrete_distributions.cpp
 general_discrete_markov_chain_SOURCES=general_discrete_markov_chain.cpp
 continuous_markov_chain_norris_ex_2_3_2_SOURCES=continuous_markov_chain_norris_ex_2_3_2.cpp
 hopping_flees_SOURCES=hopping_flees.cpp
+moran_model_boundary_mutation_SOURCES=moran_model_boundary_mutation.cpp
 genetic_drift_LDADD= -lgsl -lcblas
 hitchhiking_LDADD=
 ehrenfest_mcmc_LDADD= -lgsl -lcblas
-coin_toss_mcmc_LDADD= -lgsl -lgslcblas
+coin_toss_mcmc_LDADD= -lgsl -lcblas
 cube_mcmc_LDADD= -lgsl -lcblas
 brownian_motion_mcmc_LDADD= -lgsl -lcblas
 bookshelf_LDADD= -lgsl -lgslcblas
-stepping_stone_model_LDADD= -lgsl -lgslcblas
-general_discrete_distributions_LDADD= -lgsl -lgslcblas
-general_discrete_markov_chain_LDADD= -lgsl -lgslcblas
+stepping_stone_model_LDADD= -lgsl -lcblas
+general_discrete_distributions_LDADD= -lgsl -lcblas
+general_discrete_markov_chain_LDADD= -lgsl -lcblas
 continuous_markov_chain_norris_ex_2_3_2_LDADD= ../include/libran_generator.la -lgsl -lcblas
 hopping_flees_LDADD= ../include/libran_generator.la -lgsl -lcblas
+moran_model_boundary_mutation_LDADD= ../include/libtools.la ../include/libran_generator.la ../include/libctmc.la -lgsl -lcblas
 
 # End of Makefile.am
