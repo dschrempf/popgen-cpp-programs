@@ -101,55 +101,67 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6fb6789701149da7bdd88c11d3ce261b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a6fb6789701149da7bdd88c11d3ce261b">CTMC</a> ()</td></tr>
-<tr class="separator:a6fb6789701149da7bdd88c11d3ce261b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fd843a783503405abdd6e96f3f3511e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a0fd843a783503405abdd6e96f3f3511e">CTMC</a> (double t_init, int <a class="el" href="hopping__flees_8cpp.html#a856338f4004d23c28b7acb6550576c23">s_init</a>)</td></tr>
-<tr class="separator:a0fd843a783503405abdd6e96f3f3511e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a216702013face42d4fa576e80ecc9901"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a216702013face42d4fa576e80ecc9901">~CTMCT</a> ()</td></tr>
-<tr class="separator:a216702013face42d4fa576e80ecc9901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83debe41139512a3fee5aefdfdfbd1b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a83debe41139512a3fee5aefdfdfbd1b6">CTMC</a> (gsl_matrix *q, size_t ns, bool log_path=false)</td></tr>
+<tr class="separator:a83debe41139512a3fee5aefdfdfbd1b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0970e63a5bf714678fca63123be8cd87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a0970e63a5bf714678fca63123be8cd87">~CTMC</a> ()</td></tr>
+<tr class="separator:a0970e63a5bf714678fca63123be8cd87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11dcb1006eee5d7d239257e3171ac9d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a11dcb1006eee5d7d239257e3171ac9d7">jump_maybe</a> (double dt_max)</td></tr>
+<tr class="separator:a11dcb1006eee5d7d239257e3171ac9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67388d53e74549f82f67271873d87dd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a67388d53e74549f82f67271873d87dd9">jump</a> ()</td></tr>
+<tr class="separator:a67388d53e74549f82f67271873d87dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e200ff31cd91679d7b050fcc4547336"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a3e200ff31cd91679d7b050fcc4547336">jump_silently</a> ()</td></tr>
+<tr class="separator:a3e200ff31cd91679d7b050fcc4547336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adebed1754c9d39b4f87520d480030450"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#adebed1754c9d39b4f87520d480030450">burn_it_in</a> ()</td></tr>
+<tr class="separator:adebed1754c9d39b4f87520d480030450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad95f38b7dcc275c5924f9280299e8312"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ctmc_8h.html#a981216161467119699bb029cc534bbca">state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#ad95f38b7dcc275c5924f9280299e8312">run</a> (double dt)</td></tr>
+<tr class="separator:ad95f38b7dcc275c5924f9280299e8312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c61cebeb8221645fe7121e63aa520f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a73c61cebeb8221645fe7121e63aa520f">print_info</a> (std::ostream &amp;out)</td></tr>
+<tr class="separator:a73c61cebeb8221645fe7121e63aa520f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a92fd2378d26736c32eb309021506c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#ab9a92fd2378d26736c32eb309021506c">print_info_short</a> (std::ostream &amp;out)</td></tr>
+<tr class="separator:ab9a92fd2378d26736c32eb309021506c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae69dcedf459f8c4b7d353f53df27f91b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#ae69dcedf459f8c4b7d353f53df27f91b">set_log_level</a> (unsigned int level=1)</td></tr>
+<tr class="separator:ae69dcedf459f8c4b7d353f53df27f91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9451758b0d0c4d3b14af4dda0e5252ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a9451758b0d0c4d3b14af4dda0e5252ad">log_push_back</a> ()</td></tr>
+<tr class="separator:a9451758b0d0c4d3b14af4dda0e5252ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bbba0ff2e4a23356575f0d15bb18c4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a4bbba0ff2e4a23356575f0d15bb18c4c">print_path</a> (std::ostream &amp;out)</td></tr>
+<tr class="separator:a4bbba0ff2e4a23356575f0d15bb18c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0de80520a9bbe71ad95a806a55c5c07a"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a0de80520a9bbe71ad95a806a55c5c07a">get_state_vector</a> () const </td></tr>
+<tr class="separator:a0de80520a9bbe71ad95a806a55c5c07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343fa2a99df5f87b030cb0eab41401fa"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a343fa2a99df5f87b030cb0eab41401fa">get_time_vector</a> () const </td></tr>
+<tr class="separator:a343fa2a99df5f87b030cb0eab41401fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afade7a3ed68d500d6ab5c54c0e9f3046"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#afade7a3ed68d500d6ab5c54c0e9f3046">analyze_jump</a> ()</td></tr>
+<tr class="separator:afade7a3ed68d500d6ab5c54c0e9f3046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aa6d5e2d8e162e617dc1f203eccf671"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a1aa6d5e2d8e162e617dc1f203eccf671">print_direct_hitting_times</a> (std::ostream &amp;out)</td></tr>
+<tr class="separator:a1aa6d5e2d8e162e617dc1f203eccf671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44e553e43ff21da3247d1f0725f27db5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a44e553e43ff21da3247d1f0725f27db5">print_hitting_times</a> (std::ostream &amp;out)</td></tr>
+<tr class="separator:a44e553e43ff21da3247d1f0725f27db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2410e24241c82fef7948c7b508f6b36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#aa2410e24241c82fef7948c7b508f6b36">print_direct_number_jumps</a> (std::ostream &amp;out)</td></tr>
+<tr class="separator:aa2410e24241c82fef7948c7b508f6b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a247ac30f3240cf50b97d30064f8c349e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCTMC.html#a247ac30f3240cf50b97d30064f8c349e">print_invariant_distribution</a> (std::ostream &amp;out)</td></tr>
+<tr class="separator:a247ac30f3240cf50b97d30064f8c349e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a6fb6789701149da7bdd88c11d3ce261b"></a>
+<a class="anchor" id="a83debe41139512a3fee5aefdfdfbd1b6"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">CTMC::CTMC </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a0fd843a783503405abdd6e96f3f3511e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">CTMC::CTMC </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>t_init</em>, </td>
+          <td class="paramtype">gsl_matrix *&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>s_init</em>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>ns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>log_path</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -157,29 +169,25 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<p>Initialize the chain with a specific time and state.</p>
+<p>Initialize the chain.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t_init</td><td>the initial time. </td></tr>
-    <tr><td class="paramname">s_init</td><td>the inital state. </td></tr>
+    <tr><td class="paramname">q</td><td>the transition rate matrix Q. </td></tr>
+    <tr><td class="paramname">ns</td><td>the number of states. </td></tr>
+    <tr><td class="paramname">log_path</td><td>set to true to log the full path. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a216702013face42d4fa576e80ecc9901"></a>
+<a class="anchor" id="a0970e63a5bf714678fca63123be8cd87"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">CTMC::~CTMCT </td>
+          <td class="memname">CTMC::~CTMC </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -189,13 +197,352 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="afade7a3ed68d500d6ab5c54c0e9f3046"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::analyze_jump </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Traverses logs and analyzes them.</p><ul>
+<li>Determins the average hitting time from state a to state b.</li>
+<li>Determins the average number of jumps from state a to state b.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out_average_hitting_time</td><td>OUT. </td></tr>
+    <tr><td class="paramname">out_average_n_jumps</td><td>OUT. </td></tr>
+    <tr><td class="paramname">burn_in</td><td>number of jumps to wait before checking times.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>average hitting time. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adebed1754c9d39b4f87520d480030450"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::burn_it_in </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Evolve the chain for the number of jumps specified in burn_in. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0de80520a9bbe71ad95a806a55c5c07a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;unsigned int&gt; CTMC::get_state_vector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a343fa2a99df5f87b030cb0eab41401fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;double&gt; CTMC::get_time_vector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a67388d53e74549f82f67271873d87dd9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::jump </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Let the chain jump one.</p>
+<p>The time is not changed, the new state is determined according to the distribution of the q_ij. </p>
+
+</div>
+</div>
+<a class="anchor" id="a11dcb1006eee5d7d239257e3171ac9d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::jump_maybe </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dt_max</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Let the chain jump once if the time to the next jump does not exceed the given value.</p>
+<p>Wait some time t that is exponentially distributed with 1/q_ii. If t &lt; dt_max, let the chain jumps once. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3e200ff31cd91679d7b050fcc4547336"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::jump_silently </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Same as <a class="el" href="classCTMC.html#a67388d53e74549f82f67271873d87dd9">jump()</a> but not logs, etc. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9451758b0d0c4d3b14af4dda0e5252ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::log_push_back </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Log current state of Markov chain. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1aa6d5e2d8e162e617dc1f203eccf671"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::print_direct_hitting_times </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa2410e24241c82fef7948c7b508f6b36"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::print_direct_number_jumps </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a44e553e43ff21da3247d1f0725f27db5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::print_hitting_times </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a73c61cebeb8221645fe7121e63aa520f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::print_info </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Print info about the <a class="el" href="classCTMC.html">CTMC</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>output stream. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab9a92fd2378d26736c32eb309021506c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::print_info_short </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Print short info about the <a class="el" href="classCTMC.html">CTMC</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>output stream. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a247ac30f3240cf50b97d30064f8c349e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::print_invariant_distribution </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4bbba0ff2e4a23356575f0d15bb18c4c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::print_path </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Print the states and times.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>output stream. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad95f38b7dcc275c5924f9280299e8312"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ctmc_8h.html#a981216161467119699bb029cc534bbca">state</a> CTMC::run </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Let the chain run for the given time.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>the time to run.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the state the chain ends up in. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae69dcedf459f8c4b7d353f53df27f91b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CTMC::set_log_level </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>level</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the log level from 0 (silent) to 3 (debug). Default is 1. nnn</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>log level. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="ctmc_8h_source.html">ctmc.h</a></li>
+<li>include/<a class="el" href="ctmc_8cpp.html">ctmc.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 4 2016 13:58:04 for PopGen C/C++ Programs by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 8 2016 18:55:46 for PopGen C/C++ Programs by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

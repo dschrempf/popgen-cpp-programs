@@ -7,48 +7,259 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCTMC_a6fb6789701149da7bdd88c11d3ce261b}{C\+T\+MC} ()
+\hyperlink{classCTMC_a83debe41139512a3fee5aefdfdfbd1b6}{C\+T\+MC} (gsl\+\_\+matrix $\ast$q, size\+\_\+t ns, bool log\+\_\+path=false)
 \item 
-\hyperlink{classCTMC_a0fd843a783503405abdd6e96f3f3511e}{C\+T\+MC} (double t\+\_\+init, int \hyperlink{hopping__flees_8cpp_a856338f4004d23c28b7acb6550576c23}{s\+\_\+init})
+\hyperlink{classCTMC_a0970e63a5bf714678fca63123be8cd87}{$\sim$\+C\+T\+MC} ()
 \item 
-\hyperlink{classCTMC_a216702013face42d4fa576e80ecc9901}{$\sim$\+C\+T\+M\+CT} ()
+void \hyperlink{classCTMC_a11dcb1006eee5d7d239257e3171ac9d7}{jump\+\_\+maybe} (double dt\+\_\+max)
+\item 
+void \hyperlink{classCTMC_a67388d53e74549f82f67271873d87dd9}{jump} ()
+\item 
+void \hyperlink{classCTMC_a3e200ff31cd91679d7b050fcc4547336}{jump\+\_\+silently} ()
+\item 
+void \hyperlink{classCTMC_adebed1754c9d39b4f87520d480030450}{burn\+\_\+it\+\_\+in} ()
+\item 
+\hyperlink{ctmc_8h_a981216161467119699bb029cc534bbca}{state} \hyperlink{classCTMC_ad95f38b7dcc275c5924f9280299e8312}{run} (double dt)
+\item 
+void \hyperlink{classCTMC_a73c61cebeb8221645fe7121e63aa520f}{print\+\_\+info} (std\+::ostream \&out)
+\item 
+void \hyperlink{classCTMC_ab9a92fd2378d26736c32eb309021506c}{print\+\_\+info\+\_\+short} (std\+::ostream \&out)
+\item 
+void \hyperlink{classCTMC_ae69dcedf459f8c4b7d353f53df27f91b}{set\+\_\+log\+\_\+level} (unsigned int level=1)
+\item 
+void \hyperlink{classCTMC_a9451758b0d0c4d3b14af4dda0e5252ad}{log\+\_\+push\+\_\+back} ()
+\item 
+void \hyperlink{classCTMC_a4bbba0ff2e4a23356575f0d15bb18c4c}{print\+\_\+path} (std\+::ostream \&out)
+\item 
+const std\+::vector$<$ unsigned int $>$ \hyperlink{classCTMC_a0de80520a9bbe71ad95a806a55c5c07a}{get\+\_\+state\+\_\+vector} () const 
+\item 
+const std\+::vector$<$ double $>$ \hyperlink{classCTMC_a343fa2a99df5f87b030cb0eab41401fa}{get\+\_\+time\+\_\+vector} () const 
+\item 
+void \hyperlink{classCTMC_afade7a3ed68d500d6ab5c54c0e9f3046}{analyze\+\_\+jump} ()
+\item 
+void \hyperlink{classCTMC_a1aa6d5e2d8e162e617dc1f203eccf671}{print\+\_\+direct\+\_\+hitting\+\_\+times} (std\+::ostream \&out)
+\item 
+void \hyperlink{classCTMC_a44e553e43ff21da3247d1f0725f27db5}{print\+\_\+hitting\+\_\+times} (std\+::ostream \&out)
+\item 
+void \hyperlink{classCTMC_aa2410e24241c82fef7948c7b508f6b36}{print\+\_\+direct\+\_\+number\+\_\+jumps} (std\+::ostream \&out)
+\item 
+void \hyperlink{classCTMC_a247ac30f3240cf50b97d30064f8c349e}{print\+\_\+invariant\+\_\+distribution} (std\+::ostream \&out)
 \end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{C\+T\+MC@{C\+T\+MC}!C\+T\+MC@{C\+T\+MC}}
 \index{C\+T\+MC@{C\+T\+MC}!C\+T\+MC@{C\+T\+MC}}
-\subsubsection[{\texorpdfstring{C\+T\+M\+C()}{CTMC()}}]{\setlength{\rightskip}{0pt plus 5cm}C\+T\+M\+C\+::\+C\+T\+MC (
+\subsubsection[{\texorpdfstring{C\+T\+M\+C(gsl\+\_\+matrix $\ast$q, size\+\_\+t ns, bool log\+\_\+path=false)}{CTMC(gsl_matrix *q, size_t ns, bool log_path=false)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+T\+M\+C\+::\+C\+T\+MC (
 \begin{DoxyParamCaption}
-{}
+\item[{gsl\+\_\+matrix $\ast$}]{q, }
+\item[{size\+\_\+t}]{ns, }
+\item[{bool}]{log\+\_\+path = {\ttfamily false}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCTMC_a6fb6789701149da7bdd88c11d3ce261b}{}\label{classCTMC_a6fb6789701149da7bdd88c11d3ce261b}
-\index{C\+T\+MC@{C\+T\+MC}!C\+T\+MC@{C\+T\+MC}}
-\index{C\+T\+MC@{C\+T\+MC}!C\+T\+MC@{C\+T\+MC}}
-\subsubsection[{\texorpdfstring{C\+T\+M\+C(double t\+\_\+init, int s\+\_\+init)}{CTMC(double t_init, int s_init)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+T\+M\+C\+::\+C\+T\+MC (
-\begin{DoxyParamCaption}
-\item[{double}]{t\+\_\+init, }
-\item[{int}]{s\+\_\+init}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCTMC_a0fd843a783503405abdd6e96f3f3511e}{}\label{classCTMC_a0fd843a783503405abdd6e96f3f3511e}
-Initialize the chain with a specific time and state.
+)}\hypertarget{classCTMC_a83debe41139512a3fee5aefdfdfbd1b6}{}\label{classCTMC_a83debe41139512a3fee5aefdfdfbd1b6}
+Initialize the chain.
 
 
 \begin{DoxyParams}{Parameters}
-{\em t\+\_\+init} & the initial time. \\
+{\em q} & the transition rate matrix Q. \\
 \hline
-{\em s\+\_\+init} & the inital state. \\
+{\em ns} & the number of states. \\
+\hline
+{\em log\+\_\+path} & set to true to log the full path. \\
 \hline
 \end{DoxyParams}
-\index{C\+T\+MC@{C\+T\+MC}!````~C\+T\+M\+CT@{$\sim$\+C\+T\+M\+CT}}
-\index{````~C\+T\+M\+CT@{$\sim$\+C\+T\+M\+CT}!C\+T\+MC@{C\+T\+MC}}
-\subsubsection[{\texorpdfstring{$\sim$\+C\+T\+M\+C\+T()}{~CTMCT()}}]{\setlength{\rightskip}{0pt plus 5cm}C\+T\+M\+C\+::$\sim$\+C\+T\+M\+CT (
+\index{C\+T\+MC@{C\+T\+MC}!````~C\+T\+MC@{$\sim$\+C\+T\+MC}}
+\index{````~C\+T\+MC@{$\sim$\+C\+T\+MC}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{$\sim$\+C\+T\+M\+C()}{~CTMC()}}]{\setlength{\rightskip}{0pt plus 5cm}C\+T\+M\+C\+::$\sim$\+C\+T\+MC (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\hypertarget{classCTMC_a216702013face42d4fa576e80ecc9901}{}\label{classCTMC_a216702013face42d4fa576e80ecc9901}
+)}\hypertarget{classCTMC_a0970e63a5bf714678fca63123be8cd87}{}\label{classCTMC_a0970e63a5bf714678fca63123be8cd87}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\subsection{Member Function Documentation}
+\index{C\+T\+MC@{C\+T\+MC}!analyze\+\_\+jump@{analyze\+\_\+jump}}
+\index{analyze\+\_\+jump@{analyze\+\_\+jump}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{analyze\+\_\+jump()}{analyze_jump()}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::analyze\+\_\+jump (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_afade7a3ed68d500d6ab5c54c0e9f3046}{}\label{classCTMC_afade7a3ed68d500d6ab5c54c0e9f3046}
+Traverses logs and analyzes them.
+\begin{DoxyItemize}
+\item Determins the average hitting time from state a to state b.
+\item Determins the average number of jumps from state a to state b.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+\_\+average\+\_\+hitting\+\_\+time} & O\+UT. \\
+\hline
+{\em out\+\_\+average\+\_\+n\+\_\+jumps} & O\+UT. \\
+\hline
+{\em burn\+\_\+in} & number of jumps to wait before checking times.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+average hitting time. 
+\end{DoxyReturn}
+\index{C\+T\+MC@{C\+T\+MC}!burn\+\_\+it\+\_\+in@{burn\+\_\+it\+\_\+in}}
+\index{burn\+\_\+it\+\_\+in@{burn\+\_\+it\+\_\+in}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{burn\+\_\+it\+\_\+in()}{burn_it_in()}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::burn\+\_\+it\+\_\+in (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_adebed1754c9d39b4f87520d480030450}{}\label{classCTMC_adebed1754c9d39b4f87520d480030450}
+Evolve the chain for the number of jumps specified in burn\+\_\+in. \index{C\+T\+MC@{C\+T\+MC}!get\+\_\+state\+\_\+vector@{get\+\_\+state\+\_\+vector}}
+\index{get\+\_\+state\+\_\+vector@{get\+\_\+state\+\_\+vector}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{get\+\_\+state\+\_\+vector() const }{get_state_vector() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$unsigned int$>$ C\+T\+M\+C\+::get\+\_\+state\+\_\+vector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCTMC_a0de80520a9bbe71ad95a806a55c5c07a}{}\label{classCTMC_a0de80520a9bbe71ad95a806a55c5c07a}
+\index{C\+T\+MC@{C\+T\+MC}!get\+\_\+time\+\_\+vector@{get\+\_\+time\+\_\+vector}}
+\index{get\+\_\+time\+\_\+vector@{get\+\_\+time\+\_\+vector}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{get\+\_\+time\+\_\+vector() const }{get_time_vector() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$double$>$ C\+T\+M\+C\+::get\+\_\+time\+\_\+vector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCTMC_a343fa2a99df5f87b030cb0eab41401fa}{}\label{classCTMC_a343fa2a99df5f87b030cb0eab41401fa}
+\index{C\+T\+MC@{C\+T\+MC}!jump@{jump}}
+\index{jump@{jump}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{jump()}{jump()}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::jump (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_a67388d53e74549f82f67271873d87dd9}{}\label{classCTMC_a67388d53e74549f82f67271873d87dd9}
+Let the chain jump one.
+
+The time is not changed, the new state is determined according to the distribution of the q\+\_\+ij. \index{C\+T\+MC@{C\+T\+MC}!jump\+\_\+maybe@{jump\+\_\+maybe}}
+\index{jump\+\_\+maybe@{jump\+\_\+maybe}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{jump\+\_\+maybe(double dt\+\_\+max)}{jump_maybe(double dt_max)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::jump\+\_\+maybe (
+\begin{DoxyParamCaption}
+\item[{double}]{dt\+\_\+max}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_a11dcb1006eee5d7d239257e3171ac9d7}{}\label{classCTMC_a11dcb1006eee5d7d239257e3171ac9d7}
+Let the chain jump once if the time to the next jump does not exceed the given value.
+
+Wait some time t that is exponentially distributed with 1/q\+\_\+ii. If t $<$ dt\+\_\+max, let the chain jumps once. \index{C\+T\+MC@{C\+T\+MC}!jump\+\_\+silently@{jump\+\_\+silently}}
+\index{jump\+\_\+silently@{jump\+\_\+silently}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{jump\+\_\+silently()}{jump_silently()}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::jump\+\_\+silently (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_a3e200ff31cd91679d7b050fcc4547336}{}\label{classCTMC_a3e200ff31cd91679d7b050fcc4547336}
+Same as \hyperlink{classCTMC_a67388d53e74549f82f67271873d87dd9}{jump()} but not logs, etc. \index{C\+T\+MC@{C\+T\+MC}!log\+\_\+push\+\_\+back@{log\+\_\+push\+\_\+back}}
+\index{log\+\_\+push\+\_\+back@{log\+\_\+push\+\_\+back}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{log\+\_\+push\+\_\+back()}{log_push_back()}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::log\+\_\+push\+\_\+back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_a9451758b0d0c4d3b14af4dda0e5252ad}{}\label{classCTMC_a9451758b0d0c4d3b14af4dda0e5252ad}
+Log current state of Markov chain. \index{C\+T\+MC@{C\+T\+MC}!print\+\_\+direct\+\_\+hitting\+\_\+times@{print\+\_\+direct\+\_\+hitting\+\_\+times}}
+\index{print\+\_\+direct\+\_\+hitting\+\_\+times@{print\+\_\+direct\+\_\+hitting\+\_\+times}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{print\+\_\+direct\+\_\+hitting\+\_\+times(std\+::ostream \&out)}{print_direct_hitting_times(std::ostream &out)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::print\+\_\+direct\+\_\+hitting\+\_\+times (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_a1aa6d5e2d8e162e617dc1f203eccf671}{}\label{classCTMC_a1aa6d5e2d8e162e617dc1f203eccf671}
+\index{C\+T\+MC@{C\+T\+MC}!print\+\_\+direct\+\_\+number\+\_\+jumps@{print\+\_\+direct\+\_\+number\+\_\+jumps}}
+\index{print\+\_\+direct\+\_\+number\+\_\+jumps@{print\+\_\+direct\+\_\+number\+\_\+jumps}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{print\+\_\+direct\+\_\+number\+\_\+jumps(std\+::ostream \&out)}{print_direct_number_jumps(std::ostream &out)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::print\+\_\+direct\+\_\+number\+\_\+jumps (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_aa2410e24241c82fef7948c7b508f6b36}{}\label{classCTMC_aa2410e24241c82fef7948c7b508f6b36}
+\index{C\+T\+MC@{C\+T\+MC}!print\+\_\+hitting\+\_\+times@{print\+\_\+hitting\+\_\+times}}
+\index{print\+\_\+hitting\+\_\+times@{print\+\_\+hitting\+\_\+times}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{print\+\_\+hitting\+\_\+times(std\+::ostream \&out)}{print_hitting_times(std::ostream &out)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::print\+\_\+hitting\+\_\+times (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_a44e553e43ff21da3247d1f0725f27db5}{}\label{classCTMC_a44e553e43ff21da3247d1f0725f27db5}
+\index{C\+T\+MC@{C\+T\+MC}!print\+\_\+info@{print\+\_\+info}}
+\index{print\+\_\+info@{print\+\_\+info}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{print\+\_\+info(std\+::ostream \&out)}{print_info(std::ostream &out)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::print\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_a73c61cebeb8221645fe7121e63aa520f}{}\label{classCTMC_a73c61cebeb8221645fe7121e63aa520f}
+Print info about the \hyperlink{classCTMC}{C\+T\+MC}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream. \\
+\hline
+\end{DoxyParams}
+\index{C\+T\+MC@{C\+T\+MC}!print\+\_\+info\+\_\+short@{print\+\_\+info\+\_\+short}}
+\index{print\+\_\+info\+\_\+short@{print\+\_\+info\+\_\+short}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{print\+\_\+info\+\_\+short(std\+::ostream \&out)}{print_info_short(std::ostream &out)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::print\+\_\+info\+\_\+short (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_ab9a92fd2378d26736c32eb309021506c}{}\label{classCTMC_ab9a92fd2378d26736c32eb309021506c}
+Print short info about the \hyperlink{classCTMC}{C\+T\+MC}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream. \\
+\hline
+\end{DoxyParams}
+\index{C\+T\+MC@{C\+T\+MC}!print\+\_\+invariant\+\_\+distribution@{print\+\_\+invariant\+\_\+distribution}}
+\index{print\+\_\+invariant\+\_\+distribution@{print\+\_\+invariant\+\_\+distribution}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{print\+\_\+invariant\+\_\+distribution(std\+::ostream \&out)}{print_invariant_distribution(std::ostream &out)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::print\+\_\+invariant\+\_\+distribution (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_a247ac30f3240cf50b97d30064f8c349e}{}\label{classCTMC_a247ac30f3240cf50b97d30064f8c349e}
+\index{C\+T\+MC@{C\+T\+MC}!print\+\_\+path@{print\+\_\+path}}
+\index{print\+\_\+path@{print\+\_\+path}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{print\+\_\+path(std\+::ostream \&out)}{print_path(std::ostream &out)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::print\+\_\+path (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_a4bbba0ff2e4a23356575f0d15bb18c4c}{}\label{classCTMC_a4bbba0ff2e4a23356575f0d15bb18c4c}
+Print the states and times.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream. \\
+\hline
+\end{DoxyParams}
+\index{C\+T\+MC@{C\+T\+MC}!run@{run}}
+\index{run@{run}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{run(double dt)}{run(double dt)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf state} C\+T\+M\+C\+::run (
+\begin{DoxyParamCaption}
+\item[{double}]{dt}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_ad95f38b7dcc275c5924f9280299e8312}{}\label{classCTMC_ad95f38b7dcc275c5924f9280299e8312}
+Let the chain run for the given time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & the time to run.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the state the chain ends up in. 
+\end{DoxyReturn}
+\index{C\+T\+MC@{C\+T\+MC}!set\+\_\+log\+\_\+level@{set\+\_\+log\+\_\+level}}
+\index{set\+\_\+log\+\_\+level@{set\+\_\+log\+\_\+level}!C\+T\+MC@{C\+T\+MC}}
+\subsubsection[{\texorpdfstring{set\+\_\+log\+\_\+level(unsigned int level=1)}{set_log_level(unsigned int level=1)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+T\+M\+C\+::set\+\_\+log\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{level = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}\hypertarget{classCTMC_ae69dcedf459f8c4b7d353f53df27f91b}{}\label{classCTMC_ae69dcedf459f8c4b7d353f53df27f91b}
+Set the log level from 0 (silent) to 3 (debug). Default is 1. nnn
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & log level. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{ctmc_8h}{ctmc.\+h}\end{DoxyCompactItemize}
+include/\hyperlink{ctmc_8h}{ctmc.\+h}\item 
+include/\hyperlink{ctmc_8cpp}{ctmc.\+cpp}\end{DoxyCompactItemize}

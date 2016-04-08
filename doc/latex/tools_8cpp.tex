@@ -1,0 +1,148 @@
+\hypertarget{tools_8cpp}{}\section{include/tools.cpp File Reference}
+\label{tools_8cpp}\index{include/tools.\+cpp@{include/tools.\+cpp}}
+{\ttfamily \#include \char`\"{}tools.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{tools_8cpp_a13d89477df5648e7f979d2268ee461d9}{out\+\_\+warning} (const char $\ast$warn)
+\item 
+void \hyperlink{tools_8cpp_a7185517f8c9969a6a8dc5811d55ec7f4}{out\+\_\+warning} (std\+::string warn)
+\item 
+void \hyperlink{tools_8cpp_ae2a5aa378d076855689ad9c1d1307f2a}{out\+\_\+error} (const char $\ast$error)
+\item 
+void \hyperlink{tools_8cpp_a3dbffc5c9682a9da13687a512651595f}{out\+\_\+error} (std\+::string error)
+\item 
+void \hyperlink{tools_8cpp_a63fd4002a246d6887a12078d332a4ea4}{gsl\+\_\+matrix\+\_\+set\+\_\+row\+\_\+to\+\_\+value} (gsl\+\_\+matrix $\ast$m, const size\+\_\+t i, double x)
+\item 
+void \hyperlink{tools_8cpp_aecb52c7e73590d65cfa5e9fd0e27fdeb}{gsl\+\_\+matrix\+\_\+entry\+\_\+add} (gsl\+\_\+matrix $\ast$m, const size\+\_\+t i, const size\+\_\+t j, double x)
+\item 
+void \hyperlink{tools_8cpp_af556395c48d5f08deffd146aa5b1d838}{gsl\+\_\+matrix\+\_\+print} (gsl\+\_\+matrix $\ast$m, std\+::ostream \&out, size\+\_\+t p)
+\item 
+void \hyperlink{tools_8cpp_adde6fc82e8c40d7d302bd8e108b4736f}{f\+\_\+ostream\+\_\+to\+\_\+file} (void($\ast$p\+\_\+f)(std\+::ostream \&), char const $\ast$fn)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{tools.\+cpp@{tools.\+cpp}!f\+\_\+ostream\+\_\+to\+\_\+file@{f\+\_\+ostream\+\_\+to\+\_\+file}}
+\index{f\+\_\+ostream\+\_\+to\+\_\+file@{f\+\_\+ostream\+\_\+to\+\_\+file}!tools.\+cpp@{tools.\+cpp}}
+\subsubsection[{\texorpdfstring{f\+\_\+ostream\+\_\+to\+\_\+file(void($\ast$p\+\_\+f)(std\+::ostream \&), char const $\ast$fn)}{f_ostream_to_file(void(*p_f)(std::ostream &), char const *fn)}}]{\setlength{\rightskip}{0pt plus 5cm}void f\+\_\+ostream\+\_\+to\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(std\+::ostream \&)}]{p\+\_\+f, }
+\item[{char const $\ast$}]{fn}
+\end{DoxyParamCaption}
+)}\hypertarget{tools_8cpp_adde6fc82e8c40d7d302bd8e108b4736f}{}\label{tools_8cpp_adde6fc82e8c40d7d302bd8e108b4736f}
+\index{tools.\+cpp@{tools.\+cpp}!gsl\+\_\+matrix\+\_\+entry\+\_\+add@{gsl\+\_\+matrix\+\_\+entry\+\_\+add}}
+\index{gsl\+\_\+matrix\+\_\+entry\+\_\+add@{gsl\+\_\+matrix\+\_\+entry\+\_\+add}!tools.\+cpp@{tools.\+cpp}}
+\subsubsection[{\texorpdfstring{gsl\+\_\+matrix\+\_\+entry\+\_\+add(gsl\+\_\+matrix $\ast$m, const size\+\_\+t i, const size\+\_\+t j, double x)}{gsl_matrix_entry_add(gsl_matrix *m, const size_t i, const size_t j, double x)}}]{\setlength{\rightskip}{0pt plus 5cm}void gsl\+\_\+matrix\+\_\+entry\+\_\+add (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+matrix $\ast$}]{m, }
+\item[{const size\+\_\+t}]{i, }
+\item[{const size\+\_\+t}]{j, }
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{tools_8cpp_aecb52c7e73590d65cfa5e9fd0e27fdeb}{}\label{tools_8cpp_aecb52c7e73590d65cfa5e9fd0e27fdeb}
+Add value to element in matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & pointer to matrix. \\
+\hline
+{\em i} & row number. \\
+\hline
+{\em j} & column number. \\
+\hline
+{\em x} & value to add. \\
+\hline
+\end{DoxyParams}
+\index{tools.\+cpp@{tools.\+cpp}!gsl\+\_\+matrix\+\_\+print@{gsl\+\_\+matrix\+\_\+print}}
+\index{gsl\+\_\+matrix\+\_\+print@{gsl\+\_\+matrix\+\_\+print}!tools.\+cpp@{tools.\+cpp}}
+\subsubsection[{\texorpdfstring{gsl\+\_\+matrix\+\_\+print(gsl\+\_\+matrix $\ast$m, std\+::ostream \&out, size\+\_\+t p)}{gsl_matrix_print(gsl_matrix *m, std::ostream &out, size_t p)}}]{\setlength{\rightskip}{0pt plus 5cm}void gsl\+\_\+matrix\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+matrix $\ast$}]{m, }
+\item[{std\+::ostream \&}]{out, }
+\item[{size\+\_\+t}]{precision = {\ttfamily 3}}
+\end{DoxyParamCaption}
+)}\hypertarget{tools_8cpp_af556395c48d5f08deffd146aa5b1d838}{}\label{tools_8cpp_af556395c48d5f08deffd146aa5b1d838}
+Print a gsl\+\_\+matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & the matrix to print. \\
+\hline
+\end{DoxyParams}
+\index{tools.\+cpp@{tools.\+cpp}!gsl\+\_\+matrix\+\_\+set\+\_\+row\+\_\+to\+\_\+value@{gsl\+\_\+matrix\+\_\+set\+\_\+row\+\_\+to\+\_\+value}}
+\index{gsl\+\_\+matrix\+\_\+set\+\_\+row\+\_\+to\+\_\+value@{gsl\+\_\+matrix\+\_\+set\+\_\+row\+\_\+to\+\_\+value}!tools.\+cpp@{tools.\+cpp}}
+\subsubsection[{\texorpdfstring{gsl\+\_\+matrix\+\_\+set\+\_\+row\+\_\+to\+\_\+value(gsl\+\_\+matrix $\ast$m, const size\+\_\+t i, double x)}{gsl_matrix_set_row_to_value(gsl_matrix *m, const size_t i, double x)}}]{\setlength{\rightskip}{0pt plus 5cm}void gsl\+\_\+matrix\+\_\+set\+\_\+row\+\_\+to\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+matrix $\ast$}]{m, }
+\item[{const size\+\_\+t}]{i, }
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{tools_8cpp_a63fd4002a246d6887a12078d332a4ea4}{}\label{tools_8cpp_a63fd4002a246d6887a12078d332a4ea4}
+Set a row of a gsl\+\_\+matrix to a value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & pointer to matrix. \\
+\hline
+{\em i} & row number. \\
+\hline
+{\em x} & new value. \\
+\hline
+\end{DoxyParams}
+\index{tools.\+cpp@{tools.\+cpp}!out\+\_\+error@{out\+\_\+error}}
+\index{out\+\_\+error@{out\+\_\+error}!tools.\+cpp@{tools.\+cpp}}
+\subsubsection[{\texorpdfstring{out\+\_\+error(const char $\ast$error)}{out_error(const char *error)}}]{\setlength{\rightskip}{0pt plus 5cm}void out\+\_\+error (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{tools_8cpp_ae2a5aa378d076855689ad9c1d1307f2a}{}\label{tools_8cpp_ae2a5aa378d076855689ad9c1d1307f2a}
+Print an error to std\+::cerr and exit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & error message. \\
+\hline
+\end{DoxyParams}
+\index{tools.\+cpp@{tools.\+cpp}!out\+\_\+error@{out\+\_\+error}}
+\index{out\+\_\+error@{out\+\_\+error}!tools.\+cpp@{tools.\+cpp}}
+\subsubsection[{\texorpdfstring{out\+\_\+error(std\+::string error)}{out_error(std::string error)}}]{\setlength{\rightskip}{0pt plus 5cm}void out\+\_\+error (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{error}
+\end{DoxyParamCaption}
+)}\hypertarget{tools_8cpp_a3dbffc5c9682a9da13687a512651595f}{}\label{tools_8cpp_a3dbffc5c9682a9da13687a512651595f}
+Print an error to std\+::cerr and exit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & error message. \\
+\hline
+\end{DoxyParams}
+\index{tools.\+cpp@{tools.\+cpp}!out\+\_\+warning@{out\+\_\+warning}}
+\index{out\+\_\+warning@{out\+\_\+warning}!tools.\+cpp@{tools.\+cpp}}
+\subsubsection[{\texorpdfstring{out\+\_\+warning(const char $\ast$warn)}{out_warning(const char *warn)}}]{\setlength{\rightskip}{0pt plus 5cm}void out\+\_\+warning (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{warn}
+\end{DoxyParamCaption}
+)}\hypertarget{tools_8cpp_a13d89477df5648e7f979d2268ee461d9}{}\label{tools_8cpp_a13d89477df5648e7f979d2268ee461d9}
+Print a warning to std\+::cerr.
+
+
+\begin{DoxyParams}{Parameters}
+{\em warn} & warning message. \\
+\hline
+\end{DoxyParams}
+\index{tools.\+cpp@{tools.\+cpp}!out\+\_\+warning@{out\+\_\+warning}}
+\index{out\+\_\+warning@{out\+\_\+warning}!tools.\+cpp@{tools.\+cpp}}
+\subsubsection[{\texorpdfstring{out\+\_\+warning(std\+::string warn)}{out_warning(std::string warn)}}]{\setlength{\rightskip}{0pt plus 5cm}void out\+\_\+warning (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{warn}
+\end{DoxyParamCaption}
+)}\hypertarget{tools_8cpp_a7185517f8c9969a6a8dc5811d55ec7f4}{}\label{tools_8cpp_a7185517f8c9969a6a8dc5811d55ec7f4}
+Print a warning to std\+::cerr.
+
+
+\begin{DoxyParams}{Parameters}
+{\em warn} & warning message. \\
+\hline
+\end{DoxyParams}

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['t',['t',['../classChain.html#a07bbad56f1ed3da3594326d8b14d1906',1,'Chain::t()'],['../classContChain.html#a5c4eaed7e195c0d2fc09ecd88d16872f',1,'ContChain::t()']]],
-  ['t_5fmax',['t_max',['../hopping__flees_8cpp.html#a69bcd76a76d7e5503a922700fd0d919f',1,'hopping_flees.cpp']]],
-  ['todo_20list',['Todo List',['../todo.html',1,'']]],
-  ['trans_5fmatrix',['trans_matrix',['../general__discrete__markov__chain_8cpp.html#ad53b83095929a31cc39e2fcc57d65b5d',1,'general_discrete_markov_chain.cpp']]]
+  ['ran_5fgenerator_2ecpp',['ran_generator.cpp',['../ran__generator_8cpp.html',1,'']]],
+  ['ran_5fgenerator_2eh',['ran_generator.h',['../ran__generator_8h.html',1,'']]],
+  ['rangen',['RanGen',['../classRanGen.html',1,'RanGen'],['../classRanGen.html#af9569853a8e21e8848765565815d84a4',1,'RanGen::RanGen()']]],
+  ['run',['run',['../classCTMC.html#ad95f38b7dcc275c5924f9280299e8312',1,'CTMC']]]
 ];

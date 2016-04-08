@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['ran_5fgenerator_2ecpp',['ran_generator.cpp',['../ran__generator_8cpp.html',1,'']]],
-  ['ran_5fgenerator_2eh',['ran_generator.h',['../ran__generator_8h.html',1,'']]]
+  ['moran_5fmodel_5fboundary_5fmutation_2ecpp',['moran_model_boundary_mutation.cpp',['../moran__model__boundary__mutation_8cpp.html',1,'']]]
 ];

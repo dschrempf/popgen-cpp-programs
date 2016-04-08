@@ -23,6 +23,20 @@ void out_warning(const char * warn);
 void out_warning(std::string warn);
 
 /** 
+ * Print an error to std::cerr and exit.
+ * 
+ * @param error error message.
+ */
+void out_error(const char * error);
+
+/** 
+ * Print an error to std::cerr and exit.
+ * 
+ * @param error error message.
+ */
+void out_error(std::string error);
+
+/** 
  * Initialize an std::vector with zeroes.
  * 
  * @param length length of the vector. 
@@ -69,6 +83,6 @@ void gsl_matrix_entry_add(gsl_matrix * m,
  * @param m the matrix to print.
  */
 void gsl_matrix_print(gsl_matrix * m, std::ostream& out,
-                      size_t precision=5);
+                      size_t precision=3);
 
 #endif

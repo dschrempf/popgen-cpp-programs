@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['fac',['fac',['../bookshelf_8cpp.html#a090ba79298215dfcd69743e1c0d604b9',1,'bookshelf.cpp']]],
-  ['fix_5fwidth_5fcout_5fdbl',['fix_width_cout_dbl',['../coin__toss__mcmc_8cpp.html#acddbe38a61f5792e4ee690ce384f7215',1,'coin_toss_mcmc.cpp']]],
-  ['fix_5fwidth_5fcout_5fstr',['fix_width_cout_str',['../coin__toss__mcmc_8cpp.html#ad3cc63ab7fcc334e856361062b7ad2d4',1,'coin_toss_mcmc.cpp']]]
+  ['delta_5fx1',['delta_x1',['../hitchhiking_8c.html#a8ad6767d8c3ba2ac1cb3a1e505608c00',1,'hitchhiking.c']]],
+  ['delta_5fx2',['delta_x2',['../hitchhiking_8c.html#ab9d06bab5bc2d5935044318d7c17227f',1,'hitchhiking.c']]],
+  ['delta_5fx3',['delta_x3',['../hitchhiking_8c.html#aaa7b921beabd9f8579d4f4cce6ebde54',1,'hitchhiking.c']]],
+  ['delta_5fx4',['delta_x4',['../hitchhiking_8c.html#a82999ab18de195736fd75e00a9cea62b',1,'hitchhiking.c']]]
 ];

@@ -6,10 +6,26 @@ A class to run a continuous-\/time Markov chain (\hyperlink{classCTMC}{C\+T\+MC}
 
 
 {\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$gsl/gsl\+\_\+matrix.\+h$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}ran\+\_\+generator.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tools.\+h\char`\"{}}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{classCTMC}{C\+T\+MC}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \hyperlink{ctmc_8h_a981216161467119699bb029cc534bbca}{state}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{ctmc_8h_a9e2c5f046b7dca6fbe3f649238eb4f48}{B\+U\+R\+N\+\_\+\+IN} = 10000
+\item 
+unsigned int \hyperlink{ctmc_8h_a5fd0b0b54dc2603a4bb03ec1dc09c125}{L\+O\+G\+\_\+\+I\+N\+T\+E\+R\+V\+AL} = 1e5
 \end{DoxyCompactItemize}
 
 
@@ -22,3 +38,18 @@ Dominik Schrempf \href{mailto:dominik.schrempf@gmail.com}{\tt dominik.\+schrempf
 \begin{DoxyDate}{Date}
 Mon Apr 4 09\+:51\+:24 2016 
 \end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\index{ctmc.\+h@{ctmc.\+h}!state@{state}}
+\index{state@{state}!ctmc.\+h@{ctmc.\+h}}
+\subsubsection[{\texorpdfstring{state}{state}}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int {\bf state}}\hypertarget{ctmc_8h_a981216161467119699bb029cc534bbca}{}\label{ctmc_8h_a981216161467119699bb029cc534bbca}
+
+
+\subsection{Variable Documentation}
+\index{ctmc.\+h@{ctmc.\+h}!B\+U\+R\+N\+\_\+\+IN@{B\+U\+R\+N\+\_\+\+IN}}
+\index{B\+U\+R\+N\+\_\+\+IN@{B\+U\+R\+N\+\_\+\+IN}!ctmc.\+h@{ctmc.\+h}}
+\subsubsection[{\texorpdfstring{B\+U\+R\+N\+\_\+\+IN}{BURN_IN}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int B\+U\+R\+N\+\_\+\+IN = 10000}\hypertarget{ctmc_8h_a9e2c5f046b7dca6fbe3f649238eb4f48}{}\label{ctmc_8h_a9e2c5f046b7dca6fbe3f649238eb4f48}
+\index{ctmc.\+h@{ctmc.\+h}!L\+O\+G\+\_\+\+I\+N\+T\+E\+R\+V\+AL@{L\+O\+G\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}
+\index{L\+O\+G\+\_\+\+I\+N\+T\+E\+R\+V\+AL@{L\+O\+G\+\_\+\+I\+N\+T\+E\+R\+V\+AL}!ctmc.\+h@{ctmc.\+h}}
+\subsubsection[{\texorpdfstring{L\+O\+G\+\_\+\+I\+N\+T\+E\+R\+V\+AL}{LOG_INTERVAL}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int L\+O\+G\+\_\+\+I\+N\+T\+E\+R\+V\+AL = 1e5}\hypertarget{ctmc_8h_a5fd0b0b54dc2603a4bb03ec1dc09c125}{}\label{ctmc_8h_a5fd0b0b54dc2603a4bb03ec1dc09c125}

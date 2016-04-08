@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['i_5fstart',['i_start',['../ehrenfest__mcmc_8cpp.html#a8ea5c4b17c061343d5a7c2532e629df8',1,'ehrenfest_mcmc.cpp']]]
+  ['d',['d',['../classContChain.html#aef8dccaf67d35e5e04f236f3dddb36f1',1,'ContChain']]],
+  ['delta',['delta',['../coin__toss__mcmc_8cpp.html#a9ea1a8f5ef3e6d20b362385e1288c72c',1,'coin_toss_mcmc.cpp']]]
 ];

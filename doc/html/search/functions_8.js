@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['pick_5fexponential',['pick_exponential',['../classRanGen.html#a59d9212459d4ec46e9403b7e81f3f90e',1,'RanGen']]],
-  ['pick_5funiform',['pick_uniform',['../classRanGen.html#af43088ca2848ff838ac13177bb2885d0',1,'RanGen']]],
-  ['pp_5fmatrix',['pp_matrix',['../general__discrete__markov__chain_8cpp.html#aeabe468be8a8ef258f53acea22e043e1',1,'general_discrete_markov_chain.cpp']]],
-  ['print_5ffield',['print_field',['../stepping__stone__model_8cpp.html#ae59844ba6002faedacc6bd05d1c2328d',1,'stepping_stone_model.cpp']]]
+  ['jump',['jump',['../classCTMC.html#a67388d53e74549f82f67271873d87dd9',1,'CTMC::jump()'],['../bookshelf_8cpp.html#ad892a3bc7f66d5c2641286d2c46d4ef4',1,'jump(int *state_vec, const gsl_rng *r):&#160;bookshelf.cpp'],['../continuous__markov__chain__norris__ex__2__3__2_8cpp.html#a6083899b74700af9a2eb342bc97a646f',1,'jump(Chain *chain, double beta, RanGen *rg):&#160;continuous_markov_chain_norris_ex_2_3_2.cpp'],['../cube__mcmc_8cpp.html#ac4cdf75a22d84755a5e67890f2b3eddb',1,'jump(state_t s, const gsl_rng *r):&#160;cube_mcmc.cpp'],['../ehrenfest__mcmc_8cpp.html#a9e84f967ae03eb731820321ed36e052c',1,'jump(unsigned int i, unsigned int N, gsl_rng *r):&#160;ehrenfest_mcmc.cpp'],['../general__discrete__markov__chain_8cpp.html#afbee3faf2b9cb746736501759c9a3371',1,'jump(const gsl_ran_discrete_t *G, const gsl_rng *R):&#160;general_discrete_markov_chain.cpp'],['../hopping__flees_8cpp.html#a7f3eea55850114fc658a0e698f2ed46d',1,'jump(ContChain *ch, double t, RanGen *rg):&#160;hopping_flees.cpp'],['../stepping__stone__model_8cpp.html#aa30af12209e25d63e7d2a3963560b4ea',1,'jump(char *field, int n, const gsl_rng *r):&#160;stepping_stone_model.cpp']]],
+  ['jump_5fmaybe',['jump_maybe',['../classCTMC.html#a11dcb1006eee5d7d239257e3171ac9d7',1,'CTMC']]],
+  ['jump_5fsilently',['jump_silently',['../classCTMC.html#a3e200ff31cd91679d7b050fcc4547336',1,'CTMC']]]
 ];

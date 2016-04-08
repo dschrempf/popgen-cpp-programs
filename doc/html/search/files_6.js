@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['stepping_5fstone_5fmodel_2ecpp',['stepping_stone_model.cpp',['../stepping__stone__model_8cpp.html',1,'']]]
+  ['ran_5fgenerator_2ecpp',['ran_generator.cpp',['../ran__generator_8cpp.html',1,'']]],
+  ['ran_5fgenerator_2eh',['ran_generator.h',['../ran__generator_8h.html',1,'']]]
 ];

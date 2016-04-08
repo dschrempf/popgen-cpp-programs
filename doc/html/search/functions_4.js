@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['get_5fhet_5ff',['get_het_f',['../hitchhiking_8c.html#a75764eda9dc4881822e5eb7e40e581d6',1,'hitchhiking.c']]],
-  ['get_5fnext_5fmove',['get_next_move',['../cube__mcmc_8cpp.html#aa51e403119437eb0a78840540185185f',1,'cube_mcmc.cpp']]],
-  ['get_5fnext_5fstate',['get_next_state',['../cube__mcmc_8cpp.html#a6f0bf03df8b974d082a659733471a820',1,'cube_mcmc.cpp']]],
-  ['get_5fq',['get_q',['../ehrenfest__mcmc_8cpp.html#ae42a013668e7a376deefff64fa881dce',1,'ehrenfest_mcmc.cpp']]]
+  ['evolve_5fchain',['evolve_chain',['../hopping__flees_8cpp.html#ae97f7181bb7a088fc5bbda1a3e991f97',1,'hopping_flees.cpp']]],
+  ['evolve_5fpopulation',['evolve_population',['../genetic__drift_8cpp.html#adcad5b6c56c59702f1a03e60162f7fbe',1,'genetic_drift.cpp']]],
+  ['expected_5fsteps_5freturn',['expected_steps_return',['../cube__mcmc_8cpp.html#a6f9d169c62a23579670192f552e60062',1,'cube_mcmc.cpp']]],
+  ['expected_5fsteps_5fto_5fo',['expected_steps_to_o',['../cube__mcmc_8cpp.html#a4f5c98fe8034fbd4e9490d90154f49d1',1,'cube_mcmc.cpp']]],
+  ['expected_5fvisits_5fo',['expected_visits_o',['../cube__mcmc_8cpp.html#ab4189e88c9e57edd84741db266efd0f0',1,'cube_mcmc.cpp']]]
 ];

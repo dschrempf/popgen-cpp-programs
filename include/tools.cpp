@@ -1,11 +1,20 @@
 #include "tools.h"
 
+void out_warning(const char * warn) {
+    std::cerr << "WARNING: " << warn << std::endl;
+}
+
 void out_warning(std::string warn) {
     out_warning(warn.c_str());
 }
 
-void out_warning(const char * warn) {
-    std::cerr << "WARNING: " << warn << std::endl;
+void out_error(const char * error) {
+    std::cerr << "ERROR: " << error << std::endl;
+    exit(2);
+}
+
+void out_error(std::string error) {
+    out_warning(error.c_str());
 }
 
 void gsl_matrix_set_row_to_value(gsl_matrix * m,
@@ -35,7 +44,7 @@ void gsl_matrix_print(gsl_matrix * m, std::ostream& out,
     out << std::setprecision(p);
     for (i = 0; i < s1; i++) {
         for (j = 0; j < s2; j++) {
-            out << std::setw(p+6) << gsl_matrix_get(m, i, j);
+            out << std::setw(p+9) << gsl_matrix_get(m, i, j);
         }
         out << std::endl;
     }

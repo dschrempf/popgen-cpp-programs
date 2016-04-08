@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['ehrenfest_5fmcmc_2ecpp',['ehrenfest_mcmc.cpp',['../ehrenfest__mcmc_8cpp.html',1,'']]],
-  ['evolve_5fchain',['evolve_chain',['../hopping__flees_8cpp.html#ae97f7181bb7a088fc5bbda1a3e991f97',1,'hopping_flees.cpp']]],
-  ['evolve_5fpopulation',['evolve_population',['../genetic__drift_8cpp.html#adcad5b6c56c59702f1a03e60162f7fbe',1,'genetic_drift.cpp']]],
-  ['expected_5fsteps_5freturn',['expected_steps_return',['../cube__mcmc_8cpp.html#a6f9d169c62a23579670192f552e60062',1,'cube_mcmc.cpp']]],
-  ['expected_5fsteps_5fto_5fo',['expected_steps_to_o',['../cube__mcmc_8cpp.html#a4f5c98fe8034fbd4e9490d90154f49d1',1,'cube_mcmc.cpp']]],
-  ['expected_5fvisits_5fo',['expected_visits_o',['../cube__mcmc_8cpp.html#ab4189e88c9e57edd84741db266efd0f0',1,'cube_mcmc.cpp']]]
+  ['d',['d',['../classContChain.html#aef8dccaf67d35e5e04f236f3dddb36f1',1,'ContChain']]],
+  ['delta',['delta',['../coin__toss__mcmc_8cpp.html#a9ea1a8f5ef3e6d20b362385e1288c72c',1,'coin_toss_mcmc.cpp']]],
+  ['delta_5fx1',['delta_x1',['../hitchhiking_8c.html#a8ad6767d8c3ba2ac1cb3a1e505608c00',1,'hitchhiking.c']]],
+  ['delta_5fx2',['delta_x2',['../hitchhiking_8c.html#ab9d06bab5bc2d5935044318d7c17227f',1,'hitchhiking.c']]],
+  ['delta_5fx3',['delta_x3',['../hitchhiking_8c.html#aaa7b921beabd9f8579d4f4cce6ebde54',1,'hitchhiking.c']]],
+  ['delta_5fx4',['delta_x4',['../hitchhiking_8c.html#a82999ab18de195736fd75e00a9cea62b',1,'hitchhiking.c']]]
 ];
