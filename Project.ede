@@ -4,4 +4,5 @@
   :file "Project.ede"
   :name "cpp_programs"
   :targets nil
-  :makefile-type 'Makefile.am)
+  :makefile-type 'Makefile.am
+  :configuration-variables nil)

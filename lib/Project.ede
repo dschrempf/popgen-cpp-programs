@@ -1,0 +1,27 @@
+;; Object include
+;; EDE Project Files are auto generated: Do Not Edit
+(ede-proj-project "include"
+  :file "Project.ede"
+  :name "lib"
+  :targets
+  (list
+    (ede-proj-target-makefile-shared-object "ran_generator"
+      :name "ran_generator"
+      :path ""
+      :source '("ran_generator.h" "ran_generator.cpp")
+      :configuration-variables nil
+      :ldlibs '("gsl" "cblas"))
+    (ede-proj-target-makefile-shared-object "ctmc"
+      :name "ctmc"
+      :path ""
+      :source '("ctmc.h" "ctmc.cpp")
+      :configuration-variables nil
+      :ldlibs '("gsl" "cblas"))
+    (ede-proj-target-makefile-shared-object "tools"
+      :name "tools"
+      :path ""
+      :source '("tools.h" "tools.cpp")
+      :configuration-variables nil
+      :ldlibs '("gsl")))
+  :makefile-type 'Makefile.am
+  :configuration-variables '(("debug" ("AM_CXXFLAGS" . "-g -O0"))))

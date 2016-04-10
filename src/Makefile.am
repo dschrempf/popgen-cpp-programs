@@ -6,8 +6,8 @@
 # EDE is the Emacs Development Environment.
 # http://cedet.sourceforge.net/ede.shtml
 #
-AM_CPPFLAGS=-I../include
-CXXFLAGS=-g -O0
+AM_CPPFLAGS=-I${top_srcdir}/lib
+AM_CXXFLAGS=-g -O0
 
 top=../
 ede_FILES=Project.ede Makefile.am
@@ -42,8 +42,8 @@ bookshelf_LDADD= -lgsl -lgslcblas
 stepping_stone_model_LDADD= -lgsl -lcblas
 general_discrete_distributions_LDADD= -lgsl -lcblas
 general_discrete_markov_chain_LDADD= -lgsl -lcblas
-continuous_markov_chain_norris_ex_2_3_2_LDADD= ../include/libran_generator.la -lgsl -lcblas
-hopping_flees_LDADD= ../include/libran_generator.la -lgsl -lcblas
-moran_model_boundary_mutation_LDADD= ../include/libtools.la ../include/libran_generator.la ../include/libctmc.la -lgsl -lcblas
+continuous_markov_chain_norris_ex_2_3_2_LDADD= ../lib/libran_generator.la -lgsl -lcblas
+hopping_flees_LDADD= ../lib/libran_generator.la -lgsl -lcblas
+moran_model_boundary_mutation_LDADD= ../lib/libtools.la ../lib/libran_generator.la ../lib/libctmc.la -lgsl -lcblas
 
 # End of Makefile.am

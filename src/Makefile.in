@@ -126,7 +126,7 @@ am_continuous_markov_chain_norris_ex_2_3_2_OBJECTS =  \
 continuous_markov_chain_norris_ex_2_3_2_OBJECTS =  \
 	$(am_continuous_markov_chain_norris_ex_2_3_2_OBJECTS)
 continuous_markov_chain_norris_ex_2_3_2_DEPENDENCIES =  \
-	../include/libran_generator.la
+	../lib/libran_generator.la
 am_cube_mcmc_OBJECTS = cube_mcmc.$(OBJEXT)
 cube_mcmc_OBJECTS = $(am_cube_mcmc_OBJECTS)
 cube_mcmc_DEPENDENCIES =
@@ -151,13 +151,13 @@ hitchhiking_OBJECTS = $(am_hitchhiking_OBJECTS)
 hitchhiking_DEPENDENCIES =
 am_hopping_flees_OBJECTS = hopping_flees.$(OBJEXT)
 hopping_flees_OBJECTS = $(am_hopping_flees_OBJECTS)
-hopping_flees_DEPENDENCIES = ../include/libran_generator.la
+hopping_flees_DEPENDENCIES = ../lib/libran_generator.la
 am_moran_model_boundary_mutation_OBJECTS =  \
 	moran_model_boundary_mutation.$(OBJEXT)
 moran_model_boundary_mutation_OBJECTS =  \
 	$(am_moran_model_boundary_mutation_OBJECTS)
-moran_model_boundary_mutation_DEPENDENCIES = ../include/libtools.la \
-	../include/libran_generator.la ../include/libctmc.la
+moran_model_boundary_mutation_DEPENDENCIES = ../lib/libtools.la \
+	../lib/libran_generator.la ../lib/libctmc.la
 am_stepping_stone_model_OBJECTS = stepping_stone_model.$(OBJEXT)
 stepping_stone_model_OBJECTS = $(am_stepping_stone_model_OBJECTS)
 stepping_stone_model_DEPENDENCIES =
@@ -317,7 +317,7 @@ CPPFLAGS = @CPPFLAGS@
 CXX = @CXX@
 CXXCPP = @CXXCPP@
 CXXDEPMODE = @CXXDEPMODE@
-CXXFLAGS = -g -O0
+CXXFLAGS = @CXXFLAGS@
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
@@ -430,7 +430,8 @@ top_srcdir = @top_srcdir@
 # EDE is the Emacs Development Environment.
 # http://cedet.sourceforge.net/ede.shtml
 #
-AM_CPPFLAGS = -I../include
+AM_CPPFLAGS = -I${top_srcdir}/lib
+AM_CXXFLAGS = -g -O0
 top = ../
 ede_FILES = Project.ede Makefile.am
 SUBDIRS = 
@@ -458,9 +459,9 @@ bookshelf_LDADD = -lgsl -lgslcblas
 stepping_stone_model_LDADD = -lgsl -lcblas
 general_discrete_distributions_LDADD = -lgsl -lcblas
 general_discrete_markov_chain_LDADD = -lgsl -lcblas
-continuous_markov_chain_norris_ex_2_3_2_LDADD = ../include/libran_generator.la -lgsl -lcblas
-hopping_flees_LDADD = ../include/libran_generator.la -lgsl -lcblas
-moran_model_boundary_mutation_LDADD = ../include/libtools.la ../include/libran_generator.la ../include/libctmc.la -lgsl -lcblas
+continuous_markov_chain_norris_ex_2_3_2_LDADD = ../lib/libran_generator.la -lgsl -lcblas
+hopping_flees_LDADD = ../lib/libran_generator.la -lgsl -lcblas
+moran_model_boundary_mutation_LDADD = ../lib/libtools.la ../lib/libran_generator.la ../lib/libctmc.la -lgsl -lcblas
 all: all-recursive
 
 .SUFFIXES:
