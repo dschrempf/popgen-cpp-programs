@@ -26,9 +26,26 @@
 class RanGen
 {
  public:
+    /** 
+     * Normal initialization.
+     * 
+     */
     RanGen();
+    /** 
+     * Initialization with seed.
+     * 
+     * @param s 
+     */
+    RanGen(unsigned long int s);
     ~RanGen();
 
+    /** 
+     * Set the seed of the rng.
+     * 
+     * @param s 
+     */
+    void set_seed (unsigned long int s);
+    
     /** 
      * Simulate an exponentially distributed random variable.
      * 

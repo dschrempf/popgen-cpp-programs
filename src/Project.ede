@@ -84,7 +84,21 @@
       :source '("moran_model_boundary_mutation.cpp")
       :configuration-variables nil
       :ldlibs-local '("../lib/libtools.la" "../lib/libran_generator.la" "../lib/libctmc.la")
+      :ldlibs '("gsl" "cblas"))
+    (ede-proj-target-makefile-program "wright_fisher_boundary_mutation"
+      :name "wright_fisher_boundary_mutation"
+      :path ""
+      :source '("wright_fisher_boundary_mutation.cpp")
+      :configuration-variables nil
+      :ldlibs-local '("../lib/libtools.la" "../lib/libran_generator.la" "../lib/libctmc.la")
+      :ldlibs '("gsl" "cblas"))
+    (ede-proj-target-makefile-program "wright_fisher"
+      :name "wright_fisher"
+      :path ""
+      :source '("wright_fisher.cpp")
+      :configuration-variables nil
+      :ldlibs-local '("../lib/libtools.la" "../lib/libran_generator.la" "../lib/libctmc.la")
       :ldlibs '("gsl" "cblas")))
   :makefile-type 'Makefile.am
-  :variables '(("AM_CPPFLAGS" . "-I${top_srcdir}/lib"))
-  :configuration-variables '(("debug" ("AM_CXXFLAGS" . "-g -O0"))))
+  :variables '(("AM_CXXFLAGS" . "-I${top_srcdir}/lib"))
+  :configuration-variables '(("debug" ("CXXFLAGS" . "-g -O0"))))

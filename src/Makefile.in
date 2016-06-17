@@ -95,7 +95,9 @@ bin_PROGRAMS = genetic_drift$(EXEEXT) hitchhiking$(EXEEXT) \
 	general_discrete_distributions$(EXEEXT) \
 	general_discrete_markov_chain$(EXEEXT) \
 	continuous_markov_chain_norris_ex_2_3_2$(EXEEXT) \
-	hopping_flees$(EXEEXT) moran_model_boundary_mutation$(EXEEXT)
+	hopping_flees$(EXEEXT) moran_model_boundary_mutation$(EXEEXT) \
+	wright_fisher_boundary_mutation$(EXEEXT) \
+	wright_fisher$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -161,6 +163,16 @@ moran_model_boundary_mutation_DEPENDENCIES = ../lib/libtools.la \
 am_stepping_stone_model_OBJECTS = stepping_stone_model.$(OBJEXT)
 stepping_stone_model_OBJECTS = $(am_stepping_stone_model_OBJECTS)
 stepping_stone_model_DEPENDENCIES =
+am_wright_fisher_OBJECTS = wright_fisher.$(OBJEXT)
+wright_fisher_OBJECTS = $(am_wright_fisher_OBJECTS)
+wright_fisher_DEPENDENCIES = ../lib/libtools.la \
+	../lib/libran_generator.la ../lib/libctmc.la
+am_wright_fisher_boundary_mutation_OBJECTS =  \
+	wright_fisher_boundary_mutation.$(OBJEXT)
+wright_fisher_boundary_mutation_OBJECTS =  \
+	$(am_wright_fisher_boundary_mutation_OBJECTS)
+wright_fisher_boundary_mutation_DEPENDENCIES = ../lib/libtools.la \
+	../lib/libran_generator.la ../lib/libctmc.la
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -222,7 +234,8 @@ SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
 	$(genetic_drift_SOURCES) $(hitchhiking_SOURCES) \
 	$(hopping_flees_SOURCES) \
 	$(moran_model_boundary_mutation_SOURCES) \
-	$(stepping_stone_model_SOURCES)
+	$(stepping_stone_model_SOURCES) $(wright_fisher_SOURCES) \
+	$(wright_fisher_boundary_mutation_SOURCES)
 DIST_SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
 	$(coin_toss_mcmc_SOURCES) \
 	$(continuous_markov_chain_norris_ex_2_3_2_SOURCES) \
@@ -232,7 +245,8 @@ DIST_SOURCES = $(bookshelf_SOURCES) $(brownian_motion_mcmc_SOURCES) \
 	$(genetic_drift_SOURCES) $(hitchhiking_SOURCES) \
 	$(hopping_flees_SOURCES) \
 	$(moran_model_boundary_mutation_SOURCES) \
-	$(stepping_stone_model_SOURCES)
+	$(stepping_stone_model_SOURCES) $(wright_fisher_SOURCES) \
+	$(wright_fisher_boundary_mutation_SOURCES)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -317,7 +331,7 @@ CPPFLAGS = @CPPFLAGS@
 CXX = @CXX@
 CXXCPP = @CXXCPP@
 CXXDEPMODE = @CXXDEPMODE@
-CXXFLAGS = @CXXFLAGS@
+CXXFLAGS = -g -O0
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
@@ -430,8 +444,7 @@ top_srcdir = @top_srcdir@
 # EDE is the Emacs Development Environment.
 # http://cedet.sourceforge.net/ede.shtml
 #
-AM_CPPFLAGS = -I${top_srcdir}/lib
-AM_CXXFLAGS = -g -O0
+AM_CXXFLAGS = -I${top_srcdir}/lib
 top = ../
 ede_FILES = Project.ede Makefile.am
 SUBDIRS = 
@@ -449,6 +462,8 @@ general_discrete_markov_chain_SOURCES = general_discrete_markov_chain.cpp
 continuous_markov_chain_norris_ex_2_3_2_SOURCES = continuous_markov_chain_norris_ex_2_3_2.cpp
 hopping_flees_SOURCES = hopping_flees.cpp
 moran_model_boundary_mutation_SOURCES = moran_model_boundary_mutation.cpp
+wright_fisher_boundary_mutation_SOURCES = wright_fisher_boundary_mutation.cpp
+wright_fisher_SOURCES = wright_fisher.cpp
 genetic_drift_LDADD = -lgsl -lcblas
 hitchhiking_LDADD = 
 ehrenfest_mcmc_LDADD = -lgsl -lcblas
@@ -462,6 +477,8 @@ general_discrete_markov_chain_LDADD = -lgsl -lcblas
 continuous_markov_chain_norris_ex_2_3_2_LDADD = ../lib/libran_generator.la -lgsl -lcblas
 hopping_flees_LDADD = ../lib/libran_generator.la -lgsl -lcblas
 moran_model_boundary_mutation_LDADD = ../lib/libtools.la ../lib/libran_generator.la ../lib/libctmc.la -lgsl -lcblas
+wright_fisher_boundary_mutation_LDADD = ../lib/libtools.la ../lib/libran_generator.la ../lib/libctmc.la -lgsl -lcblas
+wright_fisher_LDADD = ../lib/libtools.la ../lib/libran_generator.la ../lib/libctmc.la -lgsl -lcblas
 all: all-recursive
 
 .SUFFIXES:
@@ -597,6 +614,14 @@ stepping_stone_model$(EXEEXT): $(stepping_stone_model_OBJECTS) $(stepping_stone_
 	@rm -f stepping_stone_model$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(stepping_stone_model_OBJECTS) $(stepping_stone_model_LDADD) $(LIBS)
 
+wright_fisher$(EXEEXT): $(wright_fisher_OBJECTS) $(wright_fisher_DEPENDENCIES) $(EXTRA_wright_fisher_DEPENDENCIES) 
+	@rm -f wright_fisher$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(wright_fisher_OBJECTS) $(wright_fisher_LDADD) $(LIBS)
+
+wright_fisher_boundary_mutation$(EXEEXT): $(wright_fisher_boundary_mutation_OBJECTS) $(wright_fisher_boundary_mutation_DEPENDENCIES) $(EXTRA_wright_fisher_boundary_mutation_DEPENDENCIES) 
+	@rm -f wright_fisher_boundary_mutation$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(wright_fisher_boundary_mutation_OBJECTS) $(wright_fisher_boundary_mutation_LDADD) $(LIBS)
+
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
 
@@ -616,6 +641,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hopping_flees.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/moran_model_boundary_mutation.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stepping_stone_model.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wright_fisher.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wright_fisher_boundary_mutation.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

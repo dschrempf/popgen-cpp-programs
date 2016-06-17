@@ -4,12 +4,23 @@ RanGen::RanGen ()
 {
     gsl_rng_env_setup();
     T = gsl_rng_default;
-    r = gsl_rng_alloc (T);
+    r = gsl_rng_alloc(T);
 }
 
+
+RanGen::RanGen(unsigned long int s)
+{
+    RanGen();
+    gsl_rng_set(r, s);
+}
 RanGen::~RanGen ()
 {
     gsl_rng_free (r);
+}
+
+
+void RanGen::set_seed(unsigned long int s) {
+    gsl_rng_set(r, s);
 }
 
 double RanGen::pick_exponential (double mean)

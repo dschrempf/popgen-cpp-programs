@@ -4,6 +4,9 @@
 #include "ctmc.h"
 #include "tools.h"
 #include "getopt.h"
+#include <unistd.h>
+#include <sys/syscall.h>
+#include <linux/random.h>
 
 template double * new_zeroes<double>(unsigned int);
 
@@ -36,11 +39,12 @@ int main(int argc, char *argv[])
     double mu = 1e-1;
     int log_l = 1;
     char * out_fn = NULL;
+    bool seed = false;
     int c;
 
     opterr = 0;
 
-    while ((c = getopt (argc, argv, "n:t:m:f:l:")) != -1)
+    while ((c = getopt (argc, argv, "n:t:m:f:l:s")) != -1)
         switch (c)
             {
             case 'n':
@@ -62,6 +66,10 @@ int main(int argc, char *argv[])
             case 'l':
                 // Set log level.
                 log_l = atoi(optarg);
+                break;
+            case 's':
+                // Set seed randomly.
+                seed = true;
                 break;
             case '?':
                 if (optopt == 'n' || optopt == 't' || optopt == 'm') {
@@ -90,14 +98,28 @@ int main(int argc, char *argv[])
         log_out << argv[count] << " ";
     log_out << std::endl;
 
+    log_out << "Setup chain." << std::endl;
     gsl_matrix * m =
         moran_boundary_mut_matrix(ne, mu);
     CTMC chain(m, ne+1);
+    if (seed) {
+        unsigned long int s;
+        log_out << "Bytes set:";
+        log_out <<
+            syscall(SYS_getrandom, &s, sizeof(unsigned long int), 0);
+        log_out << std::endl;
+        log_out << "Seed is: " << s << "." << std::endl;
+        chain.rg->set_seed(s);
+    }
+    chain.burn_it_in();
     // CTMC chain(m, ne+1, true);
     chain.set_log_level(log_l);
     // chain.print_info(std::cout);
 
+    std::cout << "Run chain." << std::endl;
     chain.run(tm);
+
+    std::cout << "Print output." << std::endl;
     // chain.print_direct_hitting_times(std::cout);
     chain.print_hitting_times(log_out);
     // chain.print_direct_number_jumps(std::cout);

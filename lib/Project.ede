@@ -24,4 +24,4 @@
       :configuration-variables nil
       :ldlibs '("gsl")))
   :makefile-type 'Makefile.am
-  :configuration-variables '(("debug" ("AM_CXXFLAGS" . "-g -O0"))))
+  :configuration-variables '(("debug" ("CXXFLAGS" . "-g -O0"))))

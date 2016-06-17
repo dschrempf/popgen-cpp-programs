@@ -1,0 +1,1 @@
+Command line: /home/dominik/Population-Genetics/Programs/cpp_programs/build/src/.libs/lt-moran_model_boundary_mutation -n0600 -t 10000000 -m 0.10 -f LOG_FILE 

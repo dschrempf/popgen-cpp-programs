@@ -280,7 +280,16 @@ CPPFLAGS =
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2
+
+# Automatically Generated Makefile by EDE.
+# For use with: automake
+# Relative File Name: lib/Makefile.am
+#
+# DO NOT MODIFY THIS FILE OR YOUR CHANGES MAY BE LOST.
+# EDE is the Emacs Development Environment.
+# http://cedet.sourceforge.net/ede.shtml
+#
+CXXFLAGS = -g -O0
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -384,16 +393,6 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ../..
-
-# Automatically Generated Makefile by EDE.
-# For use with: automake
-# Relative File Name: lib/Makefile.am
-#
-# DO NOT MODIFY THIS FILE OR YOUR CHANGES MAY BE LOST.
-# EDE is the Emacs Development Environment.
-# http://cedet.sourceforge.net/ede.shtml
-#
-AM_CXXFLAGS = -g -O0
 top = ../
 ede_FILES = Project.ede Makefile.am
 SUBDIRS = 

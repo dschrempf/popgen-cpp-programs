@@ -143,6 +143,11 @@ class CTMC {
 
     void print_invariant_distribution(std::ostream & out);
 
+    double get_entry_invariant_distribution(unsigned int i);
+    
+    /// Random number generator.
+    RanGen * rg;
+    
  private:
     /// Time of the Markov chain.
     double time_now;
@@ -159,8 +164,6 @@ class CTMC {
     /// Transition rate matrix Q without diagonal elements.
     /// Internally used to determine the state to jump to.
     gsl_matrix * q_no_diagonal;
-    /// Random number generator.
-    RanGen * rg;
     /// Counter of jumps.
     unsigned int jump_counter;
     /// Number of burn in jumps.
